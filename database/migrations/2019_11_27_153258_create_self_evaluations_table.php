@@ -13,8 +13,16 @@ class CreateSelfEvaluationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('self_evaluations', function (Blueprint $table) {
+        Schema::create('evaluations', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('language');
+            $table->integer('attitude');
+            $table->integer('participation');
+            $table->integer('learning');
+            $table->integer('collaboration');
+            $table->integer('meteo');
+            $table->integer('user_id');
+            $table->boolean('review_status')->default(false);
             $table->timestamps();
         });
     }
