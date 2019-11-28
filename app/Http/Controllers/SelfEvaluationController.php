@@ -84,7 +84,7 @@ class SelfEvaluationController extends Controller
     }
     public function skillSelfEvaluation()
     {
-        $skill= "a";
+        $skill= 1;
         return $skill;
     }
 
