@@ -14,11 +14,11 @@ class SelfEvaluationTest extends TestCase
         $this->assertTrue(true);
     }
 
-public function testSkillSelfEvaluationNotEmpty ()
+public function testSkillSelfEvaluationisNotEmpty ()
 {
 $skill = new SelfEvaluationController;
 $result =$skill->skillSelfEvaluation();
-$this->assertEmpty($result);
+$this->assertNotEmpty($result);
 }
 
 }
