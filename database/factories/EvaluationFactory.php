@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\SelfEvaluation;
+use App\Evaluation;
 use Faker\Generator as Faker;
 
-$factory->define(SelfEvaluation::class, function (Faker $faker) {
+$factory->define(Evaluation::class, function (Faker $faker) {
     return [
         //
     ];
