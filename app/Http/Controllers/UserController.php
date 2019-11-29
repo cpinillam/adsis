@@ -57,7 +57,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+<<<<<<< HEAD
         //
+=======
+
+>>>>>>> b760cadf0c3b57ba37a858cc3d0981ea1aa10d98
     }
 
     /**
