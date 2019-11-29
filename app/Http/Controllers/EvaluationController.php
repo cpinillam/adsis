@@ -12,7 +12,6 @@ class EvaluationController extends Controller
     public function index()
     {
         $evaluation = Evaluation::all();
-        //dd ($evaluation);
         return view('/Evaluation.evaluation', ['evaluations' => $evaluation]);
     }
 
@@ -21,17 +20,13 @@ class EvaluationController extends Controller
         $evaluation = new Evaluation();
         $evaluation->user_id = Auth::id();
         return view ('/Evaluation.create', ['evaluation' => $evaluation]);
-        dd($evaluation);
     }
     
     public function store(Request $request)
     {
         Evaluation::create($request->all());
-        $userid=Auth::id();
-        dd($userid);
-        return redirect ('/Evaluation.create', ['userid'=> $userid] );
+        return redirect ('/evaluation');
     }
-
     
     public function show(Evaluation $evaluation)
     {

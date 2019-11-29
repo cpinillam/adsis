@@ -14,21 +14,21 @@
         <input class="campos" type="value" name="meteo" value="{{$evaluation->meteo}}">
         <br>
         <label>Idioma:</label>
-        <input class="campos" type="value" name="language" value="{{$evaluation->language}}">
+        <input class="campos" type="number" name="language" value="{{$evaluation->language}}">
         <br>
         <label>Actitud:</label>
-        <input class="campos" type="value" name="attitude" value="{{$evaluation->attitude}}">
+        <input class="campos" type="number" name="attitude" value="{{$evaluation->attitude}}">
         <br>
         <label>Participación:</label>
-        <input class="campos" type="value" name="participation" value="{{$evaluation->participation}}">
+        <input class="campos" type="number" name="participation" value="{{$evaluation->participation}}">
         <br>
         <label>Aprendizaje:</label>
-        <input class="campos" type="value" name="learning" value="{{$evaluation->learning}}">
+        <input class="campos" type="number" name="learning" value="{{$evaluation->learning}}">
         <br>
         <label>Colaboración:</label>
-        <input class="campos" type="value" name="collaboration" value="{{$evaluation->collaboration}}">
+        <input class="campos" type="number" name="collaboration" value="{{$evaluation->collaboration}}">
         <br>
-        {{-- <span>{{$evaluation->user_id}}={{$userid}}</span> --}}
+        <input class="campos" type="hidden" name="user_id" value="{{$evaluation->user_id}}">
         <input type="submit" class="boton" value="Enviar">
         <br>
     </form>
