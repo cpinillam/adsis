@@ -33,31 +33,24 @@ class EvaluationController extends Controller
         //
     }
 
-   
     public function edit(Evaluation $evaluation)
     {
-        //
+        return view('/Evaluation.update',  ['evaluation' => $evaluation]);
     }
 
-    
     public function update(Request $request, Evaluation $evaluation)
     {
         $data = $request->all();
-        $evaluation = Evaluation::find($id);
+        $evaluation = Evaluation::find($evaluation->id);
         $evaluation->fill($data);
         $evaluation->save();
-        //return view('layouts.sent',  ['kata' => $kata]);
+        return redirect('/evaluation');
     }
-
    
     public function destroy(Evaluation $evaluation)
     {
         //
     }
-    public function skillSelfEvaluation()
-    {
-        $skill= 1;
-        return $skill;
-    }
+    
 
 }

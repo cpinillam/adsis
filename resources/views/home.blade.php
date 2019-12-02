@@ -19,7 +19,11 @@
  name: {{$user->name}}
  <br>
  description: {{$user->description}}
-
+<br>
+    <a href="/evaluation">Lista de Evaluaciones</a>
+    <br>
+    <a href="/evaluation/create">Crear Evaluación</a>
+    <br>
 
 
 
