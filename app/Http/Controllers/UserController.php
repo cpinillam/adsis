@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\SelfEvaluation;
 use Illuminate\Http\Request;
+use App\User;
 
-class SelfEvaluationController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class SelfEvaluationController extends Controller
      */
     public function index()
     {
-        //
+        return view('user');
     }
 
     /**
@@ -41,33 +41,33 @@ class SelfEvaluationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\SelfEvaluation  $selfEvaluation
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(SelfEvaluation $selfEvaluation)
+    public function show(User $user )
     {
-        //
+        return view('users/profile',['user'=> $user]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SelfEvaluation  $selfEvaluation
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(SelfEvaluation $selfEvaluation)
+    public function edit($id)
     {
-        //
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SelfEvaluation  $selfEvaluation
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SelfEvaluation $selfEvaluation)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,17 +75,11 @@ class SelfEvaluationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SelfEvaluation  $selfEvaluation
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SelfEvaluation $selfEvaluation)
+    public function destroy($id)
     {
         //
     }
-    public function skillSelfEvaluation()
-    {
-        $skill= 1;
-        return $skill;
-    }
-
 }

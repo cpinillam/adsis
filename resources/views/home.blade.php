@@ -13,8 +13,23 @@
                             {{ session('status') }}
                         </div>
                     @endif
+ hola tio soy  {{ Auth::user()->name }}
+ document: {{$user->document}}
+ <br>
+ name: {{$user->name}}
+ <br>
+ description: {{$user->description}}
+<br>
+    <a href="/evaluation">Lista de Evaluaciones</a>
+    <br>
+    <a href="/evaluation/create">Crear Evaluación</a>
+    <br>
+    <a href="/evaluationsByUser">Evaluaciones por alumno</a>
+    <br>
 
-                    You are logged in!
+
+
+
                 </div>
             </div>
         </div>

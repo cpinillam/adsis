@@ -5,9 +5,9 @@ namespace Tests\Unit;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-use App\Http\Controllers\SelfEvaluationController;
+use App\Evaluation;
 
-class SelfEvaluationTest extends TestCase
+class EvaluationTest extends TestCase
 {/* 
     public function testBasicTest()
     {
@@ -16,14 +16,14 @@ class SelfEvaluationTest extends TestCase
 
 public function testSkillSelfEvaluationIsNotEmpty ()
 {
-$skill = new SelfEvaluationController;
+$skill = new Evaluation;
 $result =$skill->skillSelfEvaluation();
 $this->assertNotEmpty($result);
 }
 
 public function testSkillSelfEvaluationIsNotString ()
 {
-$skill = new SelfEvaluationController;
+$skill = new Evaluation;
 $result =$skill->skillSelfEvaluation();
 $this->assertIsNotString($result);
 }
