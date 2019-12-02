@@ -44,7 +44,7 @@ class EvaluationController extends Controller
         $evaluation = Evaluation::find($evaluation->id);
         $evaluation->fill($data);
         $evaluation->save();
-        return view ('/evaluation');
+        return redirect ('/evaluation');
     }
    
     public function destroy(Evaluation $evaluation)
