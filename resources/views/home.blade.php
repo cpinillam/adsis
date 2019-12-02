@@ -24,7 +24,8 @@
     <br>
     <a href="/evaluation/create">Crear Evaluación</a>
     <br>
-
+    <a href="/evaluationsByUser">Evaluaciones por alumno</a>
+    <br>
 
 
 

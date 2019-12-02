@@ -30,6 +30,9 @@
         <label>Colaboración:</label>
         <input class="campos" type="number" name="collaboration" value="{{$evaluation->collaboration}}">
         <br>
+        <label>Estado de validación:</label>
+        <input class="campos" type="number" name="review_status" value="{{$evaluation->review_status}}">
+        <br>
         <input class="campos" type="hidden" name="user_id" value="{{$evaluation->user_id}}">
         <input type="submit" class="boton" value="Enviar">
         <br>

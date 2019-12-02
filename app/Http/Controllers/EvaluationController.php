@@ -44,13 +44,19 @@ class EvaluationController extends Controller
         $evaluation = Evaluation::find($evaluation->id);
         $evaluation->fill($data);
         $evaluation->save();
-        return redirect('/evaluation');
+        return view ('/evaluation');
     }
    
     public function destroy(Evaluation $evaluation)
     {
         //
     }
-    
+
+    public function getEvaluationsbyUser()
+    {
+        $user= Auth::id();
+        $evaluations = Evaluation::EvaluationsByUser($user);
+        return view('/Evaluation.evaluation', ['evaluations' => $evaluations]);
+    }
 
 }

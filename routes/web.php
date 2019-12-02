@@ -20,5 +20,6 @@ Auth::routes();
 Route::get ('/home', 'HomeController@index')->name('home');
 
 Route::resource ('evaluation', 'EvaluationController');
+Route::get ('evaluationsByUser', 'EvaluationController@getEvaluationsByUser');
 
 Route::resource('user', 'UserController');
