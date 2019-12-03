@@ -44,7 +44,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user )
+    public function show(User $user)
     {
         return view('users/profile',['user'=> $user]);
     }
@@ -55,13 +55,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    
+     public function edit($id)
     {
-<<<<<<< HEAD
-        //
-=======
+       $user= User::findOrFail($id);
+       
+       $this->authorize($user);
+       
+    //    return view('')
 
->>>>>>> b760cadf0c3b57ba37a858cc3d0981ea1aa10d98
     }
 
     /**
@@ -71,10 +73,19 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    
+     public function update(Request $request, $id)
     {
-        //
-    }
+        $user= User::findOrFail($id);
+       
+        $this->authorize($user);
+
+        $user->update($request->all());
+        
+     //    return view('')
+     
+    } 
+    
 
     /**
      * Remove the specified resource from storage.
