@@ -49436,6 +49436,8 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./slider */ "./resources/js/slider.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -49456,7 +49458,14 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 
 var app = new Vue({
   el: '#app'
-});
+}); // var elem = document.querySelector('input[type="range"]');
+//     console.log(12)
+//     var rangeValue = function(){
+//     var newValue = elem.value;
+//     var target = document.querySelector('.value');
+//   target.innerHTML = newValue;
+// }
+// elem.addEventListener("input", rangeValue);
 
 /***/ }),
 
@@ -49571,6 +49580,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/slider.js":
+/*!********************************!*\
+  !*** ./resources/js/slider.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var elem = document.querySelector('input[type="range"]');
+console.log(12);
+
+var rangeValue = function rangeValue() {
+  var newValue = elem.value;
+  var target = document.querySelector('.value');
+  target.innerHTML = newValue;
+};
+
+elem.addEventListener("input", rangeValue);
 
 /***/ }),
 
