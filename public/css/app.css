@@ -9,7 +9,7 @@ body {
 }
 
 .value {
-  border-bottom: 4px dashed #092d44;
+  border-bottom: 4px dashed #bdc3c7;
   text-align: center;
   font-weight: bold;
   font-size: 10em;
@@ -18,7 +18,7 @@ body {
   line-height: 60px;
   margin: 40px auto;
   letter-spacing: -0.07em;
-  text-shadow: #2f1616 2px 2px 2px;
+  text-shadow: white 2px 2px 2px;
 }
 
 input[type=range] {
@@ -34,11 +34,11 @@ input[type=range] {
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background-color: #b63d2f;
+  background-color: #e74c3c;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 2px solid #312f2f;
+  border: 2px solid white;
   cursor: pointer;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
