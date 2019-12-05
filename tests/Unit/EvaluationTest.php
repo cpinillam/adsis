@@ -8,12 +8,7 @@ use Tests\TestCase;
 use App\Evaluation;
 
 class EvaluationTest extends TestCase
-{/* 
-    public function testBasicTest()
-    {
-        $this->assertTrue(true);
-    } */
-
+{
 public function testSkillSelfEvaluationIsNotEmpty ()
 {
 $skill = new Evaluation;
