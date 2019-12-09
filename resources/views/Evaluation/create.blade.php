@@ -10,6 +10,11 @@
 <div>
     <form id="create" class='formular' action='/evaluation' method='POST'>
         @csrf
+
+
+        <div class="value">0</div>
+        <input type="range" min="0" max="10" step="1" value="0">
+
         <label>Meteo personal:</label>
         <input class="campos" type="value" name="meteo" value="{{$evaluation->meteo}}">
         <br>

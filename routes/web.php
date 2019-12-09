@@ -19,6 +19,6 @@ Auth::routes();
 
 Route::get ('/home', 'HomeController@index')->name('home');
 
-Route::resource ('evaluation', 'EvaluationController');
+Route::resource ('/evaluation', 'EvaluationController');
 
-Route::resource('user', 'UserController');
+Route::resource('/user', 'UserController');
