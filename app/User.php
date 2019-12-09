@@ -41,5 +41,24 @@ class User extends Authenticatable
     {
         return $this->hasRoles(['admin']);
     }
+
+    public function GetAllUsers()
+    {
+        $allUsers = User::all();
+        return $allUsers;
+    }
+
+    public function GetUsersByGroupId(int $group_id)
+    {
+        $Evaluation = $this->GetAllUsers()->where('group', $group_id);
+        return $Evaluation;
+    }
+
+    public function GetUsersById(int $group_id)
+    {
+        $Evaluation = $this->GetAllUsers()->where('group', $group_id);
+        return $Evaluation;
+    }
+}
 }
 
