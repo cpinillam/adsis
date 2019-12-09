@@ -12,7 +12,7 @@
                 <th>Aprendizaje</th>
                 <th>Colaboración</th>
                 <th>Estado</th>
-                <th>Fecha</th>
+                <th>Fecha actualización</th>
             </tr>
             @foreach ($evaluations as $evaluation)
                 <tr>
@@ -25,9 +25,9 @@
                     <td>{{$evaluation->learning}}</td>
                     <td>{{$evaluation->collaboration}}</td>
                     <td>{{$evaluation->review_status}}</td>
-                    <td>{{$evaluation->created_at}}</td>                   
+                    <td>{{$evaluation->updated_at}}</td>                   
                     <td>
-                        <form method="get" action="/evaluation/{{$evaluation->id}}/edit">
+                        <form method="GET" action="/evaluation/{{$evaluation->id}}/edit">
                             <input class="botonLista" type="submit" value="Editar">
                         </form> 
                     </td>
@@ -46,7 +46,7 @@
                 <br>
                 <form method="get" action="/evaluation/create">
                             <input class="botonLista" type="submit" value="Crear Evaluacion">
-                </form> 
+                    <a href="/home">Home</a>
         </div>
     </div>
 

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Evaluation extends Model
 {
@@ -19,4 +20,22 @@ class Evaluation extends Model
         return $Evaluation;
 
     }
+}
+
+public function user()
+{
+    return $this->hasOne(User::class);
+}
+
+
+protected function EvaluationsByUser($user)
+{
+        $evaluations = DB::table('evaluations')
+            ->where('user_id','=', $user)
+            ->Orderby ('created_at')
+            ->get();
+        return $evaluations;
+}
+
+
 }

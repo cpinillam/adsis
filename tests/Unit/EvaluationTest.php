@@ -16,14 +16,14 @@ class EvaluationTest extends TestCase
 
 public function testSkillSelfEvaluationIsNotEmpty ()
 {
-$skill = new EvaluationController;
+$skill = new Evaluation;
 $result =$skill->skillSelfEvaluation();
 $this->assertNotEmpty($result);
 }
 
 public function testSkillSelfEvaluationIsNotString ()
 {
-$skill = new EvaluationController;
+$skill = new Evaluation;
 $result =$skill->skillSelfEvaluation();
 $this->assertIsNotString($result);
 }
