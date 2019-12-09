@@ -7,29 +7,35 @@ use Illuminate\Support\Facades\DB;
 
 class Evaluation extends Model
 {
-protected $fillable = ['language', 'attitude', 'participation', 'learning', 'collaboration', 'meteo', 'user_id', 'review_status'];
+    protected $fillable = ['language', 'attitude', 'participation', 'learning', 'collaboration', 'meteo', 'group', 'user_id'];
 
-
-protected function skillSelfEvaluation()
-    {
-        $skill= 2;
-        return $skill;
+    public function GetAllEvaluations(){
+        $allEvaluations = Evaluation::all();
+        return $allEvaluations;
     }
 
-public function user()
-{
-    return $this->hasOne(User::class);
-}   
+    public function GetEvaluationByUserId(int $user_id)
+    {
+        $Evaluation = $this->GetAllEvaluations()->where('user_id', $user_id);
+        return $Evaluation;
+
+    }
 
 
-protected function EvaluationsByUser($user)
-{
-        $evaluations = DB::table('evaluations')
-            ->where('user_id','=', $user)
-            ->Orderby ('created_at')
-            ->get();
-        return $evaluations;
-}
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    } 
+
+
+    protected function EvaluationsByUser($user)
+    {
+            $evaluations = DB::table('evaluations')
+                ->where('user_id','=', $user)
+                ->Orderby ('created_at')
+                ->get();
+            return $evaluations;
+    }
 
 
 }

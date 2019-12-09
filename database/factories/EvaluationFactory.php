@@ -14,7 +14,7 @@ $factory->define(Evaluation::class, function (Faker $faker) {
         'language' => $faker->numberBetween($min = 1, $max = 5),
         'collaboration' => $faker->numberBetween($min = 1, $max = 5),
         'meteo' => $faker->numberBetween($min = 1, $max = 5),
-        'user_id' => $faker->numberBetween($min = 1, $max = 5),
+        'user_id' => $faker->numberBetween($min = 1, $max = 10),
         'review_status' => $faker->boolean
     ];
 });
