@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class Evaluation extends Model
 {
-    protected $fillable = ['language', 'attitude', 'participation', 'learning', 'collaboration', 'meteo', 'user_id'];
+    protected $fillable = ['language', 'attitude', 'participation', 'learning', 'collaboration', 'meteo', 'group', 'user_id'];
 
     public function GetAllEvaluations(){
         $allEvaluations = Evaluation::all();
@@ -20,22 +20,22 @@ class Evaluation extends Model
         return $Evaluation;
 
     }
-}
-
-public function user()
-{
-    return $this->hasOne(User::class);
-}
 
 
-protected function EvaluationsByUser($user)
-{
-        $evaluations = DB::table('evaluations')
-            ->where('user_id','=', $user)
-            ->Orderby ('created_at')
-            ->get();
-        return $evaluations;
-}
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    } 
+
+
+    protected function EvaluationsByUser($user)
+    {
+            $evaluations = DB::table('evaluations')
+                ->where('user_id','=', $user)
+                ->Orderby ('created_at')
+                ->get();
+            return $evaluations;
+    }
 
 
 }
