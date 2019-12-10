@@ -31,12 +31,16 @@ class AttendanceController extends Controller
 
     public function edit(Attendance $attendance)
     {
-        //
+        return view('/Attendance.update',  ['attendance' => $attendance]);
     }
 
     public function update(Request $request, Attendance $attendance)
     {
-        //
+        $data = $request->all();
+        $attendance = Attendance::find($attendance->id);
+        $attendance->fill($data);
+        $attendance->save();
+        return redirect ('/attendance');
     }
 
     public function destroy(Attendance $attendance)
