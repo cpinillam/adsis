@@ -6,11 +6,10 @@
         <table> 
             <tr>
                 <th>Fecha</th>
-                <th>Id</th>
-                <th>Nombre alumno</th>
-                <th>Alumno</th>
-                <th>Grupo</th>
-                <th>Tutor<th>
+                <th>Asist_Id</th>
+                <th>Alumno_Id</th>
+                <th>Nombre</th>
+                <th>Tutor_id<th>
                 <th>Tipo</th>
                 <th>Comentario</th>
             </tr>
@@ -21,7 +20,6 @@
                     <td>{{$attendance->id}}</td>
                     <td>{{$attendance->user_id}}</td>
                     <td>{{$attendance->user->name}}</td>
-                    <td>{{$attendance->group_id}}</td>
                     <td>{{$attendance->tutor_id}}</td>
                     <td>{{$attendance->attendance_type}}    </td>
                     <td>{{$attendance->comment}}</td>              

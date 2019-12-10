@@ -60,6 +60,11 @@ class User extends Authenticatable
         return $user;
     }
 
+    public function attendances()
+    {
+        return $this->hasMany('App\Attendance');
+    }
+
 }
 
 
