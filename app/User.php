@@ -54,12 +54,6 @@ class User extends Authenticatable
         return $users;
     }
 
-    public function GetUserById(int $id)
-    {
-        $user = $this->GetAllUsers()->where('user_id', $id);
-        return $user;
-    }
-
     public function attendances()
     {
         return $this->hasMany('App\Attendance');
