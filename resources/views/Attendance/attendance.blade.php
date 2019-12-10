@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 @section('content')
     <div>
@@ -6,7 +7,7 @@
             <tr>
                 <th>Fecha</th>
                 <th>Id</th>
-                {{-- <th>Nombre alumno</th> --}}
+                <th>Nombre alumno</th>
                 <th>Alumno</th>
                 <th>Grupo</th>
                 <th>Tutor<th>
@@ -19,7 +20,7 @@
                     <td>{{$attendance->created_at}}</td>
                     <td>{{$attendance->id}}</td>
                     <td>{{$attendance->user_id}}</td>
-                    {{-- <td>{{$attendance->user_id}}</td> --}}
+                    <td>{{$attendance->user->name}}</td>
                     <td>{{$attendance->group_id}}</td>
                     <td>{{$attendance->tutor_id}}</td>
                     <td>{{$attendance->attendance_type}}    </td>

@@ -50,15 +50,16 @@ class User extends Authenticatable
 
     public function GetUsersByGroupId(int $group_id)
     {
-        $Evaluation = $this->GetAllUsers()->where('group', $group_id);
-        return $Evaluation;
+        $users = $this->GetAllUsers()->where('group', $group_id);
+        return $users;
     }
 
-    public function GetUsersById(int $group_id)
+    public function GetUserById(int $id)
     {
-        $Evaluation = $this->GetAllUsers()->where('group', $group_id);
-        return $Evaluation;
+        $user = $this->GetAllUsers()->where('user_id', $id);
+        return $user;
     }
+
 }
-}
+
 
