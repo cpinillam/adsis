@@ -14,14 +14,14 @@ class CreateEvaluationsTable extends Migration
     public function up()
     {
         Schema::create('evaluations', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->unsignedBigInteger('id');
             $table->integer('language');
             $table->integer('attitude');
             $table->integer('participation');
             $table->integer('learning');
             $table->integer('collaboration');
             $table->integer('meteo');
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->boolean('review_status')->default(false);
             $table->timestamps();
         });
