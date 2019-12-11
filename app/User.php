@@ -48,16 +48,10 @@ class User extends Authenticatable
         return $allUsers;
     }
 
-    public function GetUsersByGroupId(int $group_id)
+    public function GetUsersByGroup(int $group_id)
     {
         $users = $this->GetAllUsers()->where('group', $group_id);
         return $users;
-    }
-
-    public function GetUserById(int $id)
-    {
-        $user = $this->GetAllUsers()->where('user_id', $id);
-        return $user;
     }
 
     public function attendances()
