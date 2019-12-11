@@ -26,8 +26,9 @@
                     <a href="/evaluationsByUser">Evaluaciones por alumno</a>
                     <br>
                     <br>
-                    <a href="/attendance">Lista de asistencias</a>
+                    <a href="/attendance">Lista de Asistencias</a>
                     <br>
+                    <a href="/attendance/create">Crear Hoja Asistencia</a>
                     <br>
                 </div>
             </div>
