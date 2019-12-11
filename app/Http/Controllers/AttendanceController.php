@@ -19,12 +19,12 @@ class AttendanceController extends Controller
     {
         $attendance = new Attendance();
         $user = new User;
-        $user = $user->getUsersByGroup(1);
+        $user = $user->getUsersByGroup(2);
         $attendance->tutor_id = Auth::id();
         // $tutor = $attendance->user->name;
         $tutor = Auth::user()->name;
         $attendance->timestamps = date('Y-m-d H:i:s');
-        return view('/Attendance.create', ['users' => $user, 'attendance' => $attendance, 'tutor'=>$tutor]);
+        return view('/Attendance.create', ['user' => $user, 'attendance' => $attendance, 'tutor'=>$tutor]);
     }
 
     public function store(Request $request)
