@@ -8,7 +8,7 @@ use Illuminate\Database\Schema\ForeignKeyDefinition;
 class Attendance extends Model
 {
     protected $fillable = [
-        'attendance_type', 'comment', 'tutor_id',
+        'user_id','attendance_type', 'comment', 'tutor_id', 'timestamps'
     ];
 
     public function user()
