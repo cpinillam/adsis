@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get ('/home', 'HomeController@index')->name('home');
+Route::get ('/home', 'DashboardController@getAllData');
 
 Route::resource ('evaluation', 'EvaluationController');
 Route::get ('evaluationsByUser', 'EvaluationController@getEvaluationsByUser');

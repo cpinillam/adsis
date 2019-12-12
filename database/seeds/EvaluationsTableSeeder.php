@@ -6,6 +6,6 @@ class EvaluationsTableSeeder extends Seeder
 {
         public function run()
     {
-        factory(App\Evaluation::class, 10)->create();
+        factory(App\Evaluation::class, 50)->create();
     }
 }

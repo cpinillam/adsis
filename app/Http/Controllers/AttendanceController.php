@@ -6,6 +6,7 @@ use App\User;
 use App\Attendance;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use LengthException;
 
 class AttendanceController extends Controller
 {
@@ -19,9 +20,9 @@ class AttendanceController extends Controller
     {
         $attendance = new Attendance();
         $user = new User;
-        $user = $user->getUsersByGroup(2);
+        $user = $user->getUsersByGroup(1);
         $attendance->tutor_id = Auth::id();
-        // $tutor = $attendance->user->name;
+        //$tutor = $attendance->user->name;
         $tutor = Auth::user()->name;
         $attendance->timestamps = date('Y-m-d H:i:s');
         return view('/Attendance.create', ['user' => $user, 'attendance' => $attendance, 'tutor'=>$tutor]);
@@ -29,7 +30,21 @@ class AttendanceController extends Controller
 
     public function store(Request $request)
     {
-        Attendance::create($request->all());
+        $data = $request->toArray();
+        $token = array_shift($data);
+        //dd($data);
+        $end= count($data);
+        for($i=$end; $i>=5; $i-=5)
+        {      
+        $attend = new Attendance;
+        $attend->user_id = array_shift($data);
+        $attend->attendance_type = array_shift($data);
+        $attend->comment = array_shift($data);
+        $attend->tutor_id = array_shift($data);
+        $attend->timestamps = array_shift($data);
+        $attend = $attend->toArray();
+        Attendance::create($attend);
+        }
         return redirect('/attendance');
     }
     
