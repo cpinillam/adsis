@@ -21,7 +21,7 @@ class CreateEvaluationsTable extends Migration
             $table->integer('learning')->nullable();
             $table->integer('collaboration')->nullable();
             $table->integer('meteo')->nullable();
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->boolean('review_status')->default(false);
             $table->timestamps();
         });

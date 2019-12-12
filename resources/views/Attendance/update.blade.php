@@ -18,9 +18,17 @@
         @csrf
         @method ('PATCH')
         {{ csrf_field() }}
-        <label>Tipo de asistencia:</label>
-        <input class="campos" type="value" name="attendance_type" value="{{$attendance->attendance_type}}">
-        <br>
+        <label>Tipo de asistencia:</label><br>
+        <input type="radio" name="attendance_type" value="A"  
+                {{ $attendance->attendance_type == 'A' ? 'checked' : '' }} > Asistencia
+        <input type="radio" name="attendance_type" value="RNJ"
+                {{ $attendance->attendance_type == 'RNJ' ? 'checked' : '' }}> Retraso N.J.
+        <input type="radio" name="attendance_type" value="RJ"
+                {{ $attendance->attendance_type == 'RJ' ? 'checked' : '' }}> Retraso J.
+        <input type="radio" name="attendance_type" value="FNJ"
+                {{ $attendance->attendance_type == 'FNJ' ? 'checked' : '' }}> Falta N.J.
+        <input type="radio" name="attendance_type" value="FJ"
+                {{ $attendance->attendance_type == 'FJ' ? 'checked' : '' }}> Falta J. <br>
         <label>Comentario:</label>
         <input class="campos" type="text" name="comment" value="{{$attendance->comment}}">
         <br>

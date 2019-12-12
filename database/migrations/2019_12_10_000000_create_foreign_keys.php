@@ -20,12 +20,12 @@ class CreateForeignKeys extends Migration {
 	public function down()
 	{
 		Schema::table('attendances', function (Blueprint $table) {
-			$table->dropForeign('user_id');
-			$table->dropForeign('group_id');
+		//$table->dropForeign('user_id');
+			//$table->dropForeign('group_id');
 		});
 
 		Schema::table('evaluations', function (Blueprint $table) {
-			$table->dropForeign('user_id');
+			//$table->dropForeign('user_id');
 		});
 	}
 }
