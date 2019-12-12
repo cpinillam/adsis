@@ -4,8 +4,9 @@ namespace App\Providers;
 
 use App\Evaluation;
 use Illuminate\Support\Facades\Schema;
-use App\Observers\EvaluationObserver;
 use Illuminate\Support\ServiceProvider;
+use App\Observers\UserObserver;
+use App\User;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        Evaluation::observe(EvaluationObserver::class);
+        User::observe(UserObserver::class);
 
         Schema::defaultStringLength(191);
     }

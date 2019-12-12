@@ -3,6 +3,8 @@
 namespace App\Observers;
 
 use App\User;
+use App\Evaluation;
+
 
 class UserObserver
 {
@@ -14,7 +16,15 @@ class UserObserver
      */
     public function created(User $user)
     {
-        if($user->id)
+
+        //crear la evaluacion
+        //Evaluation::class;
+        //Evaluation::create();
+
+        // $user=Evaluation::make($request->all());
+        $user=Evaluation::create([$user]);
+
+
     }
 
     /**
@@ -25,7 +35,7 @@ class UserObserver
      */
     public function updated(User $user)
     {
-        //
+       //
     }
 
     /**

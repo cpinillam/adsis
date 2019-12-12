@@ -15,13 +15,13 @@ class CreateEvaluationsTable extends Migration
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('language');
-            $table->integer('attitude');
-            $table->integer('participation');
-            $table->integer('learning');
-            $table->integer('collaboration');
-            $table->integer('meteo');
-            $table->integer('user_id');
+            $table->integer('language')->nullable();
+            $table->integer('attitude')->nullable();
+            $table->integer('participation')->nullable();
+            $table->integer('learning')->nullable();
+            $table->integer('collaboration')->nullable();
+            $table->integer('meteo')->nullable();
+            $table->integer('user_id')->nullable();
             $table->boolean('review_status')->default(false);
             $table->timestamps();
         });
