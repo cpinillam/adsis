@@ -18,7 +18,7 @@ class EvaluationController extends Controller
     public function create()
     {
         $evaluation = new Evaluation();
-       // $evaluation->user_id = Auth::id();
+        $evaluation->user_id = Auth::id();
         return view ('/Evaluation.create', ['evaluation' => $evaluation]);
     }
 
