@@ -41,5 +41,24 @@ class User extends Authenticatable
     {
         return $this->hasRoles(['admin']);
     }
+
+    public function GetAllUsers()
+    {
+        $allUsers = User::all();
+        return $allUsers;
+    }
+
+    public function GetUsersByGroup(int $group_id)
+    {
+        $users = $this->GetAllUsers()->where('group', $group_id);
+        return $users;
+    }
+
+    public function attendances()
+    {
+        return $this->hasMany('App\Attendance');
+    }
+
 }
+
 

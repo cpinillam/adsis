@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class Evaluation extends Model
 {
-    protected $fillable = ['language', 'attitude', 'participation', 'learning', 'collaboration', 'meteo', 'user_id'];
+    protected $fillable = ['language', 'attitude', 'participation', 'learning', 'collaboration', 'meteo', 'group', 'user_id'];
 
 
     public function GetAllEvaluations(){
@@ -36,6 +36,7 @@ class Evaluation extends Model
         $evaluationUserId = $evaluation->user_id;
         return $evaluationUserId;
     }
+
 
 
 
