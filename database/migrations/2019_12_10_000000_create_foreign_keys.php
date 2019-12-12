@@ -11,7 +11,7 @@ class CreateForeignKeys extends Migration {
 		Schema::table('attendances', function(Blueprint $table) {
 			$table->foreign('user_id')->references('id')->on('users');
 		});
-		
+
 		Schema::table('evaluations', function(Blueprint $table) {
 			$table->foreign('user_id')->references('id')->on('users');
 		});
@@ -19,13 +19,6 @@ class CreateForeignKeys extends Migration {
 
 	public function down()
 	{
-		Schema::table('attendances', function (Blueprint $table) {
-			$table->dropForeign('user_id');
-			$table->dropForeign('group_id');
-		});
 
-		Schema::table('evaluations', function (Blueprint $table) {
-			$table->dropForeign('user_id');
-		});
 	}
 }
