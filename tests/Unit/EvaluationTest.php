@@ -14,21 +14,32 @@ class EvaluationTest extends TestCase
         $this->assertTrue(true);
     } */
 
-public function testSkillSelfEvaluationIsNotEmpty ()
+public $evaluationId = 1;
+public $evaluationUserIdNull = 0;
+public $evaluationUserId = 1;
+
+
+public function testGetEvaluationData()
 {
-$skill = new Evaluation;
-$result =$skill->skillSelfEvaluation();
-$this->assertNotEmpty($result);
+
+    $Evaluation = new Evaluation();
+    $evaluationData = $Evaluation->GetEvaluationData($this->evaluationId);
+    $this->assertIsObject($evaluationData);
 }
 
-public function testSkillSelfEvaluationIsNotString ()
+public function  testGetEvaluationUserIdIsInt()
 {
-$skill = new Evaluation;
-$result =$skill->skillSelfEvaluation();
-$this->assertIsNotString($result);
+    $Evaluation = new Evaluation();
+    $evaluationUserId = $Evaluation->GetEvaluationUserId($this->evaluationId);
+    $this->assertIsInt($evaluationUserId);
+
 }
 
-public function testAllEvaluationsIsObject(){
+public function testGetEvaluationDate()
+{
+}
+
+    public function testAllEvaluationsIsObject(){
 
     $Evaluation = new Evaluation();
     $Evaluation->GetAllEvaluations();
@@ -37,26 +48,26 @@ public function testAllEvaluationsIsObject(){
 
 
 public function testIfEvaluationByUserIdIsEmpty (){
-    $user_id = 0;
+
     $Evaluation = new Evaluation();
-    $EvaluationByUserId = $Evaluation->GetEvaluationByUserId($user_id);
+    $EvaluationByUserId = $Evaluation->GetEvaluationByUserId($this->evaluationUserIdNull);
     $this->assertEmpty($EvaluationByUserId);
 
     }
 
 public function testEvaluationByUserIdReturnAnObject(){
-    $user_id = 1;
+
     $Evaluation = new Evaluation();
-    $EvaluationByUserId = $Evaluation->GetEvaluationByUserId($user_id);
+    $EvaluationByUserId = $Evaluation->GetEvaluationByUserId($this->evaluationUserId);
     $this->assertIsObject($EvaluationByUserId);
 }
 
 public function testIfReturnOnlyEvaluationByUserId(){
-    $user_id = 1;
+
     $Evaluation = new Evaluation();
-    $EvaluationByUserId = $Evaluation->GetEvaluationByUserId($user_id)->unique('user_id')->get();
-    dd($EvaluationByUserId);
-    $this->assertEquals($user_id, $EvaluationByUserId);
+    $EvaluationByUserId = $Evaluation->GetEvaluationByUserId($this->evaluationUserId)->first();
+    $UserIdOfEvaluation = $EvaluationByUserId->user_id;
+    $this->assertEquals($this->evaluationUserId, $UserIdOfEvaluation);
 
 }
 

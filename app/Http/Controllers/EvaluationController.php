@@ -18,19 +18,21 @@ class EvaluationController extends Controller
     public function create()
     {
         $evaluation = new Evaluation();
-        $evaluation->user_id = Auth::id();
+       // $evaluation->user_id = Auth::id();
         return view ('/Evaluation.create', ['evaluation' => $evaluation]);
     }
-    
+
     public function store(Request $request)
     {
+
         Evaluation::create($request->all());
         return redirect ('/evaluation');
     }
-    
+
     public function show(Evaluation $evaluation)
+
     {
-        //
+
     }
 
     public function edit(Evaluation $evaluation)
@@ -46,7 +48,7 @@ class EvaluationController extends Controller
         $evaluation->save();
         return redirect ('/evaluation');
     }
-   
+
     public function destroy(Evaluation $evaluation)
     {
         //
