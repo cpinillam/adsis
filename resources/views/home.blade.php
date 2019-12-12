@@ -46,24 +46,17 @@
                                     </tr>
 
                               @endforeach
-
-
                         </table>
-
-
-
-
-
                         <a href="/evaluation">Lista de Evaluaciones</a>
                         <br>
                         <a href="/evaluation/create">Crear Evaluación</a>
                         <br>
                         <a href="/evaluationsByUser">Evaluaciones por alumno</a>
                         <br>
-
-
-
-
+                        <a href="/attendance">Lista de Asistencias</a>
+                        <br>
+                        <a href="/attendance/create">Crear Hoja Asistencia</a>
+                        <br>
                 </div>
             </div>
         </div>
