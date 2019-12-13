@@ -20,7 +20,7 @@ class AttendanceController extends Controller
     {
         $attendance = new Attendance();
         $user = new User;
-        $user = $user->getUsersByGroup(2);
+        $user = $user->getUsersByGroup(1);
         $attendance->tutor_id = Auth::id();
         //$tutor = $attendance->user->name;
         $tutor = Auth::user()->name;
@@ -32,19 +32,7 @@ class AttendanceController extends Controller
     {
         $data = $request->toArray();
         $token = array_shift($data);
-        //dd($data);
-        $end= count($data);
-        for($i=$end; $i>=5; $i-=5)
-        {      
-        $attend = new Attendance;
-        $attend->user_id = array_shift($data);
-        $attend->attendance_type = array_shift($data);
-        $attend->comment = array_shift($data);
-        $attend->tutor_id = array_shift($data);
-        $attend->timestamps = array_shift($data);
-        $attend = $attend->toArray();
-        Attendance::create($attend);
-        }
+        Attendance::storeMultiple($data);
         return redirect('/attendance');
     }
     
@@ -71,4 +59,5 @@ class AttendanceController extends Controller
     {
         //
     }
+
 }
