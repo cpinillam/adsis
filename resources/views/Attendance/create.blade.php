@@ -22,6 +22,7 @@
             <tr>
                 <td>{{$user->name}}</td>
                 <td>{{$user->group}}</td>
+                {{-- TO DO : Refactor Request data from form --}}
                 <td> <input type="hidden" name="{{$user->id}}_user_id" value="{{$user->id}}"></td> 
                 <td>
                 <input type="radio" name="{{$user->id}}_attendance_type" value="A"> Asistencia 
