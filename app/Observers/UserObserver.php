@@ -18,12 +18,9 @@ class UserObserver
     {
 
         //crear la evaluacion
-        //Evaluation::class;
-        //Evaluation::create();
 
         // $user=Evaluation::make($request->all());
-        //$user=Evaluation::create([$user]);
-
+        $user=Evaluation::create([$user->id]);
 
     }
 
