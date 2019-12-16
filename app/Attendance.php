@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Illuminate\Database\Schema\ForeignKeyDefinition;
 
 class Attendance extends Model
@@ -11,9 +12,9 @@ class Attendance extends Model
         'user_id','attendance_type', 'comment', 'tutor_id', 'timestamps'
     ];
 
-    public function user()
+    protected function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->hasOne('App\User');
 
     }
 
@@ -34,4 +35,10 @@ class Attendance extends Model
         }
         return true;
     }
+
+    public static function getAttendancesByType($type)
+    {
+        $attendances = new Attendance;
+    }
+
 }

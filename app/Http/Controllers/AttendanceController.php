@@ -60,4 +60,26 @@ class AttendanceController extends Controller
         //
     }
 
+    public function filter(Request $request)
+    {
+    dd($request);
+    $sortBy = 'id';
+    $orderBy = 'desc';
+    $perPage = 20;
+    $name = null;
+    $attendance = new Attendance;
+    $user = new User;
+    $user = $user->getUsersByGroup(1);
+    $attendance->tutor_id = Auth::id();
+    $tutor = Auth::user()->name; 
+
+    if ($request->has('orderBy')) $orderBy = $request->query('orderBy');
+    if ($request->has('sortBy')) $sortBy = $request->query('sortBy');
+    if ($request->has('perPage')) $perPage = $request->query('perPage');
+    if ($request->has('name')) $name = $request->query('name');
+
+    $attendance= Attendance::search($name)->orderBy($sortBy, $orderBy)->paginate($perPage);
+    return view('/Attendance.attendance',['attendance'=>$attendance,'sortBy'=>$sortBy,'orderBy'=>$orderBy,'name'=>$name,'perPage'=>$perPage]);
+    }
+
 }
