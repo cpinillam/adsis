@@ -3,7 +3,7 @@
     <div>
         <h1>Asistencias</h1>
         <h2>Campos de filtrado</h2>
-        <form action="/attendance/filter" method="GET">
+        <form action="filter" method="GET">
             <div class="row">
               <div class="col-md-4">
                 <input class="form-control form-control-sm" type="search" name="name" value="{{ $name }}">

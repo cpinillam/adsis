@@ -60,9 +60,9 @@ class AttendanceController extends Controller
         //
     }
 
-    public function filter(Request $request)
+    public function filterAttendances(Request $request)
     {
-    dd($request);
+    //dd($request);
     $sortBy = 'id';
     $orderBy = 'desc';
     $perPage = 20;
@@ -78,7 +78,7 @@ class AttendanceController extends Controller
     if ($request->has('perPage')) $perPage = $request->query('perPage');
     if ($request->has('name')) $name = $request->query('name');
 
-    $attendance= Attendance::search($name)->orderBy($sortBy, $orderBy)->paginate($perPage);
+    $attendance= Attendance::find($name)->orderBy($sortBy, $orderBy)->paginate($perPage);
     return view('/Attendance.filter',['attendance'=>$attendance,'sortBy'=>$sortBy,'orderBy'=>$orderBy,'name'=>$name,'perPage'=>$perPage]);
     }
 
