@@ -14,7 +14,7 @@ class Attendance extends Model
 
     protected function user()
     {
-        return $this->hasOne('App\User');
+        return $this->belongsTo('App\User');
 
     }
 
@@ -36,9 +36,9 @@ class Attendance extends Model
         return true;
     }
 
-    public static function getAttendancesByType($type)
-    {
-        $attendances = new Attendance;
-    }
+    // public static function getAttendancesByType($type)
+    // {
+    //     $attendances = new Attendance;
+    // }
 
 }

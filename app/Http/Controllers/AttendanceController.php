@@ -79,7 +79,7 @@ class AttendanceController extends Controller
     if ($request->has('name')) $name = $request->query('name');
 
     $attendance= Attendance::search($name)->orderBy($sortBy, $orderBy)->paginate($perPage);
-    return view('/Attendance.attendance',['attendance'=>$attendance,'sortBy'=>$sortBy,'orderBy'=>$orderBy,'name'=>$name,'perPage'=>$perPage]);
+    return view('/Attendance.filter',['attendance'=>$attendance,'sortBy'=>$sortBy,'orderBy'=>$orderBy,'name'=>$name,'perPage'=>$perPage]);
     }
 
 }
