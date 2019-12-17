@@ -3,7 +3,7 @@
     <div>
         <h1>Asistencias</h1>
         <h2>Campos de filtrado</h2>
-        <form action="filter" method="GET">
+        <form action="filter" method="get">
             <div class="row">
               <div class="col-md-4">
                 <input class="form-control form-control-sm" type="search" name="name" value="{{ $name }}">
@@ -17,7 +17,7 @@
               </div>
               <div class="col-md-2 col-3">
                 <select name="orderBy" class="form-control form-control-sm" value="{{ $orderBy }}">
-                  @foreach(['asc', 'desc', 'timestamp'] as $order)
+                  @foreach(['desc', 'asc'] as $order)
                     <option @if($order == $orderBy) selected @endif value="{{ $order }}">{{ ucfirst($order) }}</option>
                   @endforeach
                 </select>

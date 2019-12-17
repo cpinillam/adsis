@@ -64,9 +64,9 @@ class AttendanceController extends Controller
     {
     //dd($request);
     $sortBy = 'id';
-    $orderBy = 'desc';
+    $orderBy = 'ASC';
     $perPage = 20;
-    $name = null;
+    $name = '1';
     $attendance = new Attendance;
     $user = new User;
     $user = $user->getUsersByGroup(1);
