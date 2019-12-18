@@ -24,4 +24,4 @@ Route::get ('evaluationsByUser', 'EvaluationController@getEvaluationsByUser');
 
 Route::resource('/user', 'UserController');
 Route::resource('attendance', 'AttendanceController');
-Route::get('filter', 'AttendanceController@filterAttendances');
+Route::get('filter', 'AttendanceController@filterbyName');

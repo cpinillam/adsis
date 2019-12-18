@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Schema\ForeignKeyDefinition;
+use Illuminate\Support\Facades\DB;
 
 class Attendance extends Model
 {
@@ -12,7 +13,7 @@ class Attendance extends Model
         'user_id','attendance_type', 'comment', 'tutor_id', 'timestamps'
     ];
 
-    protected function user()
+    public function user()
     {
         return $this->belongsTo('App\User');
 
@@ -36,9 +37,18 @@ class Attendance extends Model
         return true;
     }
 
-    // public static function getAttendancesByType($type)
-    // {
-    //     $attendances = new Attendance;
-    // }
+    public static function getAttendancesByUserName($name)
+    {
+        $attendancesbyName = DB::table('attendances')
+            ->Join('users', 'users.id', '=', 'attendances.user_id')
+            ->select('users.name', 'attendances.id', 'attendances.attendance_type', 'attendances.comment' , 'attendances.created_at' )
+            ->where ('users.name', $name)
+            ->get();
+
+
+        // $attendancesbyName = Attendance::with ('user')->get();
+        //dd($attendancesbyName);
+        return $attendancesbyName;
+    }
 
 }

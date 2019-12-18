@@ -60,7 +60,7 @@ class AttendanceController extends Controller
         //
     }
 
-    public function filterAttendances(Request $request)
+    /* public function filterAttendances(Request $request)
     {
     //dd($request);
     $sortBy = 'id';
@@ -80,6 +80,17 @@ class AttendanceController extends Controller
 
     $attendance= Attendance::find($name)->orderBy($sortBy, $orderBy)->paginate($perPage);
     return view('/Attendance.filter',['attendance'=>$attendance,'sortBy'=>$sortBy,'orderBy'=>$orderBy,'name'=>$name,'perPage'=>$perPage]);
+    } */
+
+    public function filterbyName(Request $request)
+    {
+        view ('/Attendance.filter');
+        $name = $request->input('name');
+        $name = "nellay";
+        //dd($name);
+        $attendance = Attendance::getAttendancesByUserName($name);
+        //dd($attendance);
+        return view('/Attendance.byname', ['attendance' => $attendance]);
     }
 
 }
