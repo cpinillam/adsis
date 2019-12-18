@@ -67,7 +67,7 @@ class DashboardController extends Controller
 
     {
 
-       $sortedEvents = $timeLineEvents->addOrderBy(created_at);
+       $sortedEvents = $timeLineEvents->SortBy('created_at');
 
            return $sortedEvents;
     }

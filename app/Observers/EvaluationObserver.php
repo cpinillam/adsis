@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Evaluation;
+use App\Event;
 
 class EvaluationObserver
 {
@@ -14,7 +15,10 @@ class EvaluationObserver
      */
     public function created(Evaluation $evaluation)
     {
-    
+        dd($evaluation);
+       $newEvent = new Event();
+       $newEvent->createEventTypeEvaluation($evaluation);
+
     }
 
     /**
