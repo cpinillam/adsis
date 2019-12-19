@@ -14,39 +14,34 @@
                         </div>
                     @endif
 
-                     hola tio soy  {{ Auth::user()->name }}
-                     document: {{$user->document}}
+                     Hola {{ Auth::user()->name }}!
                      <br>
-                     name: {{$user->name}}
+                     documento: {{$user->document}}
                      <br>
-                     description: {{$user->description}}
+                     nombre: {{$user->name}}
+                     <br>
+                     descripción: {{$user->description}}
                     <br>
 
                 </div>
 
                 <div class="card-header">Route map</div>
                 <div class="card-body">
-
-                        <table>
-
+                        {{-- <table>
                             <tr>
                                 <td>id</td>
                                 <td>fecha</td>
                             </tr>
-
                              @foreach($sortedEvents as $evaluation)
-
                                    <tr>
                                         {{ csrf_field() }}
 
                                         <td>{{$evaluation->id}}</td>
 
                                         <td>{{$evaluation->created_at}}</td>
-
                                     </tr>
-
                               @endforeach
-                        </table>
+                        </table> --}}
                         <a href="/evaluation">Lista de Evaluaciones</a>
                         <br>
                         <a href="/evaluation/create">Crear Evaluación</a>
