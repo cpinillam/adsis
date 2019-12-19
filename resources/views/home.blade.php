@@ -16,8 +16,8 @@
 
                      Hola {{ Auth::user()->name }}!
                      <br>
-                     documento: {{$user->document}}
-                     <br>
+                     {{-- documento: {{$user->document}}
+                     <br> --}}
                      nombre: {{$user->name}}
                      <br>
                      descripción: {{$user->description}}
@@ -53,6 +53,8 @@
                         <a href="/attendance/create">Crear Hoja Asistencia</a>
                         <br>
                         <a href="filter">Filtrar Asistencias</a>
+                        <br>
+                        <a href="attendanceIndicators">Indicadores Asistencia</a>
                         <br>
                 </div>
             </div>

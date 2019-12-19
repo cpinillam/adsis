@@ -2,6 +2,20 @@
 @section('content')
     <div>
         <h1>Asistencias filtradas por usuario</h1>
+
+        <h3>Indicadores Asistencia (%)</h3>
+         <table> 
+            <tr>
+                <th>A</th>
+                <th>RJ</th>
+                <th>RNJ</th>
+                <th>FJ</th>
+                <th>FNJ</th>
+            </tr>
+            @foreach ($indicators as $value)
+                <td>{{$value}}</td>
+            @endforeach
+        </table>
         <table> 
             <tr>
                 <th>Grupo</th>

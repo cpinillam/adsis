@@ -80,7 +80,18 @@ class AttendanceController extends Controller
     if ($request->has('name')) $name = $request->name;
 
     $attendancesF= Attendance::filterAttendances($name, $sortBy, $orderBy, $perPage);
-    return view('/Attendance.filtered',  ['attendance' => $attendancesF]);
+    $indicators = Attendance::getAttendanceIndicators(2);
+
+    return view('/Attendance.filtered',  ['attendance' => $attendancesF, 'indicators' => $indicators]);
     }
+
+    public function getUserAttendanceIndicators()
+    {
+        $userid = 2;
+        $AttendanceIndicators= Attendance::getAttendanceIndicators($userid);
+        return $AttendanceIndicators;
+    }
+    
+
 
 }
