@@ -20,7 +20,7 @@ class AttendanceController extends Controller
     {
         $attendance = new Attendance();
         $user = new User;
-        $user = $user->getUsersByGroup(1);
+        $user = $user->getUsersByGroup(2);
         $attendance->tutor_id = Auth::id();
         //$tutor = $attendance->user->name;
         $tutor = Auth::user()->name;
@@ -58,6 +58,29 @@ class AttendanceController extends Controller
     public function destroy(Attendance $attendance)
     {
         //
+    }
+
+    public function getFilters(Request $request)
+    {
+        $user = new User;
+        $users = $user->getAllUsers();
+        return view('/Attendance.filter', ['user' => $users]);
+    }
+
+    public function applyfilters(Request $request)
+    {
+    if ($request->has('sortBy'))
+        {
+        if ($request->sortBy=='grupo') $sortBy='group';
+        if ($request->sortBy =='fecha') $sortBy = 'created_at';
+        if ($request->sortBy == 'curso') $sortBy = 'course';
+         };
+    if ($request->has('orderBy')) $orderBy = $request->orderBy;
+    if ($request->has('perPage')) $perPage = $request->perPage;
+    if ($request->has('name')) $name = $request->name;
+
+    $attendancesF= Attendance::filterAttendances($name, $sortBy, $orderBy, $perPage);
+    return view('/Attendance.filtered',  ['attendance' => $attendancesF]);
     }
 
 }

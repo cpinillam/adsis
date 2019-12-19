@@ -3,7 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Illuminate\Database\Schema\ForeignKeyDefinition;
+use Illuminate\Support\Facades\DB;
 
 class Attendance extends Model
 {
@@ -34,4 +36,20 @@ class Attendance extends Model
         }
         return true;
     }
+
+    public static function filterAttendances($name,$sortBy,$orderBy,$perPage)
+    {
+        $attendancesFiltered = DB::table('attendances')
+            ->join('users', 'users.id', '=', 'attendances.user_id')
+            ->select('users.name', 'users.group','attendances.id','attendances.attendance_type','attendances.comment','attendances.created_at')
+            ->where('users.name',$name)
+            ->orderBy($sortBy, $orderBy)
+            ->get();
+            // ->paginate($perPage);
+
+        return $attendancesFiltered;
+    }
+
+
+    
 }

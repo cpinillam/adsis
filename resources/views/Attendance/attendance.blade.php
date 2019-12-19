@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 @section('content')
     <div>
@@ -28,13 +27,6 @@
                             <input class="botonLista" type="submit" value="Editar">
                         </form> 
                     </td>
-                    {{-- <td>
-                        <form action="/attendance/{{$attendance->id}}" method="post">
-                            @csrf
-                            @method('DELETE')
-                        <button class="botonLista" type="submit">Borrar</button>
-                        </form>
-                    </td> --}}
                 </tr>
             @endforeach
         </table>
