@@ -37,18 +37,19 @@ class Attendance extends Model
         return true;
     }
 
-    public static function getAttendancesByUserName($name)
+    public static function filterAttendances($name,$sortBy,$orderBy,$perPage)
     {
-        $attendancesbyName = DB::table('attendances')
-            ->Join('users', 'users.id', '=', 'attendances.user_id')
-            ->select('users.name', 'attendances.id', 'attendances.attendance_type', 'attendances.comment' , 'attendances.created_at' )
-            ->where ('users.name', $name)
+        $attendancesFiltered = DB::table('attendances')
+            ->join('users', 'users.id', '=', 'attendances.user_id')
+            ->select('users.name', 'users.group','attendances.id','attendances.attendance_type','attendances.comment','attendances.created_at')
+            ->where('users.name',$name)
+            ->orderBy($sortBy, $orderBy)
             ->get();
+            // ->paginate($perPage);
 
-
-        // $attendancesbyName = Attendance::with ('user')->get();
-        //dd($attendancesbyName);
-        return $attendancesbyName;
+        return $attendancesFiltered;
     }
 
+
+    
 }

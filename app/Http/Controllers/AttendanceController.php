@@ -20,7 +20,7 @@ class AttendanceController extends Controller
     {
         $attendance = new Attendance();
         $user = new User;
-        $user = $user->getUsersByGroup(1);
+        $user = $user->getUsersByGroup(2);
         $attendance->tutor_id = Auth::id();
         //$tutor = $attendance->user->name;
         $tutor = Auth::user()->name;
@@ -60,37 +60,27 @@ class AttendanceController extends Controller
         //
     }
 
-    /* public function filterAttendances(Request $request)
+    public function getFilters(Request $request)
     {
-    //dd($request);
-    $sortBy = 'id';
-    $orderBy = 'ASC';
-    $perPage = 20;
-    $name = '1';
-    $attendance = new Attendance;
-    $user = new User;
-    $user = $user->getUsersByGroup(1);
-    $attendance->tutor_id = Auth::id();
-    $tutor = Auth::user()->name; 
+        $user = new User;
+        $users = $user->getAllUsers();
+        return view('/Attendance.filter', ['user' => $users]);
+    }
 
-    if ($request->has('orderBy')) $orderBy = $request->query('orderBy');
-    if ($request->has('sortBy')) $sortBy = $request->query('sortBy');
-    if ($request->has('perPage')) $perPage = $request->query('perPage');
-    if ($request->has('name')) $name = $request->query('name');
-
-    $attendance= Attendance::find($name)->orderBy($sortBy, $orderBy)->paginate($perPage);
-    return view('/Attendance.filter',['attendance'=>$attendance,'sortBy'=>$sortBy,'orderBy'=>$orderBy,'name'=>$name,'perPage'=>$perPage]);
-    } */
-
-    public function filterbyName(Request $request)
+    public function applyfilters(Request $request)
     {
-        view ('/Attendance.filter');
-        $name = $request->input('name');
-        $name = "nellay";
-        //dd($name);
-        $attendance = Attendance::getAttendancesByUserName($name);
-        //dd($attendance);
-        return view('/Attendance.byname', ['attendance' => $attendance]);
+    if ($request->has('sortBy'))
+        {
+        if ($request->sortBy=='grupo') $sortBy='group';
+        if ($request->sortBy =='fecha') $sortBy = 'created_at';
+        if ($request->sortBy == 'curso') $sortBy = 'course';
+         };
+    if ($request->has('orderBy')) $orderBy = $request->orderBy;
+    if ($request->has('perPage')) $perPage = $request->perPage;
+    if ($request->has('name')) $name = $request->name;
+
+    $attendancesF= Attendance::filterAttendances($name, $sortBy, $orderBy, $perPage);
+    return view('/Attendance.filtered',  ['attendance' => $attendancesF]);
     }
 
 }
