@@ -41,7 +41,7 @@ class Attendance extends Model
     {
         $attendancesFiltered = DB::table('attendances')
             ->join('users', 'users.id', '=', 'attendances.user_id')
-            ->select('users.name', 'users.group','attendances.id','attendances.attendance_type','attendances.comment','attendances.created_at')
+            ->select('users.name','attendances.user_id', 'users.group','attendances.id','attendances.attendance_type','attendances.comment','attendances.created_at')
             ->where('users.name',$name)
             ->orderBy($sortBy, $orderBy)
             ->get();
@@ -75,11 +75,16 @@ class Attendance extends Model
         }
         $total = $countA + $countRJ + $countRNJ + $countFJ + $countFNJ;
         $countA = ($countA/$total)*100;
+        $countA= round($countA, 2);
         $countRJ = ($countRJ/$total)*100;
+        $countRJ = round($countRJ, 2);
         $countRNJ = ($countRNJ/$total)*100;
+        $countRNJ = round($countRNJ, 2);
         $countFJ = ($countFJ/$total)*100;
+        $countFJ = round($countFJ, 2);
         $countFNJ = ($countFNJ/$total)*100;
-
+        $countFNJ = round($countFNJ, 2);
+        
         $userIndicators= array([$countA, $countRJ, $countRNJ, $countFJ, $countFNJ, $total ]);
 
         return $userIndicators;

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div>
-        <h1>Asistencias filtradas por Alumno</h1>
+        <h2>Asistencias filtradas por Alumno</h2>
 
         <h4>Indicadores por tipo de Asistencia</h4>
          <table> 
