@@ -75,9 +75,10 @@ class Attendance extends Model
         }
         $total = $countA + $countRJ + $countRNJ + $countFJ + $countFNJ;
         $countA = ($countA/$total)*100;
-        $countRJ = ($countRJ / $total) * 100;
-        $countFJ = ($countFJ / $total) * 100;
-        $countFNJ = ($countFNJ / $total) * 100;
+        $countRJ = ($countRJ/$total)*100;
+        $countRNJ = ($countRNJ/$total)*100;
+        $countFJ = ($countFJ/$total)*100;
+        $countFNJ = ($countFNJ/$total)*100;
 
         $userIndicators= array([$countA, $countRJ, $countRNJ, $countFJ, $countFNJ, $total ]);
 
