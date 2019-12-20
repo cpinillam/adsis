@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\SelfEvaluation;
+use App\CourseCatalog;
 use Illuminate\Http\Request;
 
-class SelfEvaluationController extends Controller
+class CourseCatalogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class SelfEvaluationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\SelfEvaluation  $selfEvaluation
+     * @param  \App\CourseCatalog  $courseCatalog
      * @return \Illuminate\Http\Response
      */
-    public function show(SelfEvaluation $selfEvaluation)
+    public function show(CourseCatalog $courseCatalog)
     {
         //
     }
@@ -52,10 +52,10 @@ class SelfEvaluationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SelfEvaluation  $selfEvaluation
+     * @param  \App\CourseCatalog  $courseCatalog
      * @return \Illuminate\Http\Response
      */
-    public function edit(SelfEvaluation $selfEvaluation)
+    public function edit(CourseCatalog $courseCatalog)
     {
         //
     }
@@ -64,10 +64,10 @@ class SelfEvaluationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SelfEvaluation  $selfEvaluation
+     * @param  \App\CourseCatalog  $courseCatalog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SelfEvaluation $selfEvaluation)
+    public function update(Request $request, CourseCatalog $courseCatalog)
     {
         //
     }
@@ -75,17 +75,11 @@ class SelfEvaluationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SelfEvaluation  $selfEvaluation
+     * @param  \App\CourseCatalog  $courseCatalog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SelfEvaluation $selfEvaluation)
+    public function destroy(CourseCatalog $courseCatalog)
     {
         //
     }
-    public function skillSelfEvaluation()
-    {
-        $skill= 1;
-        return $skill;
-    }
-
 }
