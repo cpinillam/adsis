@@ -26,3 +26,4 @@ Route::resource('/user', 'UserController');
 Route::resource('attendance', 'AttendanceController');
 Route::get('filter', 'AttendanceController@getFilters');
 Route::post('filter', 'AttendanceController@applyFilters');
+Route::get('attendanceIndicators', 'AttendanceController@getUserAttendanceIndicators');

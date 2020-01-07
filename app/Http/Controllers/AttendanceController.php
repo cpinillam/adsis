@@ -20,7 +20,7 @@ class AttendanceController extends Controller
     {
         $attendance = new Attendance();
         $user = new User;
-        $user = $user->getUsersByGroup(2);
+        $user = $user->getUsersByGroup(1);
         $attendance->tutor_id = Auth::id();
         //$tutor = $attendance->user->name;
         $tutor = Auth::user()->name;
@@ -80,7 +80,19 @@ class AttendanceController extends Controller
     if ($request->has('name')) $name = $request->name;
 
     $attendancesF= Attendance::filterAttendances($name, $sortBy, $orderBy, $perPage);
-    return view('/Attendance.filtered',  ['attendance' => $attendancesF]);
+    $userid= $attendancesF[0]->user_id;
+    $indicators = Attendance::getAttendanceIndicators($userid);
+    
+    return view('/Attendance.filtered',  ['attendance' => $attendancesF, 'indicators' => $indicators]);
     }
+
+    public function getUserAttendanceIndicators()
+    {
+        // $AttendanceIndicators= Attendance::getAttendanceIndicators($userid);
+        // return $AttendanceIndicators;
+        return view('/users.indicators');
+    }
+    
+
 
 }
