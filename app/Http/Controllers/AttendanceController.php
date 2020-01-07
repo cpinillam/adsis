@@ -86,10 +86,11 @@ class AttendanceController extends Controller
     return view('/Attendance.filtered',  ['attendance' => $attendancesF, 'indicators' => $indicators]);
     }
 
-    public function getUserAttendanceIndicators($userid)
+    public function getUserAttendanceIndicators()
     {
-        $AttendanceIndicators= Attendance::getAttendanceIndicators($userid);
-        return $AttendanceIndicators;
+        // $AttendanceIndicators= Attendance::getAttendanceIndicators($userid);
+        // return $AttendanceIndicators;
+        return view('/users.indicators');
     }
     
 

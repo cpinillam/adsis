@@ -11,7 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    {{-- <script src="https://d3js.org/d3.v4.min.js"></script> --}}
+    <script src="{{ asset('js/justgage.js')}}" defer></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -74,6 +75,7 @@
 
         <main class="py-4">
             @yield('content')
+            @yield('scripts')
         </main>
     </div>
 </body>
