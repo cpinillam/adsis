@@ -10,6 +10,9 @@ class Event extends Model
     public $eventTypeCourse = 1;
     public $eventTypeEvaluation =2;
 
+
+    protected  $fillable = ['user_id', 'event_id', 'event_type', 'event_date'];
+
     public function createEventTypeCourse($course)
     {
         Event::create([
@@ -24,7 +27,9 @@ class Event extends Model
 
     public  function createEventTypeEvaluation($evaluation)
     {
+
         Event::create([
+
             'user_id' =>$evaluation['user_id'],
             'event_id' => $evaluation['id'],
             'event_type' => $this->eventTypeEvaluation,
