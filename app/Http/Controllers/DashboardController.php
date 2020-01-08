@@ -22,7 +22,6 @@ class DashboardController extends Controller
     public function getAllData()
     {
         $user = Auth::user();
-
         $evaluations = $this->getEvaluations($user->id);
         $courses = $this->getCourses($user->id);
 
