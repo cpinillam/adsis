@@ -49462,16 +49462,6 @@ var app = new Vue({
  * TODO ask the correct way to export and import javascript
  */
 
-var elem = document.querySelector('input[type="range"]');
-
-var rangeValue = function rangeValue() {
-  var newValue = elem.value;
-  var target = document.querySelector('.value');
-  target.innerHTML = newValue;
-};
-
-elem.addEventListener("input", rangeValue);
-
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
