@@ -56,6 +56,8 @@
                         <br>
                         <a href="attendanceIndicators">Indicadores Asistencia</a>
                         <br>
+                        <a href="avgEvaluationsByUser">Media Indicadores Usuario</a>
+                        <br>
                 </div>
             </div>
         </div>

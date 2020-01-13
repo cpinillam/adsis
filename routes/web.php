@@ -21,6 +21,7 @@ Route::get ('/home', 'DashboardController@getAllData');
 
 Route::resource ('evaluation', 'EvaluationController');
 Route::get ('evaluationsByUser', 'EvaluationController@getEvaluationsByUser');
+Route::get('avgEvaluationsByUser', 'EvaluationController@avgEvaluationsByUser');
 
 Route::resource('/user', 'UserController');
 Route::resource('attendance', 'AttendanceController');
