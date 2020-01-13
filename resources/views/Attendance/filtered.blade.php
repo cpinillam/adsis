@@ -4,6 +4,7 @@
         <h2>Asistencias filtradas por Alumno</h2>
 
         <h4>Indicadores por tipo de Asistencia</h4>
+        <div id='result'></div>
          <table> 
             <tr>
                 <th>A</th>
@@ -18,6 +19,8 @@
                 <td>{{$indicators[0][3]}}%</td>
                 <td>{{$indicators[0][4]}}%</td>
         </table>
+
+
         <br>
         <table> 
             <tr>
@@ -48,4 +51,12 @@
         <br>
         <a href="/home">Home</a>
     </div>
+@endsection
+
+@section('scripts')
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script> --}}
+<script>
+  let gauge = new Gauge('#result',300, @json($indicators));
+  gauge.render();
+</script>
 @endsection

@@ -14,7 +14,7 @@
 @section('scripts')
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script> --}}
 <script>
-  let indicator2 = new Gauge('#result2',350);
+  let indicator2 = new Gauge('#result2',350, evaluation);
   indicator2.render();
   let indicator3 = new Gauge('#result3',350);
   indicator3.render();

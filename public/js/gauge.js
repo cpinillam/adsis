@@ -1,11 +1,25 @@
 class Gauge {
 
-    constructor(id, width) {
+    constructor(id, width, indicators) {
         this.id = id;
+        this.data = {};
+        this.label = {};
         this.width = width;
-        // this.data = data;
-    }
+        this.data[0] = indicators[0][0];
+        this.data[1] = indicators[0][1];
+        this.data[2] = indicators[0][2];
+        this.data[3] = indicators[0][3];
+        this.data[4] = indicators[0][4];
 
+        this.label[0] = 'A';
+        this.label[1] = 'RJ';
+        this.label[2] = 'RNJ';
+        this.label[3] = 'FJ';
+        this.label[4] = 'FNJ';
+
+        console.log(this.data);
+    }
+    
     message() {
         console.log('hola');
     }
@@ -13,10 +27,11 @@ class Gauge {
     render() {
 
         var data = [
-            { value: 5, label: "Rev2", color: '#d08ce6' },
-            { value: 70, label: "Práctica", color: '#b730e3' },
-            { value: 50, label: "Rev1", color: '#658ee6' },
-            { value: 80, label: "Teoría", color: '#2562e6' }
+            { value: this.data[4], label: this.label[4], color: '#e33b24' },
+            { value: this.data[3], label: this.label[3], color: '#dae012' },
+            { value: this.data[2], label: this.label[2], color: '#f2b741' },
+            { value: this.data[1], label: this.label[1], color: '#dae012' },
+            { value: this.data[0], label: this.label[0], color: '#1acf17' }
         ];
         
         var width = this.width;
@@ -24,7 +39,7 @@ class Gauge {
         var arcSize = (6 * width / 100);
         var innerRadius = arcSize * 3;
 
-        var svg = d3.select('#result2', this.id).append('svg').attr('width', width).attr('height', width);
+        var svg = d3.select('#result', this.id).append('svg').attr('width', width).attr('height', width);
 
         var arcs = data.map(function (obj, i) {
             return d3.svg.arc().innerRadius(i * arcSize + innerRadius).outerRadius((i + 1) * arcSize - (width / 100) + innerRadius);
@@ -87,7 +102,7 @@ class Gauge {
                         .attr("xlink:href", "#Text" + r.data.object.label)
                         .attr("startOffset", '5')
                         .attr("dy", '-3em')
-                        .text(lableObj.value / 10 + '');
+                        .text(lableObj.value  + '%');
                 }
                 if (i === 0) {
                     var centroidText = r.data.arc.centroid({

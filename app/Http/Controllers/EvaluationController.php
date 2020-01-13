@@ -66,7 +66,7 @@ class EvaluationController extends Controller
     {
         $user = Auth::id();
         $avgEval = Evaluation::AvgEvaluations($user);
-        dd($avgEval);
-        return view('/Evaluation.evaluation', ['evaluations' => $avgEval]);
+        // dd($avgEval);
+        return view('/users.indicators', ['evaluation'=> $avgEval]);
     }
 }
