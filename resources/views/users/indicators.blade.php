@@ -14,12 +14,12 @@
 @section('scripts')
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script> --}}
 <script>
-  let indicator2 = new Gauge('#result2',350, evaluation);
-  indicator2.render();
-  let indicator3 = new Gauge('#result3',350);
-  indicator3.render();
-  let indicator4 = new Gauge('#result4',350);
-  indicator4.render();
+  let label2=['Teoría', 'Rev1', 'Práctica', 'Rev2'];
+  let colour2=['#2562e6', '#658ee6', '#b730e3', '#d08ce6'];
+
+  let indicator2 = new Gauge('#result2',350, evaluation, label2, colour2);
+  indicator2.render4Integers();
+ 
 </script>
 
 @endsection

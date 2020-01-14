@@ -5,7 +5,7 @@
 
         <h4>Indicadores por tipo de Asistencia</h4>
         <div id='result'></div>
-         <table> 
+         {{-- <table> 
             <tr>
                 <th>A</th>
                 <th>RJ</th>
@@ -18,7 +18,7 @@
                 <td>{{$indicators[0][2]}}%</td>
                 <td>{{$indicators[0][3]}}%</td>
                 <td>{{$indicators[0][4]}}%</td>
-        </table>
+        </table> --}}
 
 
         <br>
@@ -56,7 +56,11 @@
 @section('scripts')
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script> --}}
 <script>
-  let gauge = new Gauge('#result',300, @json($indicators));
-  gauge.render();
+// ejecución grafico tipos asistencia por alumno
+  let label=["A", "RJ", "RNJ", "FJ", "FNJ"];
+  let colour=['#1acf17', '#dae012', '#e0880b', '#dae012','#e33b24'];
+  let gauge = new Gauge('#result',300, @json($indicators), label, colour);
+  gauge.render5Percentages();
+  
 </script>
 @endsection
