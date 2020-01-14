@@ -1,5 +1,4 @@
 class Gauge {
-
        
     render5Percentages(id, width, indicators, label, colour) {
 

@@ -13,7 +13,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Material Kit by Creative Tim
+        Adsis
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -36,7 +36,7 @@
     <!-- CSS Files -->
     <link href="{{ asset('css/material-kit.css?v=2.0.6') }}" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="{{ asset('css/assets/demo/demo.css') }}" rel="stylesheet" />
+    <link href="{{ asset('/demo/demo.css') }}" rel="stylesheet" />
 
 
     <!-- Fonts -->
@@ -136,8 +136,8 @@
 </footer>
 <!--   Core JS Files   -->
 <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('js/core/core/popper.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('js/core/core/bootstrap-material-design.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/core/bootstrap-material-design.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/plugins/moment.min.js') }}"></script>
 <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
 <script src="{{ asset('js/plugins/bootstrap-datetimepicker.js') }}" type="text/javascript"></script>
@@ -145,7 +145,7 @@
 <script src="{{ asset('js/plugins/nouislider.min.js') }}" type="text/javascript"></script>
 
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
-<script src="{{ asset('js/material-kit.js?v=2.0.6') }}" type="text/javascript"></script>
+<script src="{{ asset('js/material-kit.js') }}" type="text/javascript"></script>
 <script>
     $(document).ready(function() {
         //init DateTimePickers

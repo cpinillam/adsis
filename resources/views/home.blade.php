@@ -27,7 +27,7 @@
 
                 <div class="card-header">Route map</div>
                 <div class="card-body">
-                        {{-- <table>
+                        <table>
                             <tr>
                                 <td>id</td>
                                 <td>fecha</td>
@@ -41,7 +41,7 @@
                                         <td>{{$evaluation->created_at}}</td>
                                     </tr>
                               @endforeach
-                        </table> --}}
+                        </table>
                         <a href="/evaluation">Lista de Evaluaciones</a>
                         <br>
                         <a href="/evaluation/create">Crear Evaluación</a>
@@ -55,9 +55,6 @@
                         <a href="filter">Filtrar Asistencias</a>
                         <br>
                         <a href="attendanceIndicators">Indicadores Asistencia</a>
-                        <br>
-                        <a href="avgEvaluationsByUser">Media Indicadores Usuario</a>
-                        <br>
                 </div>
             </div>
         </div>

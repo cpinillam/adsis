@@ -62,4 +62,11 @@ class EvaluationController extends Controller
         return view('/Evaluation.evaluation', ['evaluations' => $evaluations]);
     }
 
+    public function avgEvaluationsbyUser()
+    {
+        $user = Auth::id();
+        $avgEval = Evaluation::AvgEvaluations($user);
+        //dd($avgEval);
+        return view('/users.indicators', ['evaluation' => $avgEval]);
+    }
 }
