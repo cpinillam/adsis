@@ -10933,12 +10933,12 @@ legend {
 }
 
 a {
-  color: #9c27b0;
+  color: #97a204;
 }
 
 a:hover,
 a:focus {
-  color: #89229b;
+  color: #97a204;
   text-decoration: none;
 }
 
@@ -10966,9 +10966,16 @@ label {
 }
 
 .main-raised {
-  margin: -60px 30px 0px;
+  margin: 50px 30px 0px;
   border-radius: 30px;
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+
+}
+
+.main-general {
+    margin: -50px 30px 0px;
+    border-radius: 30px;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -11423,7 +11430,7 @@ label {
 
 @media all and (max-width: 375px) {
   .page-header {
-    height: calc(100vh + 270px);
+    height: calc(100vh - 270px);
   }
   .index-page {
     overflow-x: hidden;
@@ -11436,7 +11443,7 @@ label {
     display: none;
   }
   .main.main-raised {
-    margin-top: -30px;
+
   }
   .form-group.is-focused .bootstrap-datetimepicker-widget {
     left: -32px !important;
@@ -13966,7 +13973,7 @@ textarea {
 .navbar {
   border: 0;
   border-radius: 3px;
-  padding: 0.625rem 0;
+  padding: 0.625rem 0 1.65rem;
   margin-bottom: 20px;
   color: #555;
   background-color: #fff !important;
@@ -16070,11 +16077,12 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 
   background-position: center center;
   background-size: cover;
-  margin: 0;
+  margin: 65px 0px 0px;
   padding: 0;
   border: 0;
   display: flex;
   align-items: center;
+    height: calc(20vh);
 }
 
 .page-header .carousel .carousel-indicators {

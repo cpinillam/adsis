@@ -45,11 +45,11 @@
 </head>
 
 <body class="index-page sidebar-collapse">
-<nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg bg-success" id="sectionsNav">
+<nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg bg-light" id="sectionsNav">
     <div class="container">
         <div class="navbar-translate">
             <a class="navbar-brand" href="https://demos.creative-tim.com/material-kit/index.html">
-                <img src="img/logo-adsis.png" style="max-width: 50px; width: 100%;"> </a>
+                <img src="img/logo-adsis-color.png" style="max-width: 50px; width: 100%;"> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="navbar-toggler-icon"></span>
@@ -97,13 +97,12 @@
 
 
 
-<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('img/bg2.jpg');">
+<div class="page-header" data-parallax="true" style="background-image: url('img/city.jpg'); background-size: cover; background-position: top center;">
     <div class="container">
         <div class="row">
             <div class="col-md-8 ml-auto mr-auto">
                 <div class="brand">
-                    <h1>Material Kit.</h1>
-                    <h3>A Badass Bootstrap 4 UI Kit based on Material Design.</h3>
+                    .
                 </div>
             </div>
         </div>
@@ -111,7 +110,7 @@
 </div>
 
 
-<div class="main  main-raised">
+<div class="main  main-general">
 
 
     @yield('content')
