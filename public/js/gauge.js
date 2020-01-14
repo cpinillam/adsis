@@ -1,6 +1,8 @@
 class Gauge {
 
-    constructor(id, width, indicators, label, colour) {
+       
+    render5Percentages(id, width, indicators, label, colour) {
+
         this.id = id;
         this.data = {};
         this.label = {};
@@ -27,9 +29,6 @@ class Gauge {
 
 
         console.log(this.data);
-    }
-   
-    render5Percentages() {
 
         var data = [
             { value: this.data[4], label: this.label[4], color: this.colour[4] },
@@ -44,7 +43,7 @@ class Gauge {
         var arcSize = (6 * width / 100);
         var innerRadius = arcSize * 3;
 
-        var svg = d3.select('#result', this.id).append('svg').attr('width', width).attr('height', width);
+        var svg = d3.select(this.id).append('svg').attr('width', width).attr('height', width);
 
         var arcs = data.map(function (obj, i) {
             return d3.svg.arc().innerRadius(i * arcSize + innerRadius).outerRadius((i + 1) * arcSize - (width / 100) + innerRadius);
@@ -125,7 +124,30 @@ class Gauge {
         });
     }
 
-    render4Integers() {
+    render4Integers(id, width, indicators, label, colour) {
+        this.id = id;
+        this.data = {};
+        this.label = {};
+        this.colour = {};
+        this.width = width;
+
+        this.data[0] = indicators[0];
+        this.data[1] = indicators[1];
+        this.data[2] = indicators[2];
+        this.data[3] = indicators[3];
+
+        this.label[0] = label[0];
+        this.label[1] = label[1];
+        this.label[2] = label[2];
+        this.label[3] = label[3];
+
+        this.colour[0] = colour[0];
+        this.colour[1] = colour[1];
+        this.colour[2] = colour[2];
+        this.colour[3] = colour[3];
+
+
+        console.log(this.data);
 
         var data = [
             { value: this.data[3], label: this.label[3], color: this.colour[3] },
@@ -139,7 +161,7 @@ class Gauge {
         var arcSize = (6 * width / 100);
         var innerRadius = arcSize * 3;
 
-        var svg = d3.select('#result', this.id).append('svg').attr('width', width).attr('height', width);
+        var svg = d3.select(this.id).append('svg').attr('width', width).attr('height', width);
 
         var arcs = data.map(function (obj, i) {
             return d3.svg.arc().innerRadius(i * arcSize + innerRadius).outerRadius((i + 1) * arcSize - (width / 100) + innerRadius);

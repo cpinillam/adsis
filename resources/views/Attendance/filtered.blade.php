@@ -59,8 +59,8 @@
 // ejecución grafico tipos asistencia por alumno
   let label=["A", "RJ", "RNJ", "FJ", "FNJ"];
   let colour=['#1acf17', '#dae012', '#e0880b', '#dae012','#e33b24'];
-  let gauge = new Gauge('#result',300, @json($indicators), label, colour);
-  gauge.render5Percentages();
+  let gauge = new Gauge;
+  gauge.render5Percentages('#result',300, @json($indicators), label, colour);
   
 </script>
 @endsection

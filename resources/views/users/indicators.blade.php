@@ -14,11 +14,21 @@
 @section('scripts')
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script> --}}
 <script>
-  let label2=['Teoría', 'Rev1', 'Práctica', 'Rev2'];
-  let colour2=['#2562e6', '#658ee6', '#b730e3', '#d08ce6'];
+  let label1=['Teoría', 'Rev1', 'Práctica', 'Rev2'];
+  let colour1=['#2562e6', '#658ee6', '#b730e3', '#d08ce6'];
+  let evaluation1=[35,46,50,70];
+  let indicator1 = new Gauge;
+  indicator1.render4Integers('#result2',350, evaluation1, label1, colour1);
 
-  let indicator2 = new Gauge('#result2',350, evaluation, label2, colour2);
-  indicator2.render4Integers();
+  let label2=['Teoría', 'Rev1', 'Práctica', 'Rev2'];
+  let evaluation2=[44,86,90,30];
+  let indicator2 = new Gauge;
+  indicator2.render4Integers('#result3',350, evaluation2, label2, colour1);
+
+  let label3=['Teoría', 'Rev1', 'Práctica', 'Rev2'];
+  let evaluation3=[97,86,70,40];
+  let indicator3 = new Gauge;
+  indicator3.render4Integers('#result4',350, evaluation3, label3, colour1);
  
 </script>
 
