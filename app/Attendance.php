@@ -3,7 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Illuminate\Database\Schema\ForeignKeyDefinition;
+use Illuminate\Support\Facades\DB;
 
 class Attendance extends Model
 {
@@ -34,4 +36,77 @@ class Attendance extends Model
         }
         return true;
     }
+
+    public static function filterAttendances($name,$sortBy,$orderBy,$perPage)
+    {
+        $attendancesFiltered = DB::table('attendances')
+            ->join('users', 'users.id', '=', 'attendances.user_id')
+            ->select('users.name','attendances.user_id', 'users.group','attendances.id','attendances.attendance_type','attendances.comment','attendances.created_at')
+            ->where('users.name',$name)
+            ->orderBy($sortBy, $orderBy)
+            ->get();
+            // ->paginate($perPage);
+
+        return $attendancesFiltered;
+    }
+
+    public static function getAttendanceIndicators($id)
+    {
+        $countA = 0;
+        $countRJ = 0;
+        $countRNJ = 0;
+        $countFJ = 0;
+        $countFNJ = 0;
+        $total = 0;
+
+        $attendancesbyUser = DB::table('attendances')
+            ->join('users', 'users.id', '=', 'attendances.user_id')
+            ->select('attendances.id', 'attendances.attendance_type')
+            ->where('users.id', $id)
+            ->get();
+
+        foreach ($attendancesbyUser as $attendance)
+        {
+            if ($attendance->attendance_type == 'A') $countA ++;
+            if ($attendance->attendance_type == 'RJ') $countRJ++;
+            if ($attendance->attendance_type == 'RNJ') $countRNJ++;
+            if ($attendance->attendance_type == 'FJ') $countFJ++;
+            if ($attendance->attendance_type == 'FNJ') $countFNJ++;  
+        }
+        $total = $countA + $countRJ + $countRNJ + $countFJ + $countFNJ;
+        $countA = ($countA/$total)*100;
+        $countA= round($countA, 1);
+        $countRJ = ($countRJ/$total)*100;
+        $countRJ = round($countRJ, 1);
+        $countRNJ = ($countRNJ/$total)*100;
+        $countRNJ = round($countRNJ, 1);
+        $countFJ = ($countFJ/$total)*100;
+        $countFJ = round($countFJ, 1);
+        $countFNJ = ($countFNJ/$total)*100;
+        $countFNJ = round($countFNJ, 1);
+        
+        $userIndicators= array([$countA, $countRJ, $countRNJ, $countFJ, $countFNJ, $total ]);
+
+        return $userIndicators;
+    }
+
+    // public static function calculatePercentageIndicators($indicators)
+    // {
+    //     $total= end($indicators);
+    //     /* $percentageA = (array_shift($indicators))/$total*100; //A
+    //     $percentageRJ = array_shift($indicators) / $total * 100; //RJ
+    //     $percentageRNJ = array_shift($indicators) / $total * 100; //RNJ
+    //     $percentageFJ = array_shift($indicators) / $total * 100; //FJ
+    //     $percentageFNJ = array_shift($indicators) / $total * 100; //FNJ */
+
+    //     function divide($indicators, $total)
+    //     {
+    //         return $indicators / $total;
+    //     }
+
+    //     $percentages = array_map("divide", $indicators, $total);
+
+    //     return $percentages;
+    // }
+
 }
