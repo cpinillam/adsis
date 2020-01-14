@@ -22,7 +22,6 @@ class DashboardController extends Controller
     public function getAllData()
     {
         $user = Auth::user();
-
         $evaluations = $this->getEvaluations($user->id);
         $courses = $this->getCourses($user->id);
 
@@ -45,6 +44,20 @@ class DashboardController extends Controller
     {
         $courses = new Course();
         $coursesByUser = $courses->GetCoursesByUserId($userId);
+
+
+//        $getingid = $coursesByUser->each(function ($item, $key)
+  //      {
+    //        $start_date = $item->CourseCatalog->start_date;
+
+      //      $item->push('la_date', $start_date );
+
+
+        //});
+
+  //  dd($getingid);-->
+
+
         return $coursesByUser;
 
     }
@@ -53,7 +66,7 @@ class DashboardController extends Controller
 
     {
 
-       $sortedEvents = $timeLineEvents->sortBy('created_at');
+       $sortedEvents = $timeLineEvents->SortBy('created_at');
 
            return $sortedEvents;
     }
