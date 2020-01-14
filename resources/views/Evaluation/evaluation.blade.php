@@ -5,12 +5,10 @@
         <table> 
             <tr>
                 <th>Alumno</th>
-                <th>Meteo</th>
                 <th>Idioma</th>
                 <th>Actitud</th>
                 <th>Participación</th>
                 <th>Aprendizaje</th>
-                <th>Colaboración</th>
                 <th>Estado</th>
                 <th>Fecha actualización</th>
             </tr>
@@ -18,12 +16,10 @@
                 <tr>
                     {{ csrf_field() }}
                     <td>{{$evaluation->user_id}}</td>
-                    <td>{{$evaluation->meteo}}</td>
                     <td>{{$evaluation->language}}</td>
                     <td>{{$evaluation->attitude}}</td>
                     <td>{{$evaluation->participation}}</td>
                     <td>{{$evaluation->learning}}</td>
-                    <td>{{$evaluation->collaboration}}</td>
                     <td>{{$evaluation->review_status}}</td>
                     <td>{{$evaluation->updated_at}}</td>                   
                     <td>

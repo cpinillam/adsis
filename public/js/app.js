@@ -49462,16 +49462,6 @@ var app = new Vue({
  * TODO ask the correct way to export and import javascript
  */
 
-var elem = document.querySelector('input[type="range"]');
-
-var rangeValue = function rangeValue() {
-  var newValue = elem.value;
-  var target = document.querySelector('.value');
-  target.innerHTML = newValue;
-};
-
-elem.addEventListener("input", rangeValue);
-
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -49598,8 +49588,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\adsis-web\adsis\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\adsis-web\adsis\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\adsis\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\adsis\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
