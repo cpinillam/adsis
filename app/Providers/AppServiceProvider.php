@@ -3,10 +3,12 @@
 namespace App\Providers;
 
 use App\Evaluation;
+use App\User;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use App\Observers\UserObserver;
-use App\User;
+use App\Observers\EvaluationObserver;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
     {
 
         User::observe(UserObserver::class);
+        Evaluation::observe(EvaluationObserver::class);
 
         Schema::defaultStringLength(191);
     }

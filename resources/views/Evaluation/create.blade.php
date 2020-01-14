@@ -13,7 +13,7 @@
 
 
         <div class="value">0</div>
-        <input type="range" min="0" max="10" step="1" value="0">
+        <input type="range" min="1" max="5" step="1" value="{{$evaluation->meteo}}">
 
         <label>Meteo personal:</label>
         <input class="campos" type="value" name="meteo" value="{{$evaluation->meteo}}">

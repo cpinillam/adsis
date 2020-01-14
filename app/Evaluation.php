@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Highlight\Language;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
@@ -55,5 +56,28 @@ class Evaluation extends Model
             return $evaluations;
     }
 
+    public static function AvgEvaluations(int $user_id)
+    {
+        $avgEvaluations = new Evaluation();
+        $avgEvaluations->user_id = $user_id;
+        $avgLanguage = DB::table('evaluations')
+            ->where('user_id', '=', $user_id)
+            ->avg('language');
+        $avgEvaluations->language = round($avgLanguage,1);
+        $avgAttitude = DB::table('evaluations')
+            ->where('user_id', '=', $user_id)
+            ->avg('attitude');
+        $avgEvaluations->attitude = round($avgAttitude,1);
+        $avgParticipation = DB::table('evaluations')
+            ->where('user_id', '=', $user_id)
+            ->avg('participation');
+        $avgEvaluations->participation = round($avgParticipation,1);
+        $avgLearning = DB::table('evaluations')
+            ->where('user_id', '=', $user_id)
+            ->avg('learning');
+        $avgEvaluations->learning = round($avgLearning,1);
+
+        return $avgEvaluations;
+    }
 
 }

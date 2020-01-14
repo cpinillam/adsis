@@ -15,7 +15,7 @@ class EvaluationObserver
      */
     public function created(Evaluation $evaluation)
     {
-        dd($evaluation);
+
        $newEvent = new Event();
        $newEvent->createEventTypeEvaluation($evaluation);
 
