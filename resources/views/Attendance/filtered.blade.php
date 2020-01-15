@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <div>
-        <h2>Asistencias filtradas por Alumno</h2>
+        <h2>Asistencias por Alumn@</h2>
 
-        <h4>Indicadores por tipo de Asistencia</h4>
+        <h3>Indicadores</h3>
         <div id='result'></div>
          {{-- <table> 
             <tr>
@@ -60,7 +60,7 @@
   let label=["A", "RJ", "RNJ", "FJ", "FNJ"];
   let colour=['#1acf17', '#dae012', '#e0880b', '#dae012','#e33b24'];
   let gauge = new Gauge;
-  gauge.render5Percentages('#result',300, @json($indicators), label, colour);
+  gauge.render5Percentages('#result',350, @json($indicators), label, colour);
   
 </script>
 @endsection
