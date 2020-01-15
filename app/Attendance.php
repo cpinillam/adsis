@@ -90,23 +90,4 @@ class Attendance extends Model
         return $userIndicators;
     }
 
-    // public static function calculatePercentageIndicators($indicators)
-    // {
-    //     $total= end($indicators);
-    //     /* $percentageA = (array_shift($indicators))/$total*100; //A
-    //     $percentageRJ = array_shift($indicators) / $total * 100; //RJ
-    //     $percentageRNJ = array_shift($indicators) / $total * 100; //RNJ
-    //     $percentageFJ = array_shift($indicators) / $total * 100; //FJ
-    //     $percentageFNJ = array_shift($indicators) / $total * 100; //FNJ */
-
-    //     function divide($indicators, $total)
-    //     {
-    //         return $indicators / $total;
-    //     }
-
-    //     $percentages = array_map("divide", $indicators, $total);
-
-    //     return $percentages;
-    // }
-
 }

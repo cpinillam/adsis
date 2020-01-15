@@ -44,23 +44,11 @@
 
 <div class="main main-raised" style="background-image: url('img/city.jpg');">
 
-
-
-
-
-
-
-
     <div class="section section-signup" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 ml-auto mr-auto">
                     <div class="card card-login">
-
-
-
-
-
 
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
@@ -71,17 +59,12 @@
                             </div>
 
                             <div class="card-body">
-
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="material-icons">mail</i>
-                      </span>
+                                        <span class="input-group-text">
+                                            <i class="material-icons">mail</i>
+                                        </span>
                                     </div>
-
-
-
-
 
                                     <input id="email" type="email" placeholder="Email ..." class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
@@ -90,16 +73,13 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
-
-
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="material-icons">lock_outline</i>
-                      </span>
+                                        <span class="input-group-text">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
                                     </div>
-
                                     <input id="password" type="password" placeholder="Password..." class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                     @error('password')
@@ -110,10 +90,7 @@
                                 </div>
                             </div>
                             <div class="footer text-center">
-
-
-
-
+                           
                                 <button type="submit" class="btn btn-success btn-round">
                                     {{ __('Entrar') }}
                                 </button>
@@ -123,24 +100,17 @@
                                         {{ __('Olvidó su contraseña?') }}
                                     </a>
                                 @endif
-
+                                
                             </div>
-
+                            
                         </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        <div class="footer text-center">
+                            <form  action="{{ route('register') }}" method="GET">
+                                <button type="submit" class="btn btn-primary btn-round">
+                                    {{ __('Registrarse') }}
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
