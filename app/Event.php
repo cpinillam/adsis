@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class Event extends Model
 {
     public $eventTypeCourse = 1;
-    public $eventTypeEvaluation =2;
+    public $eventTypeEvaluation = 2;
 
 
     protected  $fillable = ['user_id', 'event_id', 'event_type', 'event_date'];
@@ -35,5 +35,12 @@ class Event extends Model
             'event_type' => $this->eventTypeEvaluation,
             'event_date' => $evaluation->created_at,
         ]);
+    }
+
+    public  function showEventsByUser($user){
+
+        $eventsByUser = Event::all()->where('user_id', $user);
+
+        return $eventsByUser;
     }
 }

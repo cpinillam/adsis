@@ -13,7 +13,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Material Kit by Creative Tim
+        Adsis
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -47,7 +47,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="index-page sidebar-collapse">
+<body class="profile-page sidebar-collapse">
 <nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg bg-light" id="sectionsNav">
     <div class="container">
         <div class="navbar-translate">
@@ -100,7 +100,7 @@
 
 
 
-<div class="page-header" data-parallax="true" style="background-image: url('img/city.jpg'); background-size: cover; background-position: top center;">
+<div class="page-header" data-parallax="true" style="background-image: url('img/hd-profile.jpg'); background-size: auto; background-position: top center;">
     <div class="container">
         <div class="row">
             <div class="col-md-8 ml-auto mr-auto">
@@ -117,7 +117,7 @@
 
 
     @yield('content')
-
+    @yield('scripts')
 
 </div>
 

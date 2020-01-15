@@ -4,8 +4,8 @@ body {
   font-family: "Dosis", Helvetica, Arial, sans-serif;
   background: #ecf0f1;
   color: #34495e;
-
-
+  padding-top: 40px;
+  text-shadow: white 1px 1px 1px;
 }
 
 .value {

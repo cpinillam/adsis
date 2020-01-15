@@ -11,12 +11,26 @@
     <form id="create" class='formular' action='/evaluation' method='POST'>
         @csrf
 
+            <div class="col-md-12">
 
-        <div class="value">0</div>
-        <input type="range" min="1" max="5" step="1" value="{{$evaluation->meteo}}">
+                    <div class="slider-item">
+                        <div class="number">5</div>
+                        <div class="face">😄</div>
+                        <input class="rango" type="range" value="0" min="0" max="10" step="1">
+                    </div>
+
+            </div>
+
+
+
+
+
+
+
 
         <label>Meteo personal:</label>
         <input class="campos" type="value" name="meteo" value="{{$evaluation->meteo}}">
+
         <br>
         <label>Idioma:</label>
         <input class="campos" type="number" name="language" value="{{$evaluation->language}}">
@@ -38,6 +52,28 @@
         <br>
     </form>
 </div>
+    <script type="application/javascript">
+
+
+
+        const range = document.getElementsByClassName('rango');
+        const emoji9 = '<img src="http://okgooru.es/pruebas-tecnicas/source/loader.svg">';
+        const emoji10 = '<img src="http://okgooru.es/pruebas-tecnicas/source/hand.svg">';
+        const mojis = ['😄','🙂','😐','😑','☹️','😩','😠','😡','🤢',emoji9,emoji10];
+
+        for (i = 0; i < range.length; i++){
+        let faceDiv = range[i].parentElement.querySelector('.face');
+        let numberDiv = range[i].parentElement.querySelector('.number');
+
+        range[i].addEventListener('input', (e) => {
+
+            let rangeValue = e.target.value;
+            faceDiv.innerHTML = mojis[rangeValue];
+            numberDiv.innerHTML = rangeValue;
+
+        })};
+
+    </script>
 @endsection
 
 
