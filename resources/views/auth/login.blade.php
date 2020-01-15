@@ -41,6 +41,30 @@
 
 <body class="index-page">
 
+<nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg" id="sectionsNav">
+    <div class="container">
+        <div class="navbar-translate">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <!-- Authentication Links -->
+                @guest
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('REGÍSTRATE SI ERES NUEVO...') }}</a>
+                        </li>
+                    @endif
+                @endguest
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <div class="main main-raised" style="background-image: url('img/city.jpg');">
 
@@ -104,13 +128,7 @@
                             </div>
                             
                         </form>
-                        <div class="footer text-center">
-                            <form  action="{{ route('register') }}" method="GET">
-                                <button type="submit" class="btn btn-primary btn-round">
-                                    {{ __('Registrarse') }}
-                                </button>
-                            </form>
-                        </div>
+
                     </div>
                 </div>
             </div>
