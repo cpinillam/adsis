@@ -5,22 +5,6 @@
 
         <h3>Indicadores</h3>
         <div id='result'></div>
-         {{-- <table> 
-            <tr>
-                <th>A</th>
-                <th>RJ</th>
-                <th>RNJ</th>
-                <th>FJ</th>
-                <th>FNJ</th>
-            </tr>
-                <td>{{$indicators[0][0]}}%</td>
-                <td>{{$indicators[0][1]}}%</td>
-                <td>{{$indicators[0][2]}}%</td>
-                <td>{{$indicators[0][3]}}%</td>
-                <td>{{$indicators[0][4]}}%</td>
-        </table> --}}
-
-
         <br>
         <table> 
             <tr>
