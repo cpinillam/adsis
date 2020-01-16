@@ -1288,7 +1288,7 @@ pre code {
   margin-left: 91.666667%;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .col-sm {
     flex-basis: 0;
     flex-grow: 1;
@@ -6413,7 +6413,7 @@ button.bg-dark:focus {
   display: inline-flex !important;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .d-sm-none {
     display: none !important;
   }
@@ -6443,7 +6443,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .d-md-none {
     display: none !important;
   }
@@ -6473,7 +6473,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .d-lg-none {
     display: none !important;
   }

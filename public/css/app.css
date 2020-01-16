@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);[type=range] {
   -webkit-appearance: none;
-  margin: 33px 0;
+  margin: 22px 0;
   width: 100%;
 }
 
@@ -94,5 +94,10 @@
   width: 66px;
   border: 11px solid #b8db00;
   margin-top: 0;
+}
+
+.face img {
+  width: 100%;
+  max-height: 10vh;
 }
 

@@ -51,7 +51,7 @@ $track-radius: 35px !default;
 
 [type='range'] {
     -webkit-appearance: none;
-    margin: $thumb-height / 2 0;
+    margin: $thumb-height / 3 0;
     width: $track-width;
 
     &:focus {
@@ -118,4 +118,8 @@ $track-radius: 35px !default;
         @include thumb;
         margin-top: 0;
     }
+}
+.face img{
+    width: 100%;
+    max-height: 10vh;
 }

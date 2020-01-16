@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.twolevels')
 @section('content')
 
-<h3 class="titulo">Autoevaluación</h3>
-<p class="titulo"> A valorar de 1 a 5 las siguientes competencias</p>
+<h3 class="title pt-4 pl-4 pr-4 mb-0">Autoevaluación</h3>
+<p  class="pl-4 pr-4"> A valorar de 1 a 10 las siguientes competencias</p>
 @if ($errors->any())
 <p>Valorar todos los campos</p>
 @endif
@@ -13,53 +13,141 @@
 
             <div class="col-md-12">
 
-                    <div class="slider-item d-md-flex d-sm-none w-100">
-                        <div class="col-sm-12 col-md-8 flex-column justify-content-center flex-column">
-                            <h3> Aprendizajes Conseguidos</h3>
-                            <input class="rango" type="range" value="0" min="0" max="10" step="1">
+
+
+                <!-- item start -->
+                    <div class="slider-item d-flex flex-wrap  w-100">
+                        <div class="col-md-8 col-sm-12 d-flex flex-column justify-content-center p-0">
+
+                            <div class="row d-flex">
+                                <h5 class="col-sm-7 col-md-8 col-lg-12 d-flex align-items-center text-center"> Meteo Personal</h5>
+
+                                <div class="col-sm-5 col-md-4 d-flex d-lg-none pl-0">
+                                    <h3 class="title number w-25 d-flex align-items-center justify-content-center">1</h3>
+                                    <div class="face w-75 d-flex align-items-center justify-content-center"><img src="../img/svg/face-1.svg"></div>
+                                </div>
+                            </div>
+
+                            <input class="rango" type="range" name="meteo" min="1" value="{{$evaluation->meteo}}" max="10" step="1">
                         </div>
-                        <div class="col-sm-12 col-md-4 d-flex">
-                            <div class="number">5</div>
-                            <div class="face">😄</div>
+                        <div class="col-md-4  col-sm-12 d-flex  d-sm-none d-md-none">
+                            <h3 class="title number w-25 d-flex align-items-center justify-content-center">0</h3>
+                            <div class="face w-75 d-flex align-items-center justify-content-center"><img src="../img/svg/face-1.svg"></div>
                         </div>
                     </div>
+                <!-- item end -->
 
+                <!-- item start -->
+                <div class="slider-item d-flex flex-wrap  w-100">
+                    <div class="col-md-8 col-sm-12 d-flex flex-column justify-content-center p-0">
 
-                <div class="slider-item d-flex w-100">
-                    <div class="col-8 flex-column justify-content-center flex-column">
-                        <h3> Aprendizajes Conseguidos</h3>
-                        <input class="rango" type="range" value="0" min="0" max="10" step="1">
+                        <div class="row d-flex">
+                            <h5 class="col-sm-7 col-md-8 col-lg-12 d-flex align-items-center text-center"> Idioma</h5>
+
+                            <div class="col-sm-5 col-md-4 d-flex d-lg-none pl-0">
+                                <h3 class="title number w-25 d-flex align-items-center justify-content-center">1</h3>
+                                <div class="face w-75 d-flex align-items-center justify-content-center"><img src="../img/svg/face-1.svg"></div>
+                            </div>
+                        </div>
+
+                        <input class="rango" type="range" name="language" min="1" value="{{$evaluation->language}}" max="10" step="1">
                     </div>
-                    <div class="col-4 d-flex">
-                        <div class="number">5</div>
-                        <div class="face">😄</div>
-                    </div>
-                </div>
-
-
-                <div class="slider-item d-flex w-100">
-                    <div class="col-8 flex-column justify-content-center flex-column">
-                        <h3> Aprendizajes Conseguidos</h3>
-                        <input class="rango" type="range" value="0" min="0" max="10" step="1">
-                    </div>
-                    <div class="col-4 d-flex">
-                        <div class="number">5</div>
-                        <div class="face">😄</div>
+                    <div class="col-md-4  col-sm-12 d-flex  d-sm-none d-md-none">
+                        <h3 class="title number w-25 d-flex align-items-center justify-content-center">0</h3>
+                        <div class="face w-75 d-flex align-items-center justify-content-center"><img src="../img/svg/face-1.svg"></div>
                     </div>
                 </div>
+                <!-- item end -->
 
+                <!-- item start -->
+                <div class="slider-item d-flex flex-wrap  w-100">
+                    <div class="col-md-8 col-sm-12 d-flex flex-column justify-content-center p-0">
 
-                <div class="slider-item d-flex w-100">
-                    <div class="col-8 flex-column justify-content-center flex-column">
-                        <h3> Aprendizajes Conseguidos</h3>
-                        <input class="rango" type="range" value="0" min="0" max="10" step="1">
+                        <div class="row d-flex">
+                            <h5 class="col-sm-7 col-md-8 col-lg-12 d-flex align-items-center text-center"> Actitud</h5>
+
+                            <div class="col-sm-5 col-md-4 d-flex d-lg-none pl-0">
+                                <h3 class="title number w-25 d-flex align-items-center justify-content-center">1</h3>
+                                <div class="face w-75 d-flex align-items-center justify-content-center"><img src="../img/svg/face-1.svg"></div>
+                            </div>
+                        </div>
+
+                        <input class="rango" type="range" name="attitude" value="{{$evaluation->attitude}}" min="1" max="10" step="1">
                     </div>
-                    <div class="col-4 d-flex">
-                        <div class="number">5</div>
-                        <div class="face">😄</div>
+                    <div class="col-md-4  col-sm-12 d-flex  d-sm-none d-md-none">
+                        <h3 class="title number w-25 d-flex align-items-center justify-content-center">0</h3>
+                        <div class="face w-75 d-flex align-items-center justify-content-center"><img src="../img/svg/face-1.svg"></div>
                     </div>
                 </div>
+                <!-- item end -->
 
+                <!-- item start -->
+                <div class="slider-item d-flex flex-wrap  w-100">
+                    <div class="col-md-8 col-sm-12 d-flex flex-column justify-content-center p-0">
+
+                        <div class="row d-flex">
+                            <h5 class="col-sm-7 col-md-8 col-lg-12 d-flex align-items-center text-center"> Participación</h5>
+
+                            <div class="col-sm-5 col-md-4 d-flex d-lg-none pl-0">
+                                <h3 class="title number w-25 d-flex align-items-center justify-content-center">1</h3>
+                                <div class="face w-75 d-flex align-items-center justify-content-center"><img src="../img/svg/face-1.svg"></div>
+                            </div>
+                        </div>
+
+                        <input class="rango" type="range" name="participation" value="{{$evaluation->participation}}" min="1" max="10" step="1">
+                    </div>
+                    <div class="col-md-4  col-sm-12 d-flex  d-sm-none d-md-none">
+                        <h3 class="title number w-25 d-flex align-items-center justify-content-center">0</h3>
+                        <div class="face w-75 d-flex align-items-center justify-content-center"><img src="../img/svg/face-1.svg"></div>
+                    </div>
+                </div>
+                <!-- item end -->
+
+                <!-- item start -->
+                <div class="slider-item d-flex flex-wrap  w-100">
+                    <div class="col-md-8 col-sm-12 d-flex flex-column justify-content-center p-0">
+
+                        <div class="row d-flex">
+                            <h5 class="col-sm-7 col-md-8 col-lg-12 d-flex align-items-center text-center"> Aprendizaje</h5>
+
+                            <div class="col-sm-5 col-md-4 d-flex d-lg-none pl-0">
+                                <h3 class="title number w-25 d-flex align-items-center justify-content-center">1</h3>
+                                <div class="face w-75 d-flex align-items-center justify-content-center"><img src="../img/svg/face-1.svg"></div>
+                            </div>
+                        </div>
+
+                        <input class="rango" type="range" name="learning" value="{{$evaluation->learning}}" min="1" max="10" step="1">
+                    </div>
+                    <div class="col-md-4  col-sm-12 d-flex  d-sm-none d-md-none">
+                        <h3 class="title number w-25 d-flex align-items-center justify-content-center">0</h3>
+                        <div class="face w-75 d-flex align-items-center justify-content-center"><img src="../img/svg/face-1.svg"></div>
+                    </div>
+                </div>
+                <!-- item end -->
+
+                <!-- item start -->
+                <div class="slider-item d-flex flex-wrap  w-100">
+                    <div class="col-md-8 col-sm-12 d-flex flex-column justify-content-center p-0">
+
+                        <div class="row d-flex">
+                            <h5 class="col-sm-7 col-md-8 col-lg-12 d-flex align-items-center text-center"> Colaboración</h5>
+
+                            <div class="col-sm-5 col-md-4 d-flex d-lg-none pl-0">
+                                <h3 class="title number w-25 d-flex align-items-center justify-content-center">1</h3>
+                                <div class="face w-75 d-flex align-items-center justify-content-center"><img src="../img/svg/face-1.svg"></div>
+                            </div>
+                        </div>
+
+                        <input class="rango" type="range" name="collaboration" value="{{$evaluation->collaboration}}" min="1" max="10" step="1">
+                    </div>
+                    <div class="col-md-4  col-sm-12 d-flex  d-sm-none d-md-none">
+                        <h3 class="title number w-25 d-flex align-items-center justify-content-center">0</h3>
+                        <div class="face w-75 d-flex align-items-center justify-content-center"><img src="../img/svg/face-1.svg"></div>
+                    </div>
+                </div>
+                <!-- item end -->
+                <input class="campos" type="hidden" name="user_id" value="{{$evaluation->user_id}}">
+                <input type="submit" class="btn btn-round btn-danger  mt-5 mb-5 w-100" value="Enviar">
             </div>
 
 
@@ -69,52 +157,42 @@
 
 
 
-        <label>Meteo personal:</label>
-        <input class="campos" type="value" name="meteo" value="{{$evaluation->meteo}}">
 
-        <br>
-        <label>Idioma:</label>
-        <input class="campos" type="number" name="language" value="{{$evaluation->language}}">
-        <br>
-        <label>Actitud:</label>
-        <input class="campos" type="number" name="attitude" value="{{$evaluation->attitude}}">
-        <br>
-        <label>Participación:</label>
-        <input class="campos" type="number" name="participation" value="{{$evaluation->participation}}">
-        <br>
-        <label>Aprendizaje:</label>
-        <input class="campos" type="number" name="learning" value="{{$evaluation->learning}}">
-        <br>
-        <label>Colaboración:</label>
-        <input class="campos" type="number" name="collaboration" value="{{$evaluation->collaboration}}">
-        <br>
-        <input class="campos" type="hidden" name="user_id" value="{{$evaluation->user_id}}">
-        <input type="submit" class="boton" value="Enviar">
-        <br>
     </form>
 </div>
     <script type="application/javascript">
 
 
 
+
         const range = document.getElementsByClassName('rango');
-        const emoji9 = '<img src="http://okgooru.es/pruebas-tecnicas/source/loader.svg">';
-        const emoji10 = '<img src="http://okgooru.es/pruebas-tecnicas/source/hand.svg">';
-        const mojis = ['😄','🙂','😐','😑','☹️','😩','😠','😡','🤢',emoji9,emoji10];
+        const emoji1 = '<img src="../img/svg/face-1.svg">';
+        const emoji2 = '<img src="../img/svg/face-2.svg">';
+        const emoji3 = '<img src="../img/svg/face-3.svg">';
+        const emoji4 = '<img src="../img/svg/face-4.svg">';
+        const emoji5 = '<img src="../img/svg/face-5.svg">';
+        const mojis = [emoji1,emoji1,emoji1,emoji2,emoji2,emoji3,emoji3,emoji4,emoji4,emoji5,emoji5];
 
         for (i = 0; i < range.length; i++){
-        let faceDiv = range[i].parentElement.parentElement.querySelector('.face');
-        let numberDiv = range[i].parentElement.parentElement.querySelector('.number');
+        let faceDiv = range[i].parentElement.parentElement.getElementsByClassName('face');
+        let numberDiv = range[i].parentElement.parentElement.getElementsByClassName('number');
+        console.log(numberDiv)
+
+
 
         range[i].addEventListener('input', (e) => {
 
             let rangeValue = e.target.value;
-            faceDiv.innerHTML = mojis[rangeValue];
-            numberDiv.innerHTML = rangeValue;
-
+            faceDiv[0].innerHTML = mojis[rangeValue];
+            faceDiv[1].innerHTML = mojis[rangeValue];
+            numberDiv[0].innerHTML = rangeValue;
+            numberDiv[1].innerHTML = rangeValue;
+            console.log(e);
         })};
 
     </script>
+
+
 @endsection
 
 
