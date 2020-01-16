@@ -54,7 +54,7 @@
                         <br>
                         <a href="filter">Filtrar Asistencias</a>
                         <br>
-                        <a href="attendanceIndicators">Indicadores Asistencia</a>
+                        <a href="attendanceIndicators">Indicadores Evaluación</a>
                 </div>
             </div>
         </div>

@@ -16,11 +16,6 @@ body {
   letter-spacing: -0.07em;
 }
 
-.content-list {
-  margin-left: 100px;
-  position: absolute;
-}
-
 input[type=range] {
   display: block;
   -webkit-appearance: none;

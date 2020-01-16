@@ -81,7 +81,7 @@ class Gauge {
             .attr('d', function (d) {
                 return d.data.arc(d);
             }).attr('fill', function (d, i) {
-                return i == 0 ? d.data.object.color : i == 1 ? '#e8e8e8' : 'none';
+                return i == 0 ? d.data.object.color : i == 1 ? '#cfcfcf' : 'none';
             });
 
         svg.selectAll('g').each(function (d, index) {
@@ -199,7 +199,7 @@ class Gauge {
             .attr('d', function (d) {
                 return d.data.arc(d);
             }).attr('fill', function (d, i) {
-                return i == 0 ? d.data.object.color : i == 1 ? '#e8e8e8' : 'none';
+                return i == 0 ? d.data.object.color : i == 1 ? '#cfcfcf' : 'none';
             });
 
         svg.selectAll('g').each(function (d, index) {
