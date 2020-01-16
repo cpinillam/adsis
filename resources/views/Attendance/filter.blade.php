@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div>
+    <div id="content-list" style="margin-left: 50px">
         <h1>Asistencias</h1>
         <h2>Campos de filtrado</h2>
         <form action="filter" method="POST">
@@ -44,4 +44,5 @@
             </div>
           </form>
         </div>
+        <div style="height: 200px"></div>
 @endsection

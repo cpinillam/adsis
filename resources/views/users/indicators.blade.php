@@ -1,15 +1,17 @@
 @extends('layouts.app')
 @section('content')
+<div id="content-list" style="margin-left: 50px">
 <h2>Indicadores - Dashboard</h2>
-<div id='container'>
-    <h4>Aprendizajes conseguidos</h4>
-    <div id='result2'></div>
-    <h4>Dinámica de trabajo</h4>
-    <div id='result3'></div>
-    <h4>Actitud</h4>
-    <div id='result4'></div>
-    <h4>Idioma</h4>
-    <div id='result5'></div>
+  <div id='container'>
+      <h4>Aprendizajes conseguidos</h4>
+      <div id='result2'></div>
+      <h4>Dinámica de trabajo</h4>
+      <div id='result3'></div>
+      <h4>Actitud</h4>
+      <div id='result4'></div>
+      <h4>Idioma</h4>
+      <div id='result5'></div>
+  </div>
 </div>
 @endsection
 

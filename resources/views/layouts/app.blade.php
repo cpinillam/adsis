@@ -77,7 +77,7 @@
         </div>
     </div>
 </nav>
-<div class="page-header" data-parallax="true" style="background-image: url('img/hd-profile.jpg'); background-size: auto; background-position: top center;">
+<div class="page-header" data-parallax="true" style="background-image: url('/img/hd-profile.jpg'); background-size: auto; background-position: top center;">
     <div class="container">
         <div class="row">
             <div class="col-md-8 ml-auto mr-auto">

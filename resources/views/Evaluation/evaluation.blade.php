@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div>
+    <div id="content-list" style="margin-left: 50px">
         <h1>Lista de Evaluaciones</h1>
         <table> 
             <tr>

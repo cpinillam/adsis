@@ -479,6 +479,11 @@ hr {
   overflow: visible;
 }
 
+.main-content {
+  margin-left: 1000px;
+  position: absolute;
+}
+
 h1,
 h2,
 h3,
@@ -10949,12 +10954,6 @@ a.text-info:focus {
 
 a .material-icons {
   vertical-align: middle;
-}
-
-.main {
-  background: #FFFFFF;
-  position: relative;
-  z-index: 3;
 }
 
 .form-check,
