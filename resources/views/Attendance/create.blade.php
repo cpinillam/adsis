@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
+<div id="content-list" style="margin-left: 50px">
 <h1 class="titulo">Hoja Asistencia</h1>
-<div>
     <label>Nombre Tutor:{{$tutor}}</label>
     <br>
     <label>Id Tutor: {{$attendance->tutor_id}}</label>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div>
+    <div id="content-list" style="margin-left: 50px">
         <h2>Asistencias por Alumn@</h2>
 
         <h3>Indicadores</h3>
