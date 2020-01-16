@@ -6,9 +6,9 @@
 // Version 1.4.1
 // MIT License
 
-$color-primary: #224889;
-$color-roof: #A6CFFF;
-$color-ledge: #79AAFF;
+$color-primary: #a3bd31;
+$color-roof: #a3bd31;
+$color-ledge: #b8db00;
 $color-window-left: #65EBFF;
 $color-window-right: #71FBFF;
 $color-window: linear-gradient(to right, $color-window-left, $color-window-left 49.9%, $color-window-right 50%, $color-window-right);
@@ -18,15 +18,15 @@ $delay: 70ms;
 $easing: cubic-bezier(.1, 0, .3, 1);
 
 
-$track-color: linear-gradient(to bottom, $color-ledge, $color-ledge 49.9%, darken($color-ledge, 5%) 50%, darken($color-ledge, 5%) 100%) !default;
+$track-color: $color-ledge !default;
 $thumb-color: $color-primary !default;
 
-$thumb-radius: 20px !default;
-$thumb-height: 40px !default;
-$thumb-width: 40px !default;
+$thumb-radius: 50% !default;
+$thumb-height: 66px !default;
+$thumb-width: 66px !default;
 
-$track-width: 290px !default;
-$track-height: 30px !default;
+$track-width: 100% !default;
+$track-height: 26px !default;
 $track-shadow-color: rgba(0, 0, 0, .2) !default;
 $track-border-width: 5px !default;
 $track-border-color: $color-primary !default;
@@ -46,6 +46,7 @@ $track-radius: 35px !default;
     cursor: pointer;
     height: $thumb-height;
     width: $thumb-width;
+    border: 11px solid $track-color;
 }
 
 [type='range'] {

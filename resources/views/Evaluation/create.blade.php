@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<h1 class="titulo">Autoevaluación</h1>
+<h3 class="titulo">Autoevaluación</h3>
 <p class="titulo"> A valorar de 1 a 5 las siguientes competencias</p>
 @if ($errors->any())
 <p>Valorar todos los campos</p>
@@ -13,11 +13,52 @@
 
             <div class="col-md-12">
 
-                    <div class="slider-item">
-                        <div class="number">5</div>
-                        <div class="face">😄</div>
+                    <div class="slider-item d-md-flex d-sm-none w-100">
+                        <div class="col-sm-12 col-md-8 flex-column justify-content-center flex-column">
+                            <h3> Aprendizajes Conseguidos</h3>
+                            <input class="rango" type="range" value="0" min="0" max="10" step="1">
+                        </div>
+                        <div class="col-sm-12 col-md-4 d-flex">
+                            <div class="number">5</div>
+                            <div class="face">😄</div>
+                        </div>
+                    </div>
+
+
+                <div class="slider-item d-flex w-100">
+                    <div class="col-8 flex-column justify-content-center flex-column">
+                        <h3> Aprendizajes Conseguidos</h3>
                         <input class="rango" type="range" value="0" min="0" max="10" step="1">
                     </div>
+                    <div class="col-4 d-flex">
+                        <div class="number">5</div>
+                        <div class="face">😄</div>
+                    </div>
+                </div>
+
+
+                <div class="slider-item d-flex w-100">
+                    <div class="col-8 flex-column justify-content-center flex-column">
+                        <h3> Aprendizajes Conseguidos</h3>
+                        <input class="rango" type="range" value="0" min="0" max="10" step="1">
+                    </div>
+                    <div class="col-4 d-flex">
+                        <div class="number">5</div>
+                        <div class="face">😄</div>
+                    </div>
+                </div>
+
+
+                <div class="slider-item d-flex w-100">
+                    <div class="col-8 flex-column justify-content-center flex-column">
+                        <h3> Aprendizajes Conseguidos</h3>
+                        <input class="rango" type="range" value="0" min="0" max="10" step="1">
+                    </div>
+                    <div class="col-4 d-flex">
+                        <div class="number">5</div>
+                        <div class="face">😄</div>
+                    </div>
+                </div>
 
             </div>
 
@@ -62,8 +103,8 @@
         const mojis = ['😄','🙂','😐','😑','☹️','😩','😠','😡','🤢',emoji9,emoji10];
 
         for (i = 0; i < range.length; i++){
-        let faceDiv = range[i].parentElement.querySelector('.face');
-        let numberDiv = range[i].parentElement.querySelector('.number');
+        let faceDiv = range[i].parentElement.parentElement.querySelector('.face');
+        let numberDiv = range[i].parentElement.parentElement.querySelector('.number');
 
         range[i].addEventListener('input', (e) => {
 

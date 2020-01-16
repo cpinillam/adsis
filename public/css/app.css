@@ -1,58 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Dosis:700);@charset "UTF-8";
-
-body {
-  font-family: "Dosis", Helvetica, Arial, sans-serif;
-  background: #ecf0f1;
-  color: #34495e;
-  padding-top: 40px;
-  text-shadow: white 1px 1px 1px;
-}
-
-.value {
-  text-align: center;
-  font-weight: bold;
-  font-size: 6em;
-  height: 20px;
-  letter-spacing: -0.07em;
-}
-
-input[type=range] {
-  display: block;
+@import url(https://fonts.googleapis.com/css?family=Nunito);[type=range] {
   -webkit-appearance: none;
-  background-color: #bdc3c7;
-  width: 300px;
-  height: 5px;
-  border-radius: 5px;
-  margin: 0 auto;
-  outline: 0;
-}
-
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  background-color: #e74c3c;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 2px solid white;
-  cursor: pointer;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-
-​ input[type=range]::-webkit-slider-thumb:hover {
-  background-color: white;
-  border: 2px solid #e74c3c;
-}
-
-input[type=range]::-webkit-slider-thumb:active {
-  -webkit-transform: scale(1.6);
-          transform: scale(1.6);
-}
-
-[type=range] {
-  -webkit-appearance: none;
-  margin: 20px 0;
-  width: 290px;
+  margin: 33px 0;
+  width: 100%;
 }
 
 [type=range]:focus {
@@ -60,89 +9,90 @@ input[type=range]::-webkit-slider-thumb:active {
 }
 
 [type=range]:focus::-webkit-slider-runnable-track {
-  background: -webkit-gradient(linear, left top, left bottom, from(#79AAFF), color-stop(49.9%, #79AAFF), color-stop(50%, #609aff), to(#609aff));
-  background: linear-gradient(to bottom, #79AAFF, #79AAFF 49.9%, #609aff 50%, #609aff 100%);
+  background: #b8db00;
 }
 
 [type=range]:focus::-ms-fill-lower {
-  background: linear-gradient(to bottom, #79AAFF, #79AAFF 49.9%, #609aff 50%, #609aff 100%);
+  background: #b8db00;
 }
 
 [type=range]:focus::-ms-fill-upper {
-  background: linear-gradient(to bottom, #79AAFF, #79AAFF 49.9%, #609aff 50%, #609aff 100%);
+  background: #b8db00;
 }
 
 [type=range]::-webkit-slider-runnable-track {
   cursor: pointer;
-  height: 30px;
+  height: 26px;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  width: 290px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#79AAFF), color-stop(49.9%, #79AAFF), color-stop(50%, #609aff), to(#609aff));
-  background: linear-gradient(to bottom, #79AAFF, #79AAFF 49.9%, #609aff 50%, #609aff 100%);
-  border: 5px solid #224889;
+  width: 100%;
+  background: #b8db00;
+  border: 5px solid #a3bd31;
   border-radius: 35px;
 }
 
 [type=range]::-webkit-slider-thumb {
-  background: #224889;
-  border-radius: 20px;
+  background: #a3bd31;
+  border-radius: 50%;
   cursor: pointer;
-  height: 40px;
-  width: 40px;
+  height: 66px;
+  width: 66px;
+  border: 11px solid #b8db00;
   -webkit-appearance: none;
-  margin-top: -10px;
+  margin-top: -25px;
 }
 
 [type=range]::-moz-range-track {
   cursor: pointer;
-  height: 30px;
+  height: 26px;
   -moz-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  width: 290px;
-  background: linear-gradient(to bottom, #79AAFF, #79AAFF 49.9%, #609aff 50%, #609aff 100%);
-  border: 5px solid #224889;
+  width: 100%;
+  background: #b8db00;
+  border: 5px solid #a3bd31;
   border-radius: 35px;
 }
 
 [type=range]::-moz-range-thumb {
-  background: #224889;
-  border-radius: 20px;
+  background: #a3bd31;
+  border-radius: 50%;
   cursor: pointer;
-  height: 40px;
-  width: 40px;
+  height: 66px;
+  width: 66px;
+  border: 11px solid #b8db00;
 }
 
 [type=range]::-ms-track {
   cursor: pointer;
-  height: 30px;
+  height: 26px;
   -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  width: 290px;
+  width: 100%;
   background: transparent;
   border-color: transparent;
-  border-width: 20px 0;
+  border-width: 33px 0;
   color: transparent;
 }
 
 [type=range]::-ms-fill-lower {
-  background: linear-gradient(to bottom, #79AAFF, #79AAFF 49.9%, #609aff 50%, #609aff 100%);
-  border: 5px solid #224889;
+  background: #b8db00;
+  border: 5px solid #a3bd31;
   border-radius: 70px;
 }
 
 [type=range]::-ms-fill-upper {
-  background: linear-gradient(to bottom, #79AAFF, #79AAFF 49.9%, #609aff 50%, #609aff 100%);
-  border: 5px solid #224889;
+  background: #b8db00;
+  border: 5px solid #a3bd31;
   border-radius: 70px;
 }
 
 [type=range]::-ms-thumb {
-  background: #224889;
-  border-radius: 20px;
+  background: #a3bd31;
+  border-radius: 50%;
   cursor: pointer;
-  height: 40px;
-  width: 40px;
+  height: 66px;
+  width: 66px;
+  border: 11px solid #b8db00;
   margin-top: 0;
 }
 
