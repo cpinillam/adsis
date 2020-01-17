@@ -6,6 +6,7 @@ use http\Exception\UnexpectedValueException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use  App\Event;
 use App\Evaluation;
 use App\Course;
 
@@ -19,16 +20,13 @@ class DashboardController extends Controller
     }
 
 
-    public function getAllData()
+    public function getAllEvents()
     {
         $user = Auth::user();
-        $evaluations = $this->getEvaluations($user->id);
-        $courses = $this->getCourses($user->id);
 
-        $allEvents = $evaluations->union($courses);
-        $sortedEvents = $this->SortTimeLineEvents($allEvents);
-
-
+        $allEvents = new Event();
+        $eventsByUser = $allEvents->showEventsByUser($user->id);
+        $sortedEvents = $this->SortTimeLineEvents($eventsByUser);
 
         return view('home',['user'=> $user, 'sortedEvents'=> $sortedEvents]);
     }
@@ -46,18 +44,6 @@ class DashboardController extends Controller
         $coursesByUser = $courses->GetCoursesByUserId($userId);
 
 
-//        $getingid = $coursesByUser->each(function ($item, $key)
-  //      {
-    //        $start_date = $item->CourseCatalog->start_date;
-
-      //      $item->push('la_date', $start_date );
-
-
-        //});
-
-  //  dd($getingid);-->
-
-
         return $coursesByUser;
 
     }
@@ -66,7 +52,7 @@ class DashboardController extends Controller
 
     {
 
-       $sortedEvents = $timeLineEvents->SortBy('created_at');
+       $sortedEvents = $timeLineEvents->SortBy('event_date');
 
            return $sortedEvents;
     }

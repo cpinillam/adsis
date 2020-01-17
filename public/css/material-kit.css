@@ -1293,7 +1293,7 @@ pre code {
   margin-left: 91.666667%;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .col-sm {
     flex-basis: 0;
     flex-grow: 1;
@@ -6418,7 +6418,7 @@ button.bg-dark:focus {
   display: inline-flex !important;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .d-sm-none {
     display: none !important;
   }
@@ -6448,7 +6448,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .d-md-none {
     display: none !important;
   }
@@ -6478,7 +6478,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .d-lg-none {
     display: none !important;
   }
@@ -14539,6 +14539,8 @@ textarea {
   font-size: 12px;
   font-weight: 500;
   min-width: 100px;
+
+  background-color: #f0efef;
   text-align: center;
   color: #555;
   transition: all .3s;
@@ -14581,7 +14583,7 @@ textarea {
 .nav-pills.nav-pills-success .nav-item .nav-link.active,
 .nav-pills.nav-pills-success .nav-item .nav-link.active:focus,
 .nav-pills.nav-pills-success .nav-item .nav-link.active:hover {
-  background-color: #4caf50;
+  background-color: #bfae00;
   box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(76, 175, 80, 0.6);
   color: #fff;
 }
@@ -14603,7 +14605,7 @@ textarea {
 }
 
 .nav-pills.nav-pills-icons .nav-item .nav-link {
-  border-radius: 4px;
+  border-radius: 20px;
 }
 
 .tab-space {
@@ -17350,7 +17352,7 @@ footer .pull-center {
 }
 
 .profile-page .page-header {
-  height: 380px;
+  height: 180px;
   background-position: top center;
 }
 
@@ -17385,7 +17387,7 @@ footer .pull-center {
 }
 
 .profile-page .profile-tabs {
-  margin-top: 4.284rem;
+
 }
 
 .profile-page .gallery {
