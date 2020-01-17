@@ -33,13 +33,13 @@
                                 {{ csrf_field() }}
                             <li class="nav-item justify-content-center">
                                 <a class="nav-link show"  role="tab" data-toggle="tab" aria-selected="true">
-                                     <i class="material-icons">assignment</i> {{$event->event_date}}
+                                     <i class="material-icons">assignment</i> Autoevaluación <br>{{$event->event_date}}
                                 </a>
 
                             </li>
 
                             <li class="nav-item justify-content-center">
-                             <div style="max-width: 5px; background-color: #f0efef; height: 30px; display: block; position: relative; left: 50%; transform: translateY(-10px); z-index: -1;"></div>
+                             <div style="max-width: 5px; background-color: #f0efef; height: 30px; display: block; position: relative; left: 50%; transform: translateY(-10px);"></div>
                                 <div style="max-width: 20px; height: 20px; display: block; background-color: #f0efef; position: relative; left: 50%; transform: translate(-7.5px, -50%); border-radius: 50%;"></div>
                                 <div style="max-width: 5px; background-color: #f0efef; height: 10px; display: block; position: relative; left: 50%; transform: translateY(0px);"></div>
                             </li>
