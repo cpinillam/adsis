@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class Evaluation extends Model
 {
-    protected $fillable = ['language', 'attitude', 'participation', 'learning', 'collaboration', 'meteo', 'group', 'user_id'];
+    protected $fillable = ['language', 'attitude', 'workflow', 'learning', 'meteo', 'group', 'user_id'];
 
 
     public function GetAllEvaluations(){

@@ -2,7 +2,7 @@
 @section('content')
 <div id="content-list" style="margin-left: 50px">
     <h1 class="titulo">Editar Autoevaluación</h1>
-    <p class="titulo"> A valorar de 1 a 5 las siguientes competencias</p>
+    <p class="titulo"> A valorar de 1 a 10 las siguientes competencias</p>
     @if ($errors->any())
     <p>Valorar todos los campos</p>
     @endif
@@ -21,17 +21,17 @@
             <label>Actitud:</label>
             <input class="campos" type="number" name="attitude" value="{{$evaluation->attitude}}">
             <br>
-            <label>Participación:</label>
-            <input class="campos" type="number" name="participation" value="{{$evaluation->participation}}">
+            <label>Dinámica de trabajo:</label>
+            <input class="campos" type="number" name="workflow" value="{{$evaluation->workflow}}">
             <br>
-            <label>Aprendizaje:</label>
+            <label>Aprendizajes conseguidos:</label>
             <input class="campos" type="number" name="learning" value="{{$evaluation->learning}}">
             <br>
-            <label>Colaboración:</label>
-            <input class="campos" type="number" name="collaboration" value="{{$evaluation->collaboration}}">
+            <label>Ámbito:</label>
+            <input class="campos" type="text" name="scope" value="{{$evaluation->scope}}">
             <br>
-            <label>Estado de validación:</label>
-            <input class="campos" type="number" name="review_status" value="{{$evaluation->review_status}}">
+            <label>completado?:</label>
+            <input class="campos" type="boolean" name="filled" value="{{$evaluation->filled}}">
             <br>
             <input class="campos" type="hidden" name="user_id" value="{{$evaluation->user_id}}">
             <input type="submit" class="boton" value="Enviar">

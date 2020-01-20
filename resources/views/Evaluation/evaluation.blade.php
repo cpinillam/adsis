@@ -7,8 +7,11 @@
                 <th>Alumno</th>
                 <th>Idioma</th>
                 <th>Actitud</th>
-                <th>Participación</th>
-                <th>Aprendizaje</th>
+                <th>Aprendizajes conseguidos</th>
+                <th>Dinámica de trabajo</th>
+                <th>Ámbito</th>
+                <th>Id Curso</th>
+                <th>Meteo</th>
                 <th>Estado</th>
                 <th>Fecha actualización</th>
             </tr>
@@ -18,9 +21,12 @@
                     <td>{{$evaluation->user_id}}</td>
                     <td>{{$evaluation->language}}</td>
                     <td>{{$evaluation->attitude}}</td>
-                    <td>{{$evaluation->participation}}</td>
                     <td>{{$evaluation->learning}}</td>
-                    <td>{{$evaluation->review_status}}</td>
+                    <td>{{$evaluation->workflow}}</td>
+                    <td>{{$evaluation->scope}}</td>
+                    <td>{{$evaluation->course_id}}</td>
+                    <td>{{$evaluation->meteo}}</td>
+                    <td>{{$evaluation->filled}}</td>
                     <td>{{$evaluation->updated_at}}</td>                   
                     <td>
                         <form method="GET" action="/evaluation/{{$evaluation->id}}/edit">
