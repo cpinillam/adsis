@@ -33,13 +33,6 @@
                             <input class="botonLista" type="submit" value="Editar">
                         </form> 
                     </td>
-                    {{-- <td>
-                        <form action="/kata/{{$kata->id}}" method="post">
-                            @csrf
-                            @method('DELETE')
-                        <button class="botonLista" type="submit">Delete</button>
-                        </form>
-                    </td> --}}
                 </tr>
             @endforeach
         </table>
