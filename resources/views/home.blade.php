@@ -64,6 +64,8 @@
 
                 <div class="card-body">
 
+                        <a href="/courseCatalog">Catalogo de cursos</a>
+                        <br>
                         <a href="/evaluation">Lista de Evaluaciones</a>
                         <br>
                         <a href="/evaluation/create">Crear Evaluación</a>

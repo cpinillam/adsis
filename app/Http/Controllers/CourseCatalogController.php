@@ -7,21 +7,15 @@ use Illuminate\Http\Request;
 
 class CourseCatalogController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
-    {
-        //
+    { {
+            $courseCatalog = CourseCatalog::all();
+            return view('/Course.catalog', ['coursecatalog' => $courseCatalog]);
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         //
@@ -29,10 +23,7 @@ class CourseCatalogController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    */
     public function store(Request $request)
     {
         //
@@ -40,9 +31,6 @@ class CourseCatalogController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\CourseCatalog  $courseCatalog
-     * @return \Illuminate\Http\Response
      */
     public function show(CourseCatalog $courseCatalog)
     {
@@ -51,10 +39,7 @@ class CourseCatalogController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \App\CourseCatalog  $courseCatalog
-     * @return \Illuminate\Http\Response
-     */
+    */
     public function edit(CourseCatalog $courseCatalog)
     {
         //
@@ -62,22 +47,13 @@ class CourseCatalogController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\CourseCatalog  $courseCatalog
-     * @return \Illuminate\Http\Response
-     */
+    */
     public function update(Request $request, CourseCatalog $courseCatalog)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\CourseCatalog  $courseCatalog
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy(CourseCatalog $courseCatalog)
     {
         //
