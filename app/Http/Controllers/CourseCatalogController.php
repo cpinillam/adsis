@@ -12,7 +12,6 @@ class CourseCatalogController extends Controller
     { 
         $courseCatalog = CourseCatalog::all();
         return view('/Course.catalog', ['coursecatalog' => $courseCatalog]);
-        
     }
 
     public function create()

@@ -64,13 +64,15 @@
 
                 <div class="card-body">
 
+                        <a href="/course">Relación Cursos-Alumn@s</a>
+                        <br>
                         <a href="/courseCatalog">Catalogo de cursos</a>
                         <br>
                         <a href="/evaluation">Lista de Evaluaciones</a>
                         <br>
                         <a href="/evaluation/create">Crear Evaluación</a>
                         <br>
-                        <a href="/evaluationsByUser">Evaluaciones por alumno</a>
+                        <a href="/evaluationsByUser">Evaluaciones por alumn@</a>
                         <br>
                         <a href="/attendance">Lista de Asistencias</a>
                         <br>

@@ -4,11 +4,11 @@
         <h1>Catálogo de Cursos</h1>
         <table> 
             <tr>
-                <th>Curso</th>
-                <th>Nombre</th>
-                <th>Fecha inicio</th>
-                <th>Fecha fin</th>
-                <th>Duración (semanas)</th>
+                <th>Identificador</th>
+                <th>Nombre del curso</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de fin</th>
+                <th>Duración en semanas</th>
             </tr>
             @foreach ($coursecatalog as $coursecatalog)
                 <tr>

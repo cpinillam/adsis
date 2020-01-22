@@ -14,7 +14,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        $course = Course::all();
+        return view('/Course.course', ['course' => $course]);
     }
 
     
@@ -24,11 +25,7 @@ class CourseController extends Controller
     }
 
     
-   /*  public function store(Request $request)
-    {
-        Course::create($request->all());
-    } */
-
+   
     public function store(Request $request)
     {
         $data = $request->toArray();
