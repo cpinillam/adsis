@@ -9,51 +9,43 @@ class CourseCatalogController extends Controller
 {
     
     public function index()
-    { {
-            $courseCatalog = CourseCatalog::all();
-            return view('/Course.catalog', ['coursecatalog' => $courseCatalog]);
-        }
+    { 
+        $courseCatalog = CourseCatalog::all();
+        return view('/Course.catalog', ['coursecatalog' => $courseCatalog]);
+        
     }
 
-    
     public function create()
     {
-        //
+        $courseCatalog = new CourseCatalog();
+        return view('/Course.create_catalogcourse', ['coursecatalog' => $courseCatalog]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-    */
     public function store(Request $request)
     {
-        //
+        CourseCatalog::create($request->all());
+        return redirect('/courseCatalog');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(CourseCatalog $courseCatalog)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-    */
     public function edit(CourseCatalog $courseCatalog)
     {
-        //
+        return view('/Course.update_catalogcourse',  ['coursecatalog' => $courseCatalog]);
     }
 
-    /**
-     * Update the specified resource in storage.
-    */
     public function update(Request $request, CourseCatalog $courseCatalog)
     {
-        //
+        $data = $request->all();
+        $courseCatalog = CourseCatalog::find($courseCatalog->id);
+        $courseCatalog->fill($data);
+        $courseCatalog->save();
+        return redirect('/courseCatalog');
     }
 
-    
     public function destroy(CourseCatalog $courseCatalog)
     {
         //

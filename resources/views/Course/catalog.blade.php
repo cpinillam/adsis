@@ -7,6 +7,7 @@
                 <th>Curso</th>
                 <th>Nombre</th>
                 <th>Fecha inicio</th>
+                <th>Fecha fin</th>
                 <th>Duración (semanas)</th>
             </tr>
             @foreach ($coursecatalog as $coursecatalog)
@@ -15,6 +16,7 @@
                     <td>{{$coursecatalog->id}}</td>
                     <td>{{$coursecatalog->name}}</td>
                     <td>{{$coursecatalog->start_date}}</td>
+                    <td>{{$coursecatalog->end_date}}</td>
                     <td>{{$coursecatalog->weeks}}</td>          
                     <td>
                         <form method="GET" action="/courseCatalog/{{$coursecatalog->id}}/edit">
@@ -24,6 +26,11 @@
                 </tr>
             @endforeach
         </table>
+    <div>
+    </div style="margin-left: 50px">
+        <form method="GET" action="/courseCatalog/create">
+            <input class="botonLista" type="submit" value="Añadir Curso">
+        </form> 
     </div>
 
 @endsection
