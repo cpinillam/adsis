@@ -21,15 +21,11 @@ class Event extends Model
            'event_type' => $this->eventTypeCourse,
            'event_date' => $course->CourseCatalog->start_date,
         ]);
-
-
     }
 
     public  function createEventTypeEvaluation($evaluation)
     {
-
         Event::create([
-
             'user_id' =>$evaluation['user_id'],
             'event_id' => $evaluation['id'],
             'event_type' => $this->eventTypeEvaluation,

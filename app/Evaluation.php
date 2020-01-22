@@ -11,7 +11,6 @@ class Evaluation extends Model
 {
     protected $fillable = ['language', 'attitude', 'workflow', 'learning', 'meteo', 'scope', 'course_id', 'user_id', 'filled'];
 
-
     public function GetAllEvaluations(){
         $allEvaluations = Evaluation::all();
         return $allEvaluations;
@@ -21,7 +20,6 @@ class Evaluation extends Model
     {
         $Evaluation = $this->GetAllEvaluations()->where('user_id', $user_id);
         return $Evaluation;
-
     }
 
     public function GetEvaluationData($evaluationId)
@@ -30,7 +28,6 @@ class Evaluation extends Model
         return $evaluationData;
     }
 
-
     public function GetEvaluationUserId($evaluationId)
     {
         $evaluation = $this->GetEvaluationData($evaluationId);
@@ -38,14 +35,10 @@ class Evaluation extends Model
         return $evaluationUserId;
     }
 
-
-
-
     public function user()
     {
         return $this->hasOne(User::class);
     }
-
 
     protected function EvaluationsByUser($user)
     {

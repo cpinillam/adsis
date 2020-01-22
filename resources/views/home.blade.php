@@ -50,7 +50,6 @@
                                     <div style="max-width: 5px; background-color: #b5b0b0; height: 40px; display: block; position: relative; left: 50%;"></div>
                                     <div style="max-width: 20px; height: 20px; display: block; background-color: #b5b0b0; position: relative; left: 50%; transform: translate(-7.5px, -50%); border-radius: 50%;"></div>
                                 </li>
-
                         </ul>
                     </div>
                 </div>
@@ -59,14 +58,9 @@
         </div>
     </div>
 
-
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-
-
-
-
 
                 <div class="card-body">
 
