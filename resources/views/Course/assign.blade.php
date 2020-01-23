@@ -30,7 +30,7 @@
                     @endforeach
                   </select>
                 </td>
-                {{-- <td> <input type="hidden" name="{{$user->id}}_timestamps" value="{{$attendance->timestamps}}"></td> --}}
+                <td> <input type="hidden" name="{{$user->id}}_user" value="{{$user->id}}"></td>
             <tr>
             @endforeach
         </table>

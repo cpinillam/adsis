@@ -13,6 +13,10 @@ class CourseController extends Controller
     public function index()
     {
         $course = Course::all();
+        $user= new User();
+        $user= $user->GetAllUsers()->where('rol', 2); //Student role
+        //$user = $user->toArray();
+        
         return view('/Course.course', ['course' => $course]);
     }
 
@@ -30,9 +34,8 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $data = $request->toArray();
-        dd($data);
-        $token = array_shift($data);
-        Course::storeMultiple($data);
+        $token = array_shift($data); //not used
+        Course::assignMultipleUsers($data);
         return redirect('/course');
     }
     
