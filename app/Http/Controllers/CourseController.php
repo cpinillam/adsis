@@ -30,6 +30,7 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $data = $request->toArray();
+        dd($data);
         $token = array_shift($data);
         Course::storeMultiple($data);
         return redirect('/course');

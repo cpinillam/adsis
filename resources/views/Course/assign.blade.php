@@ -25,8 +25,8 @@
                 </td>
                 <td>
                   <select name="{{$user->id}}_group" class="form-control">
-                    @foreach(['1','2'] as $order)
-                      <option @if($order) selected @endif value="{{ $user->group }}">{{ ucfirst($order) }}</option>
+                    @foreach([1,2] as $order)
+                      <option @if($order) selected @endif value="{{ $order }}">{{ $order }}</option>
                     @endforeach
                   </select>
                 </td>
