@@ -64,6 +64,8 @@
 
                 <div class="card-body">
 
+                        <a href="/course/create">Asignar Alum@s a Cursos</a>
+                        <br>
                         <a href="/course">Relación Cursos-Alumn@s</a>
                         <br>
                         <a href="/courseCatalog">Catalogo de cursos</a>

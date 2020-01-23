@@ -13,4 +13,10 @@ class CourseCatalog extends Model
     {
         return $this->hasMany('App\Course');
     }
+
+    public function GetAllCatalog()
+    {
+        $allCourses = CourseCatalog::all();
+        return $allCourses;
+    }
 }

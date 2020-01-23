@@ -9,7 +9,7 @@
         @csrf
         <table>
             <tr>
-                <th>Nombre</th>
+                <th>Alumn@</th>
                 <th>Grupo</th>
                 <th>Curso</th>
             </tr>
@@ -25,8 +25,8 @@
                 </td>
                 <td>
                   <select name="{{$user->id}}_course" class="form-control">
-                   @foreach($coursecatalog as $course)
-                      <option value="{{ $course->name }}">{{ $course->name }}</option>
+                   @foreach($coursecatalog as $coursecatalog)
+                      <option value="{{ $coursecatalog->name }}">{{ $coursecatalog->name }}</option>
                    @endforeach
                   </select>
                 </td>
