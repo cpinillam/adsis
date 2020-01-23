@@ -4,9 +4,9 @@
         <h1>Relación de Alumn@s y Cursos </h1>
         <table> 
             <tr>
-                <th>Id Curso</th>
-                <th>Id Catálogo</th>
-                <th>Id Usurario</th>
+                <th>Identificador</th>
+                <th>Curso del catálogo</th>
+                <th>Alumno</th>
             </tr>
             @foreach ($course as $course)
                 <tr>

@@ -19,11 +19,12 @@ class CourseController extends Controller
     public function create()
     {
         $courseCatalog= new CourseCatalog();
+        $course = new Course();
         $courseCatalog = $courseCatalog->GetAllCatalog();
         $user = new User;
         $user = $user->GetAllUsers()->where('rol', 2); //Student role
         $tutor = Auth::user()->name;
-        return view('/Course.assign', ['user' => $user, 'coursecatalog' => $courseCatalog, 'tutor' => $tutor]);
+        return view('/Course.assign', ['user' => $user, 'coursecatalog' => $courseCatalog, 'course' => $course, 'tutor' => $tutor]);
     }
 
     public function store(Request $request)
@@ -31,7 +32,7 @@ class CourseController extends Controller
         $data = $request->toArray();
         $token = array_shift($data);
         Course::storeMultiple($data);
-        return redirect('/attendance');
+        return redirect('/course');
     }
     
     public function show(Course $course)
