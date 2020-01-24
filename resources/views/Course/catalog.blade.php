@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div id="content-list" style="margin-left: 50px">
-        <h1>Catálogo de Cursos</h1>
+        <h1>Catálogo de cursos</h1>
         <table> 
             <tr>
                 <th>Identificador</th>

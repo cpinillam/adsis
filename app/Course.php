@@ -39,10 +39,9 @@ class Course extends Model
             $user->id = array_shift($data);
             $course->user_id = $user->id;
             $course= $course->toArray();
-            //dd($course);
+            $group=intval($user->group);
             Course::create($course);
-
-            // User::update ($user);
+            $user->setGroup($group, $user->id);
         }
         return true;
     }
