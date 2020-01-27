@@ -31,9 +31,9 @@
 
                             @foreach($sortedEvents as $event)
                                 {{ csrf_field() }}
-                            <li class="nav-item justify-content-center">
+                            <li class="nav-item">
                                 <a class="nav-link show"  role="tab" data-toggle="tab" aria-selected="true">
-                                     <i class="material-icons">assignment</i> Autoevaluación <br>{{$event->event_date}}
+                                     <i class="material-icons">assignment</i> Evaluación <br>{{$event->event_scope}} {{$event->event_date}}
                                 </a>
 
                             </li>

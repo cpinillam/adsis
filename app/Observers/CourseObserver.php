@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Course;
+use App\Evaluation;
 use App\Event;
 
 class CourseObserver
@@ -10,8 +11,12 @@ class CourseObserver
    
     public function created(Course $course)
     {
-        $newEvent = new Event();
-        $newEvent->createEventTypeCourse($course);
+        $newEventC = new Event();
+        $newEventC->createEventTypeCourse($course);
+        /* $newEventEvaluationT = new Event();
+        $newEventEvaluationT->createEventTypeEvaluationT($evaluation);
+        $newEventEvaluationP = new Event();
+        $newEventEvaluationP->createEventTypeEvaluationP($evaluation); */
     }
 
     

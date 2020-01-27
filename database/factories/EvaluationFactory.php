@@ -14,7 +14,7 @@ $factory->define(Evaluation::class, function (Faker $faker) {
         'meteo' => $faker->numberBetween($min = 1, $max = 10),
         'course_id' => $faker->numberBetween($min = 1, $max = 4),
         'scope' => $faker->randomElement($array = array('Teoría', 'Práctica')),
-        'user_id' => $faker->numberBetween($min = 1, $max = 9),
+        'user_id' => $faker->numberBetween($min = 1, $max = 11),
         'filled' => false,
         'created_at' => $faker->unique()->dateTimeThisYear('now', null),
     ];

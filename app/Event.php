@@ -12,7 +12,7 @@ class Event extends Model
     public $eventEvaluationScopeT ='Teoría';
     public $eventEvaluationScopeP = 'Práctica';
 
-    protected  $fillable = ['user_id', 'event_id', 'event_type', 'event_date'];
+    protected  $fillable = ['user_id', 'event_id', 'event_type', 'event_date', 'event_scope'];
 
     public function createEventTypeCourse($course)
     {
@@ -21,6 +21,7 @@ class Event extends Model
            'event_id' => $course['id_course'],
            'event_type' => $this->eventTypeCourse,
            'event_date' => $course->CourseCatalog->start_date,
+           'event_scope' => $course->CourseCatalog->name
         ]);
     }
 
