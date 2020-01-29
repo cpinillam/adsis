@@ -33,7 +33,7 @@
             @endforeach
         </table>
         <br>
-        <a href="/home">Home</a>
+        
     </div>
 @endsection
 

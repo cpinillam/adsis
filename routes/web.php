@@ -19,6 +19,7 @@ Route::get('register', 'Auth\RegisterController@showRegistrationForm');
 Auth::routes();
 
 Route::get ('/home', 'DashboardController@getAllEvents');
+Route::get('/tutor', 'DashboardController@tutorView');
 
 Route::resource ('evaluation', 'EvaluationController');
 Route::get ('evaluationsByUser', 'EvaluationController@getEvaluationsByUser');

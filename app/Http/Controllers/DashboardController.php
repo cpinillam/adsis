@@ -31,6 +31,12 @@ class DashboardController extends Controller
         return view('home',['user'=> $user, 'sortedEvents'=> $sortedEvents]);
     }
 
+    public function tutorView()
+    {
+        $user = Auth::user();
+        return view('/users.tutor', ['user' => $user]);
+    }
+
     public  function getEvaluations($userId)
     {
         $evaluations = new Evaluation();

@@ -28,21 +28,21 @@
                     <td>{{$evaluation->meteo}}</td>
                     <td>{{$evaluation->filled}}</td>
                     <td>{{$evaluation->updated_at}}</td>                   
-                    <td>
+                    {{-- <td>
                         <form method="GET" action="/evaluation/{{$evaluation->id}}/edit">
                             <input class="botonLista" type="submit" value="Editar">
                         </form> 
-                    </td>
+                    </td> --}}
                 </tr>
             @endforeach
         </table>
         
-        <div class="botonCrear">
+      {{--   <div class="botonCrear">
                 <br>
                 <form method="get" action="/evaluation/create">
                             <input class="botonLista" type="submit" value="Crear Evaluacion">
                     <a href="/home">Home</a>
-        </div>
+        </div> --}}
     </div>
 
 @endsection

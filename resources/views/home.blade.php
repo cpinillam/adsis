@@ -32,10 +32,10 @@
                             @foreach($sortedEvents as $event)
                                 {{ csrf_field() }}
                             <li class="nav-item">
-                                <a class="nav-link show"  role="tab" data-toggle="tab" aria-selected="true">
-                                     <i class="material-icons">assignment</i> Evaluación <br>{{$event->event_scope}} {{$event->event_date}}
+                                <a class="nav-link show" role="tab" data-toggle="tab" aria-selected="true">
+                                     <i class="material-icons">assignment</i> Evaluación <br>{{$event->event_scope}} {{$event->event_date}} 
+                                     <a class="nav-link show" href="/evaluation/create">Completar</a>
                                 </a>
-
                             </li>
 
                             <li class="nav-item justify-content-center">
@@ -63,26 +63,10 @@
             <div class="card">
 
                 <div class="card-body">
-
-                        <a href="/course/create">Asignar Alum@s a Cursos</a>
+                    <br>
+                        <a href="/evaluation">Evaluaciones completadas</a>
                         <br>
-                        <a href="/course">Relación Alumn@s y Cursos</a>
-                        <br>
-                        <a href="/courseCatalog">Catalogo de cursos</a>
-                        <br>
-                        <a href="/evaluation">Lista de Evaluaciones</a>
-                        <br>
-                        <a href="/evaluation/create">Crear Evaluación</a>
-                        <br>
-                        <a href="/evaluationsByUser">Evaluaciones por alumn@</a>
-                        <br>
-                        <a href="/attendance">Lista de Asistencias</a>
-                        <br>
-                        <a href="/attendance/create">Crear Hoja Asistencia</a>
-                        <br>
-                        <a href="filter">Filtrar Asistencias</a>
-                        <br>
-                        <a href="attendanceIndicators">Indicadores Evaluación</a>
+                        <a href="attendanceIndicators">Indicadores de evaluación</a>
                 </div>
             </div>
         </div>
