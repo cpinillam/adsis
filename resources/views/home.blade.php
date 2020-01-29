@@ -9,7 +9,7 @@
                 <div class="col-md-6 ml-auto mr-auto">
                     <div class="profile">
                         <div class="avatar">
-                            <img src="./img/faces/kendall.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+                            <img src="./img/faces/christian.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
                         </div>
                         <div class="name">
                             @if (session('status'))

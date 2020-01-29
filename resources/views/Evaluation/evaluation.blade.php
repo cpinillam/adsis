@@ -37,12 +37,12 @@
             @endforeach
         </table>
         
-      {{--   <div class="botonCrear">
+        <div class="botonCrear">
                 <br>
-                <form method="get" action="/evaluation/create">
-                            <input class="botonLista" type="submit" value="Crear Evaluacion">
+                {{-- <form method="get" action="/evaluation/create">
+                            <input class="botonLista" type="submit" value="Crear Evaluacion"> --}}
                     <a href="/home">Home</a>
-        </div> --}}
+        </div>
     </div>
 
 @endsection

@@ -17,7 +17,7 @@
                                     {{ session('status') }}
                                 </div>
                             @endif
-                            <h3 class="title">{{ Auth::user()->name }}</h3>
+                            <h3 class="title">Tutor {{-- {{ Auth::user()->name }} --}}</h3>
 
                         </div>
                     </div>
