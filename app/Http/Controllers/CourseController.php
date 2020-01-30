@@ -3,81 +3,57 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\User;
+use App\CourseCatalog;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $course = Course::all();
+        $user= new User();
+        $user= $user->GetAllUsers()->where('rol', 2); //Student role
+        //$user = $user->toArray();
+        
+        return view('/Course.course', ['course' => $course]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $courseCatalog= new CourseCatalog();
+        $course = new Course();
+        $courseCatalog = $courseCatalog->GetAllCatalog();
+        $user = new User;
+        $user = $user->GetAllUsers()->where('rol', 2); //Student role
+        $tutor = Auth::user()->name;
+        return view('/Course.assign', ['user' => $user, 'coursecatalog' => $courseCatalog, 'course' => $course, 'tutor' => $tutor]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        Course::create($request->all());
+        $data = $request->toArray();
+        $token = array_shift($data); //not used
+        Course::assignMultipleUsers($data);
+        return redirect('/course');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Course  $course
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show(Course $course)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Course  $course
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Course $course)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Course  $course
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Course $course)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Course  $course
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Course $course)
     {
         //

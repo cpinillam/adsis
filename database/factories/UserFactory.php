@@ -24,7 +24,7 @@ $factory->define(User::class, function (Faker $faker) {
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password,
         'remember_token' => Str::random(10),
         'document' => '55555555w',
-        'rol' => $faker->numberBetween(1, 2),
+        'rol' => 2,
         'group' => $faker->numberBetween(1, 2),
         'description' => $faker->text(50)
     ];

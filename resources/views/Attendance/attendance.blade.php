@@ -35,7 +35,7 @@
                 <br>
                 <form method="get" action="/attendance/create">
                             <input class="botonLista" type="submit" value="Crear Hoja Asistencia">
-                    <a href="/home">Home</a>
+                    {{-- <a href="/home">Home</a> --}}
         </div>
     </div>
 

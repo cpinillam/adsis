@@ -9,31 +9,41 @@ class Event extends Model
 {
     public $eventTypeCourse = 1;
     public $eventTypeEvaluation = 2;
+    public $eventEvaluationScopeT ='Teoría';
+    public $eventEvaluationScopeP = 'Práctica';
 
-
-    protected  $fillable = ['user_id', 'event_id', 'event_type', 'event_date'];
+    protected  $fillable = ['user_id', 'event_id', 'event_type', 'event_date', 'event_scope'];
 
     public function createEventTypeCourse($course)
     {
         Event::create([
-            'user_id' => $course['user_id'],
+           'user_id' => $course['user_id'],
            'event_id' => $course['id_course'],
            'event_type' => $this->eventTypeCourse,
            'event_date' => $course->CourseCatalog->start_date,
+           'event_scope' => $course->CourseCatalog->name
         ]);
-
-
     }
 
-    public  function createEventTypeEvaluation($evaluation)
+    public  function createEventTypeEvaluationTheory($evaluation)
     {
-
         Event::create([
-
-            'user_id' =>$evaluation['user_id'],
+            'user_id' => $evaluation['user_id'],
             'event_id' => $evaluation['id'],
             'event_type' => $this->eventTypeEvaluation,
             'event_date' => $evaluation->created_at,
+            'event_scope' => $this->eventEvaluationScopeT
+        ]);
+    }
+
+    public  function createEventTypeEvaluationPractice($evaluation)
+    {
+        Event::create([
+            'user_id' => $evaluation['user_id'],
+            'event_id' => $evaluation['id'],
+            'event_type' => $this->eventTypeEvaluation,
+            'event_date' => $evaluation->created_at,
+            'event_scope' => $this->eventEvaluationScopeP
         ]);
     }
 
@@ -43,4 +53,5 @@ class Event extends Model
 
         return $eventsByUser;
     }
+
 }

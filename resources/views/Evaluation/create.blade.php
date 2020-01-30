@@ -1,13 +1,13 @@
 @extends('layouts.twolevels')
 @section('content')
 
-<h3 class="title pt-4 pl-4 pr-4 mb-0">Autoevaluación</h3>
-<p  class="pl-4 pr-4"> A valorar de 1 a 10 las siguientes competencias</p>
-@if ($errors->any())
-<p>Valorar todos los campos</p>
-@endif
+<div style="margin-left: 20px">
+    <h3 class="title pt-4 pr-4 mb-0">Autoevaluación</h3>
+    <p  class="pr-4"> A valorar de 1 a 10 las siguientes competencias</p>
+    @if ($errors->any())
+    <p>Valorar todos los campos</p>
+    @endif
 
-<div>
     <form id="create" class='formular' action='/evaluation' method='POST'>
         @csrf
 
@@ -42,7 +42,7 @@
                     <div class="col-md-8 col-sm-12 d-flex flex-column justify-content-center p-0">
 
                         <div class="row d-flex">
-                            <h5 class="col-sm-7 col-md-8 col-lg-12 d-flex align-items-center text-center"> Idioma</h5>
+                            <h5 class="col-sm-7 col-md-8 col-lg-12 d-flex align-items-center text-center"> Conocimiento del Idioma</h5>
 
                             <div class="col-sm-5 col-md-4 d-flex d-lg-none pl-0">
                                 <h3 class="title number w-25 d-flex align-items-center justify-content-center">1</h3>
@@ -86,29 +86,7 @@
                     <div class="col-md-8 col-sm-12 d-flex flex-column justify-content-center p-0">
 
                         <div class="row d-flex">
-                            <h5 class="col-sm-7 col-md-8 col-lg-12 d-flex align-items-center text-center"> Participación</h5>
-
-                            <div class="col-sm-5 col-md-4 d-flex d-lg-none pl-0">
-                                <h3 class="title number w-25 d-flex align-items-center justify-content-center">1</h3>
-                                <div class="face w-75 d-flex align-items-center justify-content-center"><img src="../img/svg/face-1.svg"></div>
-                            </div>
-                        </div>
-
-                        <input class="rango" type="range" name="participation" value="{{$evaluation->participation}}" min="1" max="10" step="1">
-                    </div>
-                    <div class="col-md-4  col-sm-12 d-flex  d-sm-none d-md-none">
-                        <h3 class="title number w-25 d-flex align-items-center justify-content-center">0</h3>
-                        <div class="face w-75 d-flex align-items-center justify-content-center"><img src="../img/svg/face-1.svg"></div>
-                    </div>
-                </div>
-                <!-- item end -->
-
-                <!-- item start -->
-                <div class="slider-item d-flex flex-wrap  w-100">
-                    <div class="col-md-8 col-sm-12 d-flex flex-column justify-content-center p-0">
-
-                        <div class="row d-flex">
-                            <h5 class="col-sm-7 col-md-8 col-lg-12 d-flex align-items-center text-center"> Aprendizaje</h5>
+                            <h5 class="col-sm-7 col-md-8 col-lg-12 d-flex align-items-center text-center"> Aprendizajes conseguidos</h5>
 
                             <div class="col-sm-5 col-md-4 d-flex d-lg-none pl-0">
                                 <h3 class="title number w-25 d-flex align-items-center justify-content-center">1</h3>
@@ -130,7 +108,7 @@
                     <div class="col-md-8 col-sm-12 d-flex flex-column justify-content-center p-0">
 
                         <div class="row d-flex">
-                            <h5 class="col-sm-7 col-md-8 col-lg-12 d-flex align-items-center text-center"> Colaboración</h5>
+                            <h5 class="col-sm-7 col-md-8 col-lg-12 d-flex align-items-center text-center"> Dinámica de trabajo</h5>
 
                             <div class="col-sm-5 col-md-4 d-flex d-lg-none pl-0">
                                 <h3 class="title number w-25 d-flex align-items-center justify-content-center">1</h3>
@@ -138,7 +116,7 @@
                             </div>
                         </div>
 
-                        <input class="rango" type="range" name="collaboration" value="{{$evaluation->collaboration}}" min="1" max="10" step="1">
+                        <input class="rango" type="range" name="workflow" value="{{$evaluation->workflow}}" min="1" max="10" step="1">
                     </div>
                     <div class="col-md-4  col-sm-12 d-flex  d-sm-none d-md-none">
                         <h3 class="title number w-25 d-flex align-items-center justify-content-center">0</h3>
@@ -146,24 +124,21 @@
                     </div>
                 </div>
                 <!-- item end -->
+
+                <!-- item start -->
+
+                <!-- item end -->
                 <input class="campos" type="hidden" name="user_id" value="{{$evaluation->user_id}}">
+                <input class="campos" type="hidden" name="course_id" value=1> {{-- //TO DO --}}
+                <input class="campos" type="hidden" name="scope" value="Teoría">
+                <input class="campos" type="hidden" name="filled" value="1">
                 <input type="submit" class="btn btn-round btn-danger  mt-5 mb-5 w-100" value="Enviar">
             </div>
-
-
-
-
-
-
-
 
 
     </form>
 </div>
     <script type="application/javascript">
-
-
-
 
         const range = document.getElementsByClassName('rango');
         const emoji1 = '<img src="../img/svg/face-1.svg">';

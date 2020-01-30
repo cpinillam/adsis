@@ -45,7 +45,7 @@
 <nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg bg-light" id="sectionsNav">
     <div class="container">
         <div class="navbar-translate">
-            <a class="navbar-brand" href="https://demos.creative-tim.com/material-kit/index.html">
+            <a class="navbar-brand" href="http://127.0.0.1:8000/home">
                 <img src="../img/logo-adsis-color.png" style="max-width: 50px; width: 100%;"> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="sr-only">Toggle navigation</span>

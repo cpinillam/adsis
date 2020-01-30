@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
+use App\Review;
 use Illuminate\Http\Request;
 
-class EventController extends Controller
+class ReviewController extends Controller
 {
    
     public function index()
@@ -19,31 +19,32 @@ class EventController extends Controller
         //
     }
 
-    
+   
     public function store(Request $request)
     {
         //
     }
 
    
-    public function show(Event $event)
+    public function show(Review $review)
     {
         //
     }
 
     
-    public function edit(Event $event)
+    public function edit(Review $review)
+    {
+        //
+    }
+
+    
+    public function update(Request $request, Review $review)
     {
         //
     }
 
    
-    public function update(Request $request, Event $event)
-    {
-        //
-    }
-
-    public function destroy(Event $event)
+    public function destroy(Review $review)
     {
         //
     }

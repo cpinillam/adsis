@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEvaluationsTable extends Migration
+class CreateReviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,14 @@ class CreateEvaluationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('evaluations', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('language')->nullable();
             $table->integer('attitude')->nullable();
             $table->integer('workflow')->nullable();
             $table->integer('learning')->nullable();
             $table->integer('meteo')->nullable();
-            $table->string('scope')->nullable();
-            $table->integer('course_id')->unsigned();
-            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('evaluation_id')->unsigned();
             $table->boolean('filled')->default(false);
             $table->timestamps();
         });
@@ -35,6 +33,6 @@ class CreateEvaluationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('self_evaluations');
+        Schema::dropIfExists('reviews');
     }
 }
