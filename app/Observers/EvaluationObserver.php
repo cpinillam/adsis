@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Evaluation;
 use App\Event;
+use App\Review;
 
 class EvaluationObserver
 {
@@ -15,6 +16,9 @@ class EvaluationObserver
        $newEventT->createEventTypeEvaluationTheory($evaluation);
        $newEventP = new Event();
        $newEventP->createEventTypeEvaluationPractice($evaluation);
+       $reviewT = new Review();
+
+       
 
     }
 
