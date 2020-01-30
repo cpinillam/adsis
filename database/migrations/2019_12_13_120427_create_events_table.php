@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->bigInteger('event_id')->unsigned();
             $table->bigInteger('event_type');
             $table->date('event_date');
+            $table->string('event_scope');
             $table->timestamps();
         });
     }

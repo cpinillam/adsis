@@ -3,59 +3,41 @@
 namespace App\Observers;
 
 use App\Course;
+use App\Evaluation;
+use App\Event;
 
 class CourseObserver
 {
-    /**
-     * Handle the course "created" event.
-     *
-     * @param  \App\Course  $course
-     * @return void
-     */
+   
     public function created(Course $course)
     {
-        //
+        $newEventC = new Event();
+        $newEventC->createEventTypeCourse($course);
+        /* $newEventEvaluationT = new Event();
+        $newEventEvaluationT->createEventTypeEvaluationT($evaluation);
+        $newEventEvaluationP = new Event();
+        $newEventEvaluationP->createEventTypeEvaluationP($evaluation); */
     }
 
-    /**
-     * Handle the course "updated" event.
-     *
-     * @param  \App\Course  $course
-     * @return void
-     */
+    
     public function updated(Course $course)
     {
         //
     }
 
-    /**
-     * Handle the course "deleted" event.
-     *
-     * @param  \App\Course  $course
-     * @return void
-     */
+   
     public function deleted(Course $course)
     {
         //
     }
 
-    /**
-     * Handle the course "restored" event.
-     *
-     * @param  \App\Course  $course
-     * @return void
-     */
+   
     public function restored(Course $course)
     {
         //
     }
 
-    /**
-     * Handle the course "force deleted" event.
-     *
-     * @param  \App\Course  $course
-     * @return void
-     */
+    
     public function forceDeleted(Course $course)
     {
         //

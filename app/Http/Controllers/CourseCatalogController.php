@@ -7,77 +7,44 @@ use Illuminate\Http\Request;
 
 class CourseCatalogController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
-    {
-        //
+    { 
+        $courseCatalog = CourseCatalog::all();
+        return view('/Course.catalog', ['coursecatalog' => $courseCatalog]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $courseCatalog = new CourseCatalog();
+        return view('/Course.create_catalogcourse', ['coursecatalog' => $courseCatalog]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        CourseCatalog::create($request->all());
+        return redirect('/courseCatalog');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\CourseCatalog  $courseCatalog
-     * @return \Illuminate\Http\Response
-     */
     public function show(CourseCatalog $courseCatalog)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\CourseCatalog  $courseCatalog
-     * @return \Illuminate\Http\Response
-     */
     public function edit(CourseCatalog $courseCatalog)
     {
-        //
+        return view('/Course.update_catalogcourse',  ['coursecatalog' => $courseCatalog]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\CourseCatalog  $courseCatalog
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, CourseCatalog $courseCatalog)
     {
-        //
+        $data = $request->all();
+        $courseCatalog = CourseCatalog::find($courseCatalog->id);
+        $courseCatalog->fill($data);
+        $courseCatalog->save();
+        return redirect('/courseCatalog');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\CourseCatalog  $courseCatalog
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(CourseCatalog $courseCatalog)
     {
         //
