@@ -54,6 +54,12 @@
                 </div>
             </div>
 
+            <div class="card">
+                <div class="card-body">
+                        <p>Lista de revisiones pendientes</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
