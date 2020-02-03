@@ -13,10 +13,7 @@ class CourseObserver
     {
         $newEventC = new Event();
         $newEventC->createEventTypeCourse($course);
-        /* $newEventEvaluationT = new Event();
-        $newEventEvaluationT->createEventTypeEvaluationT($evaluation);
-        $newEventEvaluationP = new Event();
-        $newEventEvaluationP->createEventTypeEvaluationP($evaluation); */
+
     }
 
     
