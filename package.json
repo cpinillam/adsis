@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "chai": "^4.2.0",
         "gulp": "^4.0.2",
         "nouislider": "^14.1.1"
     }
