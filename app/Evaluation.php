@@ -75,15 +75,15 @@ class Evaluation extends Model
 
     public function SetFirstCourseEvaluationTheory($course)
     {
-        $this->course_id = $course['course_id'];
+        $this->course_id = $course['id'];
         $this->user_id = $course['user_id'];
         $this->scope = $course->scopeTheory;
         return true;
     }
 
-    public function SetFirstCourseEvaluatioPractice($course)
+    public function SetFirstCourseEvaluationPractice($course)
     {
-        $this->course_id = $course['course_id'];
+        $this->course_id = $course['id'];
         $this->user_id = $course['user_id'];
         $this->scope = $course->scopePractice;
         return true;

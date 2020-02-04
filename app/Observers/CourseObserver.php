@@ -17,7 +17,6 @@ class CourseObserver
         $evaluationTheory->SetFirstCourseEvaluationTheory($course);
         $evaluationPractice = new Evaluation();
         $evaluationPractice->SetFirstCourseEvaluationPractice($course);
-
     }
     
     public function updated(Course $course)
