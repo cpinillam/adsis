@@ -8,6 +8,10 @@ use App\User;
 
 class Course extends Model
 {
+
+    public $scopeTheory = 'Teoría';
+    public $scopePractice = 'Práctica';
+
     protected $fillable = ['course_id_catalog', 'user_id'];
 
     public function GetAllCourses(){

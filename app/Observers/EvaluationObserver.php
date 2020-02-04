@@ -11,15 +11,8 @@ class EvaluationObserver
     
     public function created(Evaluation $evaluation)
     {
-
-       $newEventT = new Event();
-       $newEventT->createEventTypeEvaluationTheory($evaluation);
-       $newEventP = new Event();
-       $newEventP->createEventTypeEvaluationPractice($evaluation);
-       $reviewT = new Review();
-
-       
-
+       $review= new Review();
+       $review->create($evaluation);
     }
 
     

@@ -9,8 +9,6 @@ class Event extends Model
 {
     public $eventTypeCourse = 1;
     public $eventTypeEvaluation = 2;
-    public $eventEvaluationScopeT ='Teoría';
-    public $eventEvaluationScopeP = 'Práctica';
 
     protected  $fillable = ['user_id', 'event_id', 'event_type', 'event_date', 'event_scope'];
 
