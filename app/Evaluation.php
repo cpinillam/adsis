@@ -73,4 +73,19 @@ class Evaluation extends Model
         return $avgEvaluations;
     }
 
+    public function SetFirstCourseEvaluationTheory($course)
+    {
+        $this->course_id = $course['course_id'];
+        $this->user_id = $course['user_id'];
+        $this->scope = $course->scopeTheory;
+        return true;
+    }
+
+    public function SetFirstCourseEvaluatioPractice($course)
+    {
+        $this->course_id = $course['course_id'];
+        $this->user_id = $course['user_id'];
+        $this->scope = $course->scopePractice;
+        return true;
+    }
 }

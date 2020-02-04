@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Review;
+use App\Evaluation;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -14,9 +15,18 @@ class ReviewController extends Controller
     }
 
     
-    public function create()
+    public function create ($evaluation)
     {
-        //
+        $review = new Review();
+        $review::create([
+            'evaluation_id' => $evaluation['id'],
+            'language' => 0,
+            'attitude' => 0,
+            'workflow' => 0,
+            'learning' => 0,
+            'meteo' => 0,
+            'filled' => false
+        ]);
     }
 
    
