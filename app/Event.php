@@ -18,7 +18,7 @@ class Event extends Model
     {
         Event::create([
            'user_id' => $course['user_id'],
-           'event_id' => $course['id_course'],
+           'event_id' => $course['id'],
            'event_type' => $this->eventTypeCourse,
            'event_date' => $course->CourseCatalog->start_date,
            'event_scope' => $course->CourseCatalog->name

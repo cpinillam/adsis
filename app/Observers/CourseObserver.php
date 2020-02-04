@@ -13,6 +13,7 @@ class CourseObserver
     {
         $newEventC = new Event();
         $newEventC->createEventTypeCourse($course);
+        //dd($newEventC);
 
     }
 
