@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Course;
 use App\Evaluation;
+use App\Observers\CourseObserver;
 use App\User;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -32,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
 
         User::observe(UserObserver::class);
         Evaluation::observe(EvaluationObserver::class);
+        Course::observe(CourseObserver::class);
 
         Schema::defaultStringLength(191);
     }
