@@ -12,9 +12,8 @@ class ReviewController extends Controller
     public function index()
     {
         $review = Review::all();
-        //dd($review);
-        $evaluation = Evaluation::GetEvaluationsNotFilled();
-        return view('/Evaluation.review', ['reviews' => $review, 'evaluations'=>$evaluation]);
+        //$evaluation = Evaluation::GetEvaluationsNotFilled();
+        return view('/Review.review', ['reviews' => $review]);
     }
     
     public function create ($evaluation)
@@ -42,12 +41,16 @@ class ReviewController extends Controller
     
     public function edit(Review $review)
     {
-        //
+        return view('/Review.update', ['review' => $review]);
     }
     
     public function update(Request $request, Review $review)
     {
-        //
+        $data = $request->all();
+        $review = Review::find($review->id);
+        $review->fill($data);
+        $review->save();
+        return redirect('/review');
     }
 
    
