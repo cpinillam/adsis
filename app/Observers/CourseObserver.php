@@ -13,10 +13,12 @@ class CourseObserver
     {
         $eventCourse = new Event();
         $eventCourse->createEventTypeCourse($course);
-        $evaluationTheory = new Evaluation();
-        $evaluationTheory->SetFirstCourseEvaluationTheory($course);
-        $evaluationPractice = new Evaluation();
-        $evaluationPractice->SetFirstCourseEvaluationPractice($course);
+        $evaluationT= new Evaluation();
+        $scope = 'T'; 
+        $evaluationT->InitializeEvaluation($course, $scope);
+        $evaluationP = new Evaluation();
+        $scope = 'P'; 
+        $evaluationP->InitializeEvaluation($course, $scope); 
     }
     
     public function updated(Course $course)

@@ -38,8 +38,6 @@
                         <br>
                         <a href="/evaluation">Evaluaciones por alumn@</a>
                         <br>
-                        <a href="/evaluation/create">Crear Revisión</a>
-                        <br>
                 </div>
             </div>
 
