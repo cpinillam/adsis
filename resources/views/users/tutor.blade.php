@@ -56,7 +56,7 @@
 
             <div class="card">
                 <div class="card-body">
-                        <p>Lista de revisiones pendientes</p>
+                        <a href="/review">Lista de revisiones pendientes</a>
                 </div>
             </div>
 

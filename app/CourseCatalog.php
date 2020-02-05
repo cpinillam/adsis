@@ -9,9 +9,9 @@ class CourseCatalog extends Model
 {
     protected $fillable = ['name', 'start_date', 'end_date', 'weeks'];
     
-    public function Course()
+    public function course()
     {
-        return $this->hasMany('App\Course');
+        return $this->belongsToMany('App\Course');
     }
 
     public function GetAllCatalog()

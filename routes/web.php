@@ -33,3 +33,5 @@ Route::resource('course', 'CourseController');
 Route::get('filter', 'AttendanceController@getFilters');
 Route::post('filter', 'AttendanceController@applyFilters');
 Route::get('attendanceIndicators', 'AttendanceController@getUserAttendanceIndicators');
+
+Route::resource('review', 'ReviewController');
