@@ -11,8 +11,10 @@ class EvaluationObserver
     
     public function created(Evaluation $evaluation)
     {
-       $review= new Review();
-       $review->create($evaluation);
+       $evaluationArray =  (array) $evaluation;
+       $evaluationArray['evaluation_id'] = $evaluation->id;
+       unset($evaluationArray['id']);
+       Review::create($evaluationArray);
     }
 
     
