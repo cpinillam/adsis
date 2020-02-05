@@ -23,12 +23,16 @@ class Course extends Model
     {
         $Courses = $this->GetAllCourses()->where('user_id', $user_id);
         return $Courses;
-
     }
 
-    public function CourseCatalog()
+    public function courseCatalog()
     {
         return $this->belongsTo(CourseCatalog::class, 'course_id_catalog' );
+    }
+
+    public function evaluation()
+    {
+        return $this->hasMany('App\Evaluation');
     }
 
     public static function assignMultipleUsers($data)

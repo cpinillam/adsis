@@ -11,9 +11,11 @@ class ReviewController extends Controller
    
     public function index()
     {
-        //
+        $review = Review::all();
+        //dd($review);
+        $evaluation = Evaluation::GetEvaluationsNotFilled();
+        return view('/Evaluation.review', ['reviews' => $review, 'evaluations'=>$evaluation]);
     }
-
     
     public function create ($evaluation)
     {
@@ -27,25 +29,21 @@ class ReviewController extends Controller
             'filled' => false
         ]);
     }
-
    
     public function store(Request $request)
     {
         //
     }
-
    
     public function show(Review $review)
     {
         //
     }
-
     
     public function edit(Review $review)
     {
         //
     }
-
     
     public function update(Request $request, Review $review)
     {

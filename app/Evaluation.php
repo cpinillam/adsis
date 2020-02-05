@@ -37,7 +37,12 @@ class Evaluation extends Model
 
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
+    }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
     }
 
     protected function EvaluationsByUser($user)
@@ -87,5 +92,14 @@ class Evaluation extends Model
         $this->user_id = $course['user_id'];
         $this->scope = $course->scopePractice;
         return true;
+    }
+
+    protected function GetEvaluationsNotFilled()
+    {
+        $evaluations = DB::table('evaluations')
+            ->where('filled', '=', false)
+            ->Orderby('created_at')
+            ->get();
+        return $evaluations;
     }
 }
