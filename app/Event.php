@@ -31,7 +31,7 @@ class Event extends Model
         {
             Event::create([
                 'user_id' => $evaluation['user_id'],
-                'event_id' => $evaluation['id'],
+                'event_id' => $evaluation['id'], 
                 'event_type' => $this->eventTypeEvaluation,
                 'event_date' => $evaluation->created_at,
                 'event_scope' => $this->eventEvaluationScopeTheory

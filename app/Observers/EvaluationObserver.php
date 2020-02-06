@@ -16,13 +16,10 @@ class EvaluationObserver
        unset($evaluationArray['id']);
        Review::create($evaluationArray);
        $eventEvaluation = new Event();
-    
-       if ($evaluation['scope'] == 'Teoría')
-       {
+       if ($evaluation['scope'] == 'Teoría'){
             $scope='T';
             $eventEvaluation->createEventTypeEvaluation($evaluation, $scope);
-       }
-       else {
+       } else {
             $scope = 'P';
             $eventEvaluation->createEventTypeEvaluation($evaluation, $scope);  
        }
