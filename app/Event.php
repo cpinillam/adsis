@@ -9,8 +9,8 @@ class Event extends Model
 {
     public $eventTypeCourse = 1;
     public $eventTypeEvaluation = 2;
-    public $eventEvaluationScopeT = 'Teoría';
-    public $eventEvaluationScopeP = 'Práctica';
+    public $eventEvaluationScopeTheory = 'Teoría';
+    public $eventEvaluationScopePractice = 'Práctica';
 
     protected  $fillable = ['user_id', 'event_id', 'event_type', 'event_date', 'event_scope'];
 
@@ -25,32 +25,32 @@ class Event extends Model
         ]);
     }
 
-    public  function createEventTypeEvaluationTheory($evaluation)
+    public  function createEventTypeEvaluation($evaluation, $scope)
     {
-        Event::create([
-            'user_id' => $evaluation['user_id'],
-            'event_id' => $evaluation['id'],
-            'event_type' => $this->eventTypeEvaluation,
-            'event_date' => $evaluation->created_at,
-            'event_scope' => $this->eventEvaluationScopeT
-        ]);
+        if ($scope == 'T')
+        {
+            Event::create([
+                'user_id' => $evaluation['user_id'],
+                'event_id' => $evaluation['id'],
+                'event_type' => $this->eventTypeEvaluation,
+                'event_date' => $evaluation->created_at,
+                'event_scope' => $this->eventEvaluationScopeTheory
+                ]);
+        } else {
+            Event::create([
+                'user_id' => $evaluation['user_id'],
+                'event_id' => $evaluation['id'],
+                'event_type' => $this->eventTypeEvaluation,
+                'event_date' => $evaluation->created_at,
+                'event_scope' => $this->eventEvaluationScopePractice
+            ]);
+        }
+        
     }
 
-    public  function createEventTypeEvaluationPractice($evaluation)
+    public  function showEventsByUser($user)
     {
-        Event::create([
-            'user_id' => $evaluation['user_id'],
-            'event_id' => $evaluation['id'],
-            'event_type' => $this->eventTypeEvaluation,
-            'event_date' => $evaluation->created_at,
-            'event_scope' => $this->eventEvaluationScopeP
-        ]);
-    }
-
-    public  function showEventsByUser($user){
-
         $eventsByUser = Event::all()->where('user_id', $user);
-
         return $eventsByUser;
     }
 
