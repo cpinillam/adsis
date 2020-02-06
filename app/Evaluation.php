@@ -82,13 +82,14 @@ class Evaluation extends Model
     {
         $this->course_id = $course['id'];
         $this->user_id = $course['user_id'];
-        if ($scope == 'T')
-        {
+        if ($scope == 'T'){
             $this->scope = $course->scopeTheory;
             $this->save();
+        } else {
+            $this->scope = $course->scopePractice;
+            $this->save();
         }
-        $this->scope = $course->scopePractice;
-        $this->save();
+        
         return true;
     }
 
