@@ -8,13 +8,12 @@
     <p>Valorar todos los campos</p>
     @endif
 
-    <form id="create" class='formular' action='/evaluation' method='POST'>
+    <form id="update" class='formular' action='/evaluation/{{$evaluation->id}}' method='POST'>
         @csrf
+        @method ('PATCH')
+            {{ csrf_field() }}
 
             <div class="col-md-12">
-
-
-
                 <!-- item start -->
                     <div class="slider-item d-flex flex-wrap  w-100">
                         <div class="col-md-8 col-sm-12 d-flex flex-column justify-content-center p-0">
@@ -130,7 +129,7 @@
                 <!-- item end -->
                 <input class="campos" type="hidden" name="user_id" value="{{$evaluation->user_id}}">
                 <input class="campos" type="hidden" name="course_id" value=1> {{-- //TO DO --}}
-                <input class="campos" type="hidden" name="scope" value="Teoría">
+                <input class="campos" type="hidden" name="scope" value="Teoría">{{-- //TO DO --}}
                 <input class="campos" type="hidden" name="filled" value="1">
                 <input type="submit" class="btn btn-round btn-danger  mt-5 mb-5 w-100" value="Enviar">
             </div>

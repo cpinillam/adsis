@@ -89,7 +89,6 @@ class Evaluation extends Model
             $this->scope = $course->scopePractice;
             $this->save();
         }
-        
         return true;
     }
 

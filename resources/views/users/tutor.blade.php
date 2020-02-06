@@ -47,7 +47,7 @@
                         <br>
                         <a href="/attendance/create">Crear Hoja Asistencia</a>
                         <br>
-                        <a href="filter">Filtrar Asistencias</a>
+                        <a href="filter">Filtrar Asistencias por Alumno</a>
                         <br>
                 </div>
             </div>
