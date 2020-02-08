@@ -9,7 +9,36 @@ use Illuminate\Support\Facades\DB;
 
 class Evaluation extends Model
 {
+    
     protected $fillable = ['language', 'attitude', 'workflow', 'learning', 'meteo', 'scope', 'course_id', 'user_id', 'filled'];
+
+    public static function initializeEvaluationTheory(Course $course)
+    {
+        $evaluationT = new Evaluation();
+        $scope = 'Theory';
+        $evaluationT->InitializeEvaluation($course, $scope);
+    }
+
+    public static function initializeEvaluationPractice(Course $course)
+    {
+        $evaluationT = new Evaluation();
+        $scope = 'Practice';
+        $evaluationT->InitializeEvaluation($course, $scope);
+    }
+
+    public function InitializeEvaluation($course, $scope)
+    {
+        $this->course_id = $course['id'];
+        $this->user_id = $course['user_id'];
+        if ($scope == 'Theory') {
+            $this->scope = $course->scopeTheory;
+            $this->save();
+        } else {
+            $this->scope = $course->scopePractice;
+            $this->save();
+        }
+        return true;
+    }
 
     public function GetAllEvaluations(){
         $allEvaluations = Evaluation::all();
@@ -78,19 +107,7 @@ class Evaluation extends Model
         return $avgEvaluations;
     }
 
-    public function InitializeEvaluation($course, $scope)
-    {
-        $this->course_id = $course['id'];
-        $this->user_id = $course['user_id'];
-        if ($scope == 'T'){
-            $this->scope = $course->scopeTheory;
-            $this->save();
-        } else {
-            $this->scope = $course->scopePractice;
-            $this->save();
-        }
-        return true;
-    }
+    
 
     protected function GetEvaluationsNotFilled()
     {
