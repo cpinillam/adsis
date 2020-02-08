@@ -7,46 +7,40 @@ use Illuminate\Http\Request;
 
 class Event extends Model
 {
-    public $eventTypeCourse = 1;
-    public $eventTypeEvaluation = 2;
-    public $eventEvaluationScopeTheory = 'Teoría';
-    public $eventEvaluationScopePractice = 'Práctica';
-
     protected  $fillable = ['user_id', 'event_id', 'event_type', 'event_date', 'event_scope'];
 
-    public function createEventTypeCourse($course)
+    public static function createEventTypeCourse($course)
     {
         Event::create([
            'user_id' => $course['user_id'],
            'event_id' => $course['id'],
-           'event_type' => $this->eventTypeCourse,
+           'event_type' => 1, // eventTypeCourse = 1
            'event_date' => $course->CourseCatalog->start_date,
            'event_scope' => $course->CourseCatalog->name
         ]);
     }
 
-    public  function createEventTypeEvaluation($evaluation, $scope)
+    public static function createEventTypeTheory(Evaluation $evaluation)
     {
-        if ($scope == 'T')
-        {
-            Event::create([
-                'user_id' => $evaluation['user_id'],
-                'event_id' => $evaluation['id'], 
-                'event_type' => $this->eventTypeEvaluation,
-                'event_date' => $evaluation->created_at,
-                'event_scope' => $this->eventEvaluationScopeTheory
-                ]);
-        } else {
-            Event::create([
+        Event::create([
+            'user_id' => $evaluation['user_id'],
+            'event_id' => $evaluation['id'],
+            'event_type' => 2, // eventTypeEvaluation = 2
+            'event_date' => $evaluation->created_at,
+            'event_scope' => 'Teoría'
+        ]);
+    }
+
+    public static function createEventTypePractice(Evaluation $evaluation)
+    {
+        Event::create([
                 'user_id' => $evaluation['user_id'],
                 'event_id' => $evaluation['id'],
-                'event_type' => $this->eventTypeEvaluation,
+                'event_type' => 2,// eventTypeEvaluation = 2
                 'event_date' => $evaluation->created_at,
-                'event_scope' => $this->eventEvaluationScopePractice
+                'event_scope' => 'Práctica'
             ]);
-        }
-        
-    }
+    }     
 
     public  function showEventsByUser($user)
     {

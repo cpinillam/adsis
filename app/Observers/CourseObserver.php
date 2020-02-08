@@ -11,14 +11,11 @@ class CourseObserver
    
     public function created(Course $course)
     {
-        $eventCourse = new Event();
-        $eventCourse->createEventTypeCourse($course);
-        $evaluationT= new Evaluation();
-        $scope = 'T'; 
-        $evaluationT->InitializeEvaluation($course, $scope);
-        $evaluationP = new Evaluation();
-        $scope = 'P'; 
-        $evaluationP->InitializeEvaluation($course, $scope); 
+        
+        Event::createEventTypeCourse($course);
+        Evaluation::initializeEvaluationTheory($course);
+        Evaluation::initializeEvaluationPractice($course);
+
     }
     
     public function updated(Course $course)
