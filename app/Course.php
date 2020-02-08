@@ -25,14 +25,14 @@ class Course extends Model
         return $Courses;
     }
 
-    public function courseCatalog()
+    public function coursecatalog()
     {
-        return $this->belongsTo(CourseCatalog::class, 'course_id_catalog' );
+        return $this->belongsTo(CourseCatalog::class);
     }
 
-    public function evaluation()
+    public function user()
     {
-        return $this->hasMany('App\Evaluation');
+        return $this->belongsTo(User::class);
     }
 
     public static function assignMultipleUsers($data)

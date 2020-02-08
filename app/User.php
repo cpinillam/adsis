@@ -60,6 +60,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Attendance');
     }
 
+    public function evaluations()
+    {
+        return $this->hasMany('App\Evaluation');
+    }
+
     public function setGroup($group, $id)
     {
         $setUserGroup=DB::table('users')

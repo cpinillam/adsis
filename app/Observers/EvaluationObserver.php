@@ -8,7 +8,6 @@ use App\Review;
 
 class EvaluationObserver
 {
-    
     public function created(Evaluation $evaluation)
     {
        $evaluationArray =  (array) $evaluation;
@@ -22,25 +21,21 @@ class EvaluationObserver
        Event::createEventTypePractice($evaluation);
        return true;
     }
-
     
     public function updated(Evaluation $evaluation)
     {
         //
     }
 
-    
     public function deleted(Evaluation $evaluation)
     {
         //
     }
 
-    
     public function restored(Evaluation $evaluation)
     {
         //
     }
-
    
     public function forceDeleted(Evaluation $evaluation)
     {

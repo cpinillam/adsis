@@ -18,7 +18,7 @@
             @foreach ($evaluations as $evaluation)
                 <tr>
                     {{ csrf_field() }}
-                    <td>{{$evaluation->user_id}}</td>
+                    <td>{{$evaluation->user->name}}</td>
                     <td>{{$evaluation->language}}</td>
                     <td>{{$evaluation->attitude}}</td>
                     <td>{{$evaluation->learning}}</td>

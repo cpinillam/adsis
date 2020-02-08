@@ -3,10 +3,13 @@
 
 <div style="margin-left: 20px">
     <h3 class="title pt-4 pr-4 mb-0">Autoevaluación</h3>
+    <h3>{{$evaluation->course}}</h3> <!--TO DO-->
+    <h3>{{$evaluation->scope}}</h3>
     <p  class="pr-4"> A valorar de 1 a 10 las siguientes competencias</p>
     @if ($errors->any())
     <p>Valorar todos los campos</p>
     @endif
+    
 
     <form id="update" class='formular' action='/evaluation/{{$evaluation->id}}' method='POST'>
         @csrf
@@ -128,8 +131,8 @@
 
                 <!-- item end -->
                 <input class="campos" type="hidden" name="user_id" value="{{$evaluation->user_id}}">
-                <input class="campos" type="hidden" name="course_id" value=1> {{-- //TO DO --}}
-                <input class="campos" type="hidden" name="scope" value="Teoría">{{-- //TO DO --}}
+                <input class="campos" type="hidden" name="course_id" value="{{$evaluation->course_id}}">
+                <input class="campos" type="hidden" name="scope" value="{{$evaluation->scope}}">
                 <input class="campos" type="hidden" name="filled" value="1">
                 <input type="submit" class="btn btn-round btn-danger  mt-5 mb-5 w-100" value="Enviar">
             </div>
