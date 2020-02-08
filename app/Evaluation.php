@@ -71,7 +71,7 @@ class Evaluation extends Model
 
     public function course()
     {
-        return $this->belongsTo(Course::class);
+        return $this->belongsTo(Course::class, 'id_course');
     }
 
     protected function EvaluationsByUser($user)
@@ -107,8 +107,6 @@ class Evaluation extends Model
         return $avgEvaluations;
     }
 
-    
-
     protected function GetEvaluationsNotFilled()
     {
         $evaluations = DB::table('evaluations')
@@ -116,5 +114,18 @@ class Evaluation extends Model
             ->Orderby('created_at')
             ->get();
         return $evaluations;
+    }
+
+    public function courseCatalog()
+    {
+        return $this->hasOneThrough(
+            'App\Course',
+            'App\Evaluation',
+            'course_id', // Foreign key on Evaluation table...
+            'id_course_catalog', // Foreign key on Course table...
+            'id', // Local key on Evaluation table...
+            'id_course' // Local key on Course table...
+
+        );
     }
 }
