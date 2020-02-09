@@ -64,7 +64,7 @@
 
                 <div class="card-body">
                     <br>
-                        <a href="/evaluation">Evaluaciones completadas</a>
+                        <a href="/evaluationsByUser">Evaluaciones completadas</a>
                         <br>
                         <a href="attendanceIndicators">Indicadores de evaluación</a>
                 </div>

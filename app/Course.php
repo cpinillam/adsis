@@ -25,14 +25,32 @@ class Course extends Model
         return $Courses;
     }
 
-    public function coursecatalog()
+    /* public function CourseCatalog()
     {
-        return $this->belongsTo(CourseCatalog::class);
+        return $this->belongsTo(CourseCatalog::class, 'course_id_catalog');
+    } */
+
+    public function EvaluationCourseCatalog()
+    {
+        return $this->hasOneThrough(
+            'App\CourseCatalog', 
+            'App\Course',
+            'id_course_catalog', // Foreign key on Course table...
+            'course_id', // Foreign key on CourseCatalog table...
+            'id', // Local key on Evaluation table...
+            'id_course' // Local key on Course table...
+    
+        );
     }
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function evaluation()
+    {
+        return $this->hasOne('App\Evaluation');
     }
 
     public static function assignMultipleUsers($data)

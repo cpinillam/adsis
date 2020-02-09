@@ -58,6 +58,7 @@ class EvaluationController extends Controller
     {
         $user= Auth::id();
         $evaluations = Evaluation::EvaluationsByUser($user);
+        //dd($evaluations);
         return view('/Evaluation.evaluation', ['evaluations' => $evaluations]);
     }
 
