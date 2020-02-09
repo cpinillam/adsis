@@ -11,16 +11,18 @@ class CourseObserver
    
     public function created(Course $course)
     {
-        
+        $evaluationLimit = $course->weeks;
         Event::createEventTypeCourse($course);
-        Evaluation::initializeEvaluationTheory($course);
-        Evaluation::initializeEvaluationPractice($course);
+        Evaluation::initializeEvaluationTheory($course, $evaluationLimit);
+        Evaluation::initializeEvaluationPractice($course, $evaluationLimit);
 
     }
     
     public function updated(Course $course)
     {
-        //
+        $evaluationLimit = $course->weeks;
+        Evaluation::initializeEvaluationTheory($course, $evaluationLimit);
+        Evaluation::initializeEvaluationPractice($course, $evaluationLimit);
     }
    
     public function deleted(Course $course)

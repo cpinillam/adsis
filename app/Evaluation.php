@@ -9,21 +9,37 @@ use Illuminate\Support\Facades\DB;
 
 class Evaluation extends Model
 {
-    
+    public $evaluationTheoryCounter = 0;
+    public $evaluationPracticeCounter = 0;
+
     protected $fillable = ['language', 'attitude', 'workflow', 'learning', 'meteo', 'scope', 'course_id', 'user_id', 'filled'];
 
-    public static function initializeEvaluationTheory(Course $course)
+    public static function initializeEvaluationTheory(Course $course, $evaluationLimit)
     {
-        $evaluationT = new Evaluation();
-        $scope = 'Theory';
-        $evaluationT->InitializeEvaluation($course, $scope);
+        if (self::$evaluationTheoryCounter <= $evaluationLimit)
+        {
+            $evaluation = new Evaluation();
+            $scope = 'Theory';
+            $evaluation->InitializeEvaluation($course, $scope);
+            self::$evaluationTheoryCounter++;
+            return true;
+        }
+        self::$evaluationTheoryCounter=0;
+        return true;
     }
 
-    public static function initializeEvaluationPractice(Course $course)
+    public static function initializeEvaluationPractice(Course $course, $evaluationLimit)
     {
-        $evaluationT = new Evaluation();
+        if (self::$evaluationPracticeCounter <= $evaluationLimit) 
+        {
+        $evaluation = new Evaluation();
         $scope = 'Practice';
-        $evaluationT->InitializeEvaluation($course, $scope);
+        $evaluation->InitializeEvaluation($course, $scope);
+        self::$evaluationPracticeCounter++;
+            return true;
+        }
+        self::$evaluationPracticeCounter = 0;
+        return true;
     }
 
     public function InitializeEvaluation($course, $scope)
@@ -74,6 +90,19 @@ class Evaluation extends Model
         return $this->belongsTo(Course::class, 'id_course');
     }
 
+    public function evaluationCourse()
+    {
+        return $this->hasOneThrough(
+            'App\CourseCatalog',
+            'App\Course',
+            'course_id_catalog', // Foreign key on Course table...
+            'id', // Foreign key on CourseCatalog table...
+            'id', // Local key on Evaluation table...
+            'id_course' // Local key on Course table...
+        );
+        dd($this);
+    }
+
     protected function EvaluationsByUser($user)
     {
             $evaluations = DB::table('evaluations')
@@ -119,10 +148,10 @@ class Evaluation extends Model
     public function courseCatalog()
     {
         return $this->hasOneThrough(
+            'App\CourseCatalog',
             'App\Course',
-            'App\Evaluation',
-            'course_id', // Foreign key on Evaluation table...
-            'id_course_catalog', // Foreign key on Course table...
+            'course_id_catalog', // Foreign key on Course table...
+            'id', // Foreign key on CourseCatalog table...
             'id', // Local key on Evaluation table...
             'id_course' // Local key on Course table...
 

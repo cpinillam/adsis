@@ -24,7 +24,7 @@ class EvaluationObserver
     
     public function updated(Evaluation $evaluation)
     {
-        //
+        
     }
 
     public function deleted(Evaluation $evaluation)
