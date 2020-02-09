@@ -19,7 +19,7 @@
                     {{ csrf_field() }}
                     <td>{{$review->evaluation->user->name}}</td>
                     <td>{{$review->evaluation_id}}</td>
-                    <td>{{$review->evaluation->course_id}}</td> {{-- To Do  --}}
+                    <td>{{$review->evaluation->course_id}}</td> {{-- To Do CourseCatalog->name --}}
                     <td>{{$review->evaluation->scope}}</td>
                     <td>{{$review->language}}</td>
                     <td>{{$review->attitude}}</td>

@@ -11,6 +11,8 @@ class Event extends Model
 
     public static function createEventTypeCourse($course)
     {
+        //dd($course);
+    
         Event::create([
            'user_id' => $course['user_id'],
            'event_id' => $course['id'],

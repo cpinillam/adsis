@@ -2,15 +2,14 @@
 @section('content')
 
 <div style="margin-left: 20px">
-    <h3 class="title pt-4 pr-4 mb-0">Autoevaluación</h3>
-    <h3>{{$evaluation->course}}</h3> <!--TO DO-->
-    <h3>{{$evaluation->scope}}</h3>
+    <h2 class="title pt-4 pr-4 mb-0">Evaluación</h2>
     <p  class="pr-4"> A valorar de 1 a 10 las siguientes competencias</p>
+    <h5>{{$evaluation->course_id}}</h5> <!--TO DO-->
+    <h3>{{$evaluation->scope}}</h3>
     @if ($errors->any())
     <p>Valorar todos los campos</p>
     @endif
     
-
     <form id="update" class='formular' action='/evaluation/{{$evaluation->id}}' method='POST'>
         @csrf
         @method ('PATCH')
