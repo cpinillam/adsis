@@ -25,22 +25,9 @@ class Course extends Model
         return $Courses;
     }
 
-    /* public function CourseCatalog()
+    public function CourseCatalog()
     {
         return $this->belongsTo(CourseCatalog::class, 'course_id_catalog');
-    } */
-
-    public function EvaluationCourseCatalog()
-    {
-        return $this->hasOneThrough(
-            'App\CourseCatalog', 
-            'App\Course',
-            'id_course_catalog', // Foreign key on Course table...
-            'course_id', // Foreign key on CourseCatalog table...
-            'id', // Local key on Evaluation table...
-            'id_course' // Local key on Course table...
-    
-        );
     }
 
     public function user()
@@ -52,6 +39,7 @@ class Course extends Model
     {
         return $this->hasOne('App\Evaluation');
     }
+
 
     public static function assignMultipleUsers($data)
     {
@@ -71,4 +59,17 @@ class Course extends Model
         }
         return true;
     }
+
+     /*  public function courseCatalog()
+    {
+        return $this->hasOneThrough(
+            'App\Course',
+            'App\Evaluation',
+            'course_id_catalog', // Foreign key on Course table...
+            'course_id', // Foreign key on Evaluation table...
+            'id', // Local key on CourseCatalog table...
+            'id_course' // Local key on Course table...
+
+        );
+    } */
 }

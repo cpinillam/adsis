@@ -4,7 +4,7 @@
 <div style="margin-left: 20px">
     <h2 class="title pt-4 pr-4 mb-0">Evaluación</h2>
     <p  class="pr-4"> A valorar de 1 a 10 las siguientes competencias</p>
-    <h5>{{$evaluation->course_id}}</h5> <!--TO DO-->
+    <h5>{{$evaluation->course}}</h5> <!--TO DO Course Catalog name-->
     <h3>{{$evaluation->scope}}</h3>
     @if ($errors->any())
     <p>Valorar todos los campos</p>
