@@ -8,18 +8,25 @@ use App\Review;
 
 class EvaluationObserver
 {
+    public $firstEvaluation = true; //
+
     public function created(Evaluation $evaluation)
     {
-       $evaluationArray =  (array) $evaluation;
-       $evaluationArray['evaluation_id'] = $evaluation->id;
-       unset($evaluationArray['id']);
-       Review::create($evaluationArray);
-       if ($evaluation->scope == 'Teoría'){
-        Event::createEventTypeTheory($evaluation);
-        return true;
-       }
-       Event::createEventTypePractice($evaluation);
-       return true;
+        if ($this->firstEvaluation == true)
+        {
+            $evaluationArray =  (array) $evaluation;
+            $evaluationArray['evaluation_id'] = $evaluation->id;
+            unset($evaluationArray['id']);
+            Review::create($evaluationArray);
+            $this->firstEvaluation = false;
+            if ($evaluation->scope == 'Teoría') {
+                Event::createEventTypeTheory($evaluation);
+                return true;
+            }
+            Event::createEventTypePractice($evaluation);
+            return true;
+        }
+       
     }
     
     public function updated(Evaluation $evaluation)

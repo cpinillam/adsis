@@ -8,21 +8,23 @@ use App\Event;
 
 class CourseObserver
 {
-   
+    public $initialCourse = true; //
+
     public function created(Course $course)
     {
         $evaluationLimit = $course->weeks;
-        Event::createEventTypeCourse($course);
-        Evaluation::initializeEvaluationTheory($course, $evaluationLimit);
-        Evaluation::initializeEvaluationPractice($course, $evaluationLimit);
-
+        if ($this->initialize == true)
+        {
+            Event::createEventTypeCourse($course);
+            Evaluation::initializeEvaluationTheory($course, $evaluationLimit);
+            Evaluation::initializeEvaluationPractice($course, $evaluationLimit);
+            $this->initialize = false;
+        }
     }
     
     public function updated(Course $course)
     {
-        $evaluationLimit = $course->weeks;
-        Evaluation::initializeEvaluationTheory($course, $evaluationLimit);
-        Evaluation::initializeEvaluationPractice($course, $evaluationLimit);
+       
     }
    
     public function deleted(Course $course)
