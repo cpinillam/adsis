@@ -18,13 +18,13 @@
             @foreach ($evaluations as $evaluation)
                 <tr>
                     {{ csrf_field() }}
-                    <td>{{$evaluation->user_id}}</td> {{-- <td>{{$evaluation->user->name}}</td> --}}
+                    <td>{{$evaluation->user->name}}</td>
                     <td>{{$evaluation->language}}</td>
                     <td>{{$evaluation->attitude}}</td>
                     <td>{{$evaluation->learning}}</td>
                     <td>{{$evaluation->workflow}}</td>
                     <td>{{$evaluation->scope}}</td>
-                    <td>{{$evaluation->course_id}}</td>
+                    <td>{{$evaluation->courseCatalog->name}}</td>
                     <td>{{$evaluation->meteo}}</td>
                     <td>{{$evaluation->filled}}</td>
                     <td>{{$evaluation->updated_at}}</td>                   

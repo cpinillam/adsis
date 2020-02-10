@@ -14,9 +14,11 @@ class AddCourseCatalogRelationToCourseTable extends Migration
     public function up()
     {
         Schema::table('courses', function (Blueprint $table) {
-            $table->foreign('course_id_catalog')->references('id')->on('course_catalogs');
+            $table->foreign('course_catalog_id')->references('id')->on('course_catalogs');
         });
     }
+
+
 
     /**
      * Reverse the migrations.

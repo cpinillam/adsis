@@ -9,13 +9,14 @@ use Illuminate\Support\Facades\DB;
 
 class Evaluation extends Model
 {
-    public $evaluationTheoryCounter = 0;
-    public $evaluationPracticeCounter = 0;
+    public static $evaluationTheoryCounter = 0;
+    public static $evaluationPracticeCounter = 0;
 
-    protected $fillable = ['language', 'attitude', 'workflow', 'learning', 'meteo', 'scope', 'course_id', 'user_id', 'filled'];
+    protected $fillable = ['language', 'attitude', 'workflow', 'learning', 'meteo', 'scope', 'course_catalog_id', 'user_id', 'filled'];
 
     public static function initializeEvaluationTheory(Course $course, $evaluationLimit)
     {
+    
         if (self::$evaluationTheoryCounter <= $evaluationLimit)
         {
             $evaluation = new Evaluation();
@@ -44,7 +45,7 @@ class Evaluation extends Model
 
     public function InitializeEvaluation($course, $scope)
     {
-        $this->course_id = $course['id'];
+        $this->course_catalog_id = $course->courseCatalog->id;
         $this->user_id = $course['user_id'];
         if ($scope == 'Theory') {
             $this->scope = $course->scopeTheory;
@@ -85,22 +86,9 @@ class Evaluation extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function course()
+    public function courseCatalog()
     {
-        return $this->belongsTo(Course::class, 'id_course');
-    }
-
-    public function evaluationCourse()
-    {
-        return $this->hasOneThrough(
-            'App\CourseCatalog',
-            'App\Course',
-            'course_id_catalog', // Foreign key on Course table...
-            'id', // Foreign key on CourseCatalog table...
-            'id', // Local key on Evaluation table...
-            'id_course' // Local key on Course table...
-        );
-        dd($this);
+        return $this->belongsTo(CourseCatalog::class);
     }
 
     protected function EvaluationsByUser($user)
@@ -145,16 +133,4 @@ class Evaluation extends Model
         return $evaluations;
     }
 
-    public function courseCatalog()
-    {
-        return $this->hasOneThrough(
-            'App\CourseCatalog',
-            'App\Course',
-            'course_id_catalog', // Foreign key on Course table...
-            'id', // Foreign key on CourseCatalog table...
-            'id', // Local key on Evaluation table...
-            'id_course' // Local key on Course table...
-
-        );
-    }
 }

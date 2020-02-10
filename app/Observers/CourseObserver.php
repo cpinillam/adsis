@@ -13,12 +13,12 @@ class CourseObserver
     public function created(Course $course)
     {
         $evaluationLimit = $course->weeks;
-        if ($this->initialize == true)
+        if ($this->initialCourse == true)
         {
             Event::createEventTypeCourse($course);
             Evaluation::initializeEvaluationTheory($course, $evaluationLimit);
             Evaluation::initializeEvaluationPractice($course, $evaluationLimit);
-            $this->initialize = false;
+            $this->initialCourse = false;
         }
     }
     

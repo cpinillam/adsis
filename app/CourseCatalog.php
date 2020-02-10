@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Evaluation;
 use App\Course;
 
 class CourseCatalog extends Model
@@ -14,6 +15,12 @@ class CourseCatalog extends Model
         $allCourses = CourseCatalog::all();
         return $allCourses;
     }
+
+    public function evaluations()
+    {
+        return $this->hasMany('App\Evaluation');
+    }
+
 
     public function courses()
     {

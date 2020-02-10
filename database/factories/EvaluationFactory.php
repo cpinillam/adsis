@@ -12,7 +12,7 @@ $factory->define(Evaluation::class, function (Faker $faker) {
         'learning' => $faker->numberBetween($min = 1, $max = 10),
         'workflow' => $faker->numberBetween($min = 1, $max = 10),
         'meteo' => $faker->numberBetween($min = 1, $max = 10),
-        'course_id' => $faker->numberBetween($min = 1, $max = 4),
+        'course_catalog_id' => $faker->numberBetween($min = 1, $max = 4),
         'scope' => $faker->randomElement($array = array('Teoría', 'Práctica')),
         'user_id' => $faker->numberBetween($min = 1, $max = 11),
         'filled' => false,
