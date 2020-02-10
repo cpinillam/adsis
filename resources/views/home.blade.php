@@ -34,7 +34,7 @@
                             <li class="nav-item">
                                 <a class="nav-link show" role="tab" data-toggle="tab" aria-selected="true">
                                      <i class="material-icons">assignment</i> Evaluación <br>{{$event->event_scope}} {{$event->event_date}} 
-                                     <a class="nav-link show" href="/evaluation/create">Completar</a>
+                                     <a class="nav-link show" href="/evaluation/{{$event->event_id}}/edit">Completar</a>
                                 </a>
                             </li>
 
@@ -64,7 +64,7 @@
 
                 <div class="card-body">
                     <br>
-                        <a href="/evaluation">Evaluaciones completadas</a>
+                        <a href="/evaluationsByUser">Evaluaciones completadas</a>
                         <br>
                         <a href="attendanceIndicators">Indicadores de evaluación</a>
                 </div>

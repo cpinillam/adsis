@@ -38,8 +38,6 @@
                         <br>
                         <a href="/evaluation">Evaluaciones por alumn@</a>
                         <br>
-                        <a href="/evaluation/create">Crear Revisión</a>
-                        <br>
                 </div>
             </div>
 
@@ -49,14 +47,14 @@
                         <br>
                         <a href="/attendance/create">Crear Hoja Asistencia</a>
                         <br>
-                        <a href="filter">Filtrar Asistencias</a>
+                        <a href="filter">Filtrar Asistencias por Alumno</a>
                         <br>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-body">
-                        <p>Lista de revisiones pendientes</p>
+                        <a href="/review">Lista de revisiones pendientes</a>
                 </div>
             </div>
 

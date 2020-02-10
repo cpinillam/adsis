@@ -44,7 +44,6 @@ class EvaluationController extends Controller
     public function update(Request $request, Evaluation $evaluation)
     {
         $data = $request->all();
-        $evaluation = Evaluation::find($evaluation->id);
         $evaluation->fill($data);
         $evaluation->save();
         return redirect ('/evaluation');
@@ -59,6 +58,7 @@ class EvaluationController extends Controller
     {
         $user= Auth::id();
         $evaluations = Evaluation::EvaluationsByUser($user);
+        //dd($evaluations);
         return view('/Evaluation.evaluation', ['evaluations' => $evaluations]);
     }
 
