@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\DB;
 
 class Evaluation extends Model
 {
-    public static $evaluationTheoryCounter = 0;
-    public static $evaluationPracticeCounter = 0;
+    // public static $evaluationTheoryCounter = 0;
+    // public static $evaluationPracticeCounter = 0;
 
     protected $fillable = ['language', 'attitude', 'workflow', 'learning', 'meteo', 'scope', 'course_catalog_id', 'user_id', 'filled'];
 
@@ -18,7 +18,6 @@ class Evaluation extends Model
     {
         $evaluationsFiltered = DB::table('evaluations')
             ->join('users', 'users.id', '=', 'evaluations.user_id')
-            //->join('course_catalogs', 'id', '=', 'evaluations.course_catalog_id')
             ->select('users.name', 'evaluations.id', 'evaluations.language', 'evaluations.attitude', 'evaluations.workflow', 'evaluations.learning', 'evaluations.meteo', 'evaluations.scope', 'evaluations.course_catalog_id', 'evaluations.updated_at')
             ->where('users.name', $name)
             ->orderBy($sortBy, $orderBy)
@@ -26,32 +25,21 @@ class Evaluation extends Model
         return $evaluationsFiltered;
     }
 
-    public static function initializeEvaluationTheory(Course $course, $evaluationLimit)
+    public static function initializeEvaluationTheory(Course $course)
     {
+        $evaluation = new Evaluation();
+        $scope = 'Theory';
+        $evaluation->InitializeEvaluation($course, $scope);
     
-        if (self::$evaluationTheoryCounter <= $evaluationLimit)
-        {
-            $evaluation = new Evaluation();
-            $scope = 'Theory';
-            $evaluation->InitializeEvaluation($course, $scope);
-            self::$evaluationTheoryCounter++;
-            return true;
-        }
-        self::$evaluationTheoryCounter=0;
         return true;
     }
 
-    public static function initializeEvaluationPractice(Course $course, $evaluationLimit)
+    public static function initializeEvaluationPractice(Course $course)
     {
-        if (self::$evaluationPracticeCounter <= $evaluationLimit) 
-        {
         $evaluation = new Evaluation();
         $scope = 'Practice';
         $evaluation->InitializeEvaluation($course, $scope);
-        self::$evaluationPracticeCounter++;
-            return true;
-        }
-        self::$evaluationPracticeCounter = 0;
+            
         return true;
     }
 

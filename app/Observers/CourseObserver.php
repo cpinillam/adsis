@@ -10,16 +10,20 @@ class CourseObserver
 {
     public $initialCourse = true; //
 
+    
+    
     public function created(Course $course)
     {
-        $evaluationLimit = $course->weeks;
+        Event::createEventTypeCourse($course);
+        Evaluation::initializeEvaluationTheory($course);
+        Evaluation::initializeEvaluationPractice($course);
+        $this->initialCourse = false;
+
+        /* $evaluationLimit = $course->weeks;
         if ($this->initialCourse == true)
         {
-            Event::createEventTypeCourse($course);
-            Evaluation::initializeEvaluationTheory($course, $evaluationLimit);
-            Evaluation::initializeEvaluationPractice($course, $evaluationLimit);
-            $this->initialCourse = false;
-        }
+            
+        } */
     }
     
     public function updated(Course $course)

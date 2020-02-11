@@ -9,7 +9,7 @@
                 <th>Curso</th>
                 <th>Idioma</th>
                 <th>Actitud</th>
-                <th>Aprendizajes conseguidos</th>
+                <th>Aprendizajes</th>
                 <th>Dinámica de trabajo</th>
                 <th>Meteo</th>
                 <th>Fecha</th>
