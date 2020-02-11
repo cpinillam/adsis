@@ -14,6 +14,18 @@ class Evaluation extends Model
 
     protected $fillable = ['language', 'attitude', 'workflow', 'learning', 'meteo', 'scope', 'course_catalog_id', 'user_id', 'filled'];
 
+    public static function filterEvaluations($name, $sortBy, $orderBy)
+    {
+        $evaluationsFiltered = DB::table('evaluations')
+            ->join('users', 'users.id', '=', 'evaluations.user_id')
+            //->join('course_catalogs', 'id', '=', 'evaluations.course_catalog_id')
+            ->select('users.name', 'evaluations.id', 'evaluations.language', 'evaluations.attitude', 'evaluations.workflow', 'evaluations.learning', 'evaluations.meteo', 'evaluations.scope', 'evaluations.course_catalog_id', 'evaluations.updated_at')
+            ->where('users.name', $name)
+            ->orderBy($sortBy, $orderBy)
+            ->get();
+        return $evaluationsFiltered;
+    }
+
     public static function initializeEvaluationTheory(Course $course, $evaluationLimit)
     {
     
