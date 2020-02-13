@@ -16,10 +16,11 @@
             </tr>
             @foreach ($reviews as $review)
                 <tr>
+                   {{--  @dd($review) --}}
                     {{ csrf_field() }}
                     <td>{{$review->evaluation->user->name}}</td>
                     <td>{{$review->evaluation_id}}</td>
-                    <td>{{$review->evaluation->CourseCatalog->name}}</td> 
+                    <td>{{$review->evaluation->courseCatalog->name}}</td> 
                     <td>{{$review->evaluation->scope}}</td>
                     <td>{{$review->language}}</td>
                     <td>{{$review->attitude}}</td>
