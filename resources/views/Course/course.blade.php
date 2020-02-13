@@ -6,15 +6,15 @@
             <tr>
                 <th>Identificador</th>
                 <th>Curso del catálogo</th>
-                <th>Id Alumn@</th>
+                <th>Alumn@</th>
                 <th>Fecha de alta</th> 
             </tr>
             @foreach ($course as $course)
                 <tr>
                     {{ csrf_field() }}
-                    <td>{{$course->id_course}}</td>
-                    <td>{{$course->course_id_catalog}}</td>
-                    <td>{{$course->user_id}}</td>
+                    <td>{{$course->id}}</td>
+                    <td>{{$course->courseCatalog->name}}</td>
+                    <td>{{$course->user->name}}</td>
                     <td>{{$course->created_at}}</td>
                     {{-- <td>{{$user->name}}</td>        --}}
                     <td>

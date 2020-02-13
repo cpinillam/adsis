@@ -4,8 +4,7 @@
 <div style="margin-left: 20px">
     <h2 class="title pt-4 pr-4 mb-0">Evaluación</h2>
     <p  class="pr-4"> A valorar de 1 a 10 las siguientes competencias</p>
-    <h5>{{$evaluation->course}}</h5> <!--TO DO Course Catalog name-->
-    <h3>{{$evaluation->scope}}</h3>
+    <h3>{{$evaluation->courseCatalog->name}}</h3><h4>{{$evaluation->scope}}</h4>
     @if ($errors->any())
     <p>Valorar todos los campos</p>
     @endif
@@ -130,7 +129,7 @@
 
                 <!-- item end -->
                 <input class="campos" type="hidden" name="user_id" value="{{$evaluation->user_id}}">
-                <input class="campos" type="hidden" name="course_id" value="{{$evaluation->course_id}}">
+                <input class="campos" type="hidden" name="course_id" value="{{$evaluation->courseCatalog->name}}">
                 <input class="campos" type="hidden" name="scope" value="{{$evaluation->scope}}">
                 <input class="campos" type="hidden" name="filled" value="1">
                 <input type="submit" class="btn btn-round btn-danger  mt-5 mb-5 w-100" value="Enviar">

@@ -24,6 +24,8 @@ Route::get('/tutor', 'DashboardController@tutorView');
 Route::resource ('evaluation', 'EvaluationController');
 Route::get ('evaluationsByUser', 'EvaluationController@getEvaluationsByUser');
 Route::get('avgEvaluationsByUser', 'EvaluationController@avgEvaluationsByUser');
+Route::get('filterEvaluation', 'EvaluationController@getFilters');
+Route::post('filterEvaluation', 'EvaluationController@applyFilters');
 
 Route::resource('/user', 'UserController');
 Route::resource('attendance', 'AttendanceController');

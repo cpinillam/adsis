@@ -66,7 +66,7 @@ class AttendanceController extends Controller
         $users = $user->getAllUsers();
         return view('/Attendance.filter', ['user' => $users]);
     }
-
+ 
     public function applyfilters(Request $request)
     {
     if ($request->has('sortBy'))
@@ -76,10 +76,9 @@ class AttendanceController extends Controller
         if ($request->sortBy == 'curso') $sortBy = 'course';
          };
     if ($request->has('orderBy')) $orderBy = $request->orderBy;
-    if ($request->has('perPage')) $perPage = $request->perPage;
     if ($request->has('name')) $name = $request->name;
 
-    $attendancesF= Attendance::filterAttendances($name, $sortBy, $orderBy, $perPage);
+    $attendancesF= Attendance::filterAttendances($name, $sortBy, $orderBy);
     $userid= $attendancesF[0]->user_id;
     $indicators = Attendance::getAttendanceIndicators($userid);
     

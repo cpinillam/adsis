@@ -36,7 +36,9 @@
                         <br>
                         <a href="/courseCatalog">Catalogo de cursos</a>
                         <br>
-                        <a href="/evaluation">Evaluaciones por alumn@</a>
+                        <a href="/evaluation">Lista de Evaluaciones</a>
+                        <br>
+                        <a href="filterEvaluation">Filtrar Evaluaciones por alumn@</a>
                         <br>
                 </div>
             </div>

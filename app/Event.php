@@ -11,14 +11,12 @@ class Event extends Model
 
     public static function createEventTypeCourse($course)
     {
-        //dd($course);
-    
         Event::create([
            'user_id' => $course['user_id'],
            'event_id' => $course['id'],
            'event_type' => 1, // eventTypeCourse = 1
-           'event_date' => $course->CourseCatalog->start_date,
-           'event_scope' => $course->CourseCatalog->name
+           'event_date' => $course->courseCatalog->start_date,
+           'event_scope' => $course->courseCatalog->name
         ]);
     }
 

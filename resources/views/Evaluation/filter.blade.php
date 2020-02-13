@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
     <div id="content-list" style="margin-left: 50px">
-        <h1>Asistencias</h1>
+        <h1>Evaluaciones</h1>
         <h2>Campos de filtrado</h2>
-        <form action="filter" method="POST">
+        <form action="filterEvaluation" method="POST">
           @csrf
             <div class="row">
               <div class="col-md-4">
-                <h5>Nombre Alumn@</h5>
+                <h5>Nombre Alumno</h5>
                 <select name="name" class="form-control">
                   @foreach($user as $user)
                     <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -30,14 +30,6 @@
                   @endforeach
                 </select>
               </div>
-              {{-- <div class="col-md-2 col-3">
-                <h5>Registros por página</h5>
-                <select name="perPage" class="form-control">
-                  @foreach(['10','20','40'] as $page)
-                    <option @if($page) selected @endif value="{{ $page }}">{{ $page }}</option>
-                  @endforeach
-                </select>
-              </div> --}}
               <div class="col-md-2 col-3">
                 <button type="submit" class="w-100 btn btn blue">FILTRAR</button>
               </div>

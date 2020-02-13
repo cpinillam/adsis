@@ -12,9 +12,10 @@ class Course extends Model
     public $scopeTheory = 'Teoría';
     public $scopePractice = 'Práctica';
 
-    protected $fillable = ['course_id_catalog', 'user_id'];
+    protected $fillable = ['course_catalog_id', 'user_id'];
 
-    public function GetAllCourses(){
+    public function GetAllCourses()
+    {
         $allCourses = Course::all();
         return $allCourses;
     }
@@ -25,21 +26,15 @@ class Course extends Model
         return $Courses;
     }
 
-    public function CourseCatalog()
+    public function courseCatalog()
     {
-        return $this->belongsTo(CourseCatalog::class, 'course_id_catalog');
+        return $this->belongsTo(CourseCatalog::class);
     }
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-
-    public function evaluation()
-    {
-        return $this->hasOne('App\Evaluation');
-    }
-
 
     public static function assignMultipleUsers($data)
     {
@@ -48,7 +43,7 @@ class Course extends Model
         for ($i = $end; $i >= $numberOfInputs; $i -= $numberOfInputs) {
             $course= new Course;
             $user = new User;
-            $course->course_id_catalog = array_shift($data);
+            $course->course_catalog_id = array_shift($data);
             $user->group = array_shift($data);
             $user->id = array_shift($data);
             $course->user_id = $user->id;
@@ -57,19 +52,6 @@ class Course extends Model
             Course::create($course);
             $user->setGroup($group, $user->id);
         }
-        return true;
     }
 
-     /*  public function courseCatalog()
-    {
-        return $this->hasOneThrough(
-            'App\Course',
-            'App\Evaluation',
-            'course_id_catalog', // Foreign key on Course table...
-            'course_id', // Foreign key on Evaluation table...
-            'id', // Local key on CourseCatalog table...
-            'id_course' // Local key on Course table...
-
-        );
-    } */
 }

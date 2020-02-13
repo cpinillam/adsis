@@ -5,8 +5,8 @@
         <table> 
             <tr>
                 <th>Alumno</th>
-                <th>Evaluacion_id</th>
-                <th>Curso_id</th>
+                <th>Evaluacion</th>
+                <th>Curso del catálogo</th>
                 <th>Ámbito</th>
                 <th>Idioma</th>
                 <th>Actitud</th>
@@ -16,10 +16,11 @@
             </tr>
             @foreach ($reviews as $review)
                 <tr>
+                   {{--  @dd($review) --}}
                     {{ csrf_field() }}
                     <td>{{$review->evaluation->user->name}}</td>
                     <td>{{$review->evaluation_id}}</td>
-                    <td>{{$review->evaluation->course_id}}</td> {{-- To Do CourseCatalog->name --}}
+                    <td>{{$review->evaluation->courseCatalog->name}}</td> 
                     <td>{{$review->evaluation->scope}}</td>
                     <td>{{$review->language}}</td>
                     <td>{{$review->attitude}}</td>

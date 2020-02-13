@@ -37,7 +37,7 @@ class Attendance extends Model
         return true;
     }
 
-    public static function filterAttendances($name,$sortBy,$orderBy,$perPage)
+    public static function filterAttendances($name,$sortBy,$orderBy)
     {
         $attendancesFiltered = DB::table('attendances')
             ->join('users', 'users.id', '=', 'attendances.user_id')
@@ -45,7 +45,6 @@ class Attendance extends Model
             ->where('users.name',$name)
             ->orderBy($sortBy, $orderBy)
             ->get();
-            // ->paginate($perPage);
 
         return $attendancesFiltered;
     }

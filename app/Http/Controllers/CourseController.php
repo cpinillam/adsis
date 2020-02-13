@@ -15,20 +15,19 @@ class CourseController extends Controller
         $course = Course::all();
         $user= new User();
         $user= $user->GetAllUsers()->where('rol', 2); //Student role
-        //$user = $user->toArray();
         
         return view('/Course.course', ['course' => $course]);
     }
 
     public function create()
     {
-        $courseCatalog= new CourseCatalog();
+        $catalog= new CourseCatalog();
         $course = new Course();
-        $courseCatalog = $courseCatalog->GetAllCatalog();
+        $catalog = $catalog->GetAllCatalog();
         $user = new User;
         $user = $user->GetAllUsers()->where('rol', 2); //Student role
         $tutor = Auth::user()->name;
-        return view('/Course.assign', ['user' => $user, 'coursecatalog' => $courseCatalog, 'course' => $course, 'tutor' => $tutor]);
+        return view('/Course.assign', ['user' => $user, 'coursecatalog' => $catalog, 'course' => $course, 'tutor' => $tutor]);
     }
 
     public function store(Request $request)
